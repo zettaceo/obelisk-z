@@ -110,7 +110,7 @@ body{background:var(--ν0);color:var(--τ1);font-family:var(--Ψ);line-height:1.
 .ΛC{font-size:.58rem;color:var(--τ4);font-family:var(--Ω);letter-spacing:.1em;margin-left:auto}
 .ΝΒ{display:none;background:none;border:none;cursor:pointer;padding:4px;color:var(--τ2)}
 .ΝΒ svg{width:22px;height:22px}
-.ΝΜ{display:none;position:fixed;inset:0;z-index:800;background:rgba(6,2,15,.97);backdrop-filter:blur(24px);flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.ΝΜ{display:none;position:fixed;inset:0;z-index:950;background:rgba(6,2,15,.97);backdrop-filter:blur(24px);flex-direction:column;align-items:center;justify-content:center;gap:8px}
 .ΝΜ.open{display:flex}
 .ΝΜ a{font-family:var(--Φ);font-size:1rem;letter-spacing:.15em;text-transform:uppercase;color:var(--τ2);text-decoration:none;padding:16px 40px;border-radius:10px;width:100%;text-align:center;transition:all .2s}
 .ΝΜ a:hover{color:var(--πl);background:rgba(184,79,255,.08)}
@@ -269,15 +269,13 @@ body{background:var(--ν0);color:var(--τ1);font-family:var(--Ψ);line-height:1.
 .TsA .TsV{color:var(--πl)}.TsB .TsV{color:var(--μl)}.TsC .TsV{color:var(--γ)}
 @media(max-width:1024px){.Zg{grid-template-columns:1fr}}
 /* ECOSYSTEM */
-.Eg{position:relative;width:100%;max-width:680px;margin:0 auto;height:500px;display:flex;align-items:center;justify-content:center}
+.Eg{position:relative;width:100%;max-width:680px;margin:0 auto;height:500px;display:flex;align-items:center;justify-content:center;overflow:visible}
 .Ecv{position:absolute;inset:0;width:100%;height:100%}
 .Ecc{position:relative;z-index:10;text-align:center;display:flex;flex-direction:column;align-items:center}
 .Ecr{position:relative;width:110px;height:110px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
-.Er1{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(184,79,255,.35);animation:ΩΚ 3s ease-in-out infinite}
-.Er2{position:absolute;inset:-10px;border-radius:50%;border:1px solid rgba(184,79,255,.15);animation:ΩΚ 3s ease-in-out infinite .6s}
-.Er3{position:absolute;inset:-22px;border-radius:50%;border:1px solid rgba(184,79,255,.06);animation:ΩΚ 3s ease-in-out infinite 1.2s}
-.Eco{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--πd),var(--μd));display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(184,79,255,.5),0 0 80px rgba(184,79,255,.2);position:relative;z-index:2}
-.Eco img{width:50px;height:50px;object-fit:contain;filter:drop-shadow(0 0 6px rgba(255,255,255,.4))}
+.Er1,.Er2,.Er3{display:none}
+.Eco{width:80px;height:80px;border-radius:50%;background:transparent;display:flex;align-items:center;justify-content:center;position:relative;z-index:2}
+.Eco img{width:70px;height:70px;object-fit:contain;filter:drop-shadow(0 0 12px rgba(184,79,255,.6)) drop-shadow(0 0 24px rgba(184,79,255,.3))}
 .Ecl{font-family:var(--Φ);font-size:.6rem;letter-spacing:.18em;color:var(--πl)}
 .EN{position:absolute;transform:translate(-50%,-50%);z-index:10;display:flex;flex-direction:column;align-items:center;gap:8px}
 .ENc{display:flex;align-items:center;gap:10px;padding:11px 18px;border-radius:100px;background:rgba(14,5,32,.9);border:1px solid var(--β);backdrop-filter:blur(16px);cursor:default;transition:all .35s;white-space:nowrap;box-shadow:0 4px 24px rgba(0,0,0,.5)}
@@ -345,6 +343,57 @@ footer{padding:40px 0;border-top:1px solid rgba(184,79,255,.1);background:var(--
 .DTt{font-family:var(--Φ);font-size:clamp(1.2rem,3vw,1.8rem);font-weight:800;letter-spacing:.1em;color:#ff4444;text-transform:uppercase;margin-bottom:16px}
 .DTb{font-family:var(--Ω);font-size:.78rem;color:var(--τ3);line-height:1.8;max-width:480px;margin-bottom:28px;letter-spacing:.04em}
 .DTr{font-family:var(--Ω);font-size:.65rem;color:rgba(255,68,68,.5);letter-spacing:.15em;border:1px solid rgba(255,68,68,.15);padding:10px 20px;border-radius:var(--δ);background:rgba(255,68,68,.04)}
+/* RESPONSIVE ENHANCEMENTS */
+@media(max-width:480px){
+  :root{--ρ:60px;--ρm:48px}
+  .h1{font-size:clamp(1.8rem,7vw,2.6rem)}
+  .h2{font-size:clamp(1.3rem,5vw,2rem)}
+  .Ξ{padding:0 clamp(16px,4vw,32px)}
+  .Η{padding:110px 0 48px;min-height:auto}
+  .Ηdg{height:280px}
+  .Ηst{flex-direction:column;gap:14px}
+  .ΗΝd{width:40px;height:40px}
+  .ΗΝd svg{width:18px;height:18px}
+  .ΗΝn{font-size:.42rem}
+  .ΒΑ{flex-direction:column;width:100%}
+  .ΒΑ .Β{width:100%;justify-content:center}
+  .Eg{height:260px;overflow:visible}
+  .ENc{padding:8px 12px;gap:6px}
+  .ENn{font-size:.52rem}
+  .ENs{font-size:.48rem}
+  .ENi{width:22px;height:22px}
+  .ENi svg{width:11px;height:11px}
+  .Tst{flex-direction:column}
+  .TmBd{padding:16px;min-height:200px;font-size:.7rem}
+  .Zrs{height:200px}
+  .ZrI{width:160px}
+  .Ft{flex-direction:column;align-items:center;text-align:center}
+  .Νi{gap:8px}
+  .Νn{font-size:.68rem}
+  .Νs2{font-size:.42rem}
+  .ΛΒ{padding:5px 8px;font-size:.55rem}
+  .CFd{font-size:.9rem}
+  .CF{padding:80px 0}
+}
+@media(max-width:640px){
+  .Eg{overflow:visible}
+  .EN{transform:translate(-50%,-50%) scale(.85)}
+  .Ecr{width:80px;height:80px}
+  .Eco{width:60px;height:60px}
+  .Eco img{width:52px;height:52px}
+  .Ecl{font-size:.5rem}
+  .ELg{gap:10px}
+}
+@media(max-width:900px){
+  .Tst{flex-wrap:wrap}
+  .Ts{min-width:140px}
+  .Zrw{margin-top:32px}
+}
+@media(min-width:1400px){
+  .Ξ{max-width:1400px}
+  .Ηi{gap:80px}
+  .Eg{max-width:780px}
+}
 /* KEYFRAMES */
 @keyframes ΩΑ{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
 @keyframes ΩΑp{0%,100%{opacity:1;transform:scale(1) translate(-50%,-50%)}50%{opacity:.7;transform:scale(.94) translate(-50%,-50%)}}
@@ -956,7 +1005,7 @@ void function(){
 // NAV
 const ΝΑ=document.getElementById('Ν0'),ΝΒx=document.getElementById('ΝΒ0'),ΝΜx=document.getElementById('ΝΜ0');
 window.addEventListener('scroll',()=>ΝΑ.classList.toggle('Νs',scrollY>60),{passive:true});
-ΝΒx.addEventListener('click',()=>ΝΜx.classList.add('open'));
+ΝΒx.addEventListener('click',()=>ΝΜx.classList.toggle('open'));
 document.getElementById('ΝX0').addEventListener('click',()=>ΝΜx.classList.remove('open'));
 ΝΜx.querySelectorAll('a').forEach(α=>α.addEventListener('click',()=>ΝΜx.classList.remove('open')));
 // LANG
