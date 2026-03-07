@@ -356,6 +356,75 @@ footer{padding:40px 0;border-top:1px solid rgba(184,79,255,.1);background:var(--
 @keyframes ΩΘ{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 @keyframes ΩΚ{0%,100%{box-shadow:0 0 0 0 rgba(184,79,255,.2)}50%{box-shadow:0 0 0 10px rgba(184,79,255,0)}}
 @keyframes Ω2d{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+/* RESPONSIVE + UX FIXES */
+body.menu-open{overflow:hidden}
+.ΝΒ{position:relative;z-index:910;transition:color .2s}
+.ΝΒ svg{transition:transform .25s}
+.ΝΒ.open{color:var(--πl)}
+.ΝΒ.open svg{transform:rotate(90deg)}
+.Ecr{width:88px;height:88px}
+.Er1,.Er2,.Er3{display:none}
+.Eco{width:88px;height:88px;background:none;box-shadow:none;border-radius:0}
+.Eco img{width:64px;height:64px;filter:drop-shadow(0 0 16px rgba(184,79,255,.45))}
+@media(min-width:1280px){
+  .Ξ{max-width:1360px}
+  .Ηi,.Whg,.Sg,.Zg{gap:clamp(56px,5vw,96px)}
+  .Eg{max-width:760px;height:540px}
+  .ELg{grid-template-columns:repeat(5,minmax(0,1fr))}
+}
+@media(max-width:1100px){
+  .ΝΜ{padding:88px 24px 32px;justify-content:flex-start;overflow-y:auto}
+}
+@media(max-width:767px){
+  .Ξ{padding:0 18px}
+  .Ν{padding:14px 0}
+  .Ν.Νs{padding:12px 0}
+  .Νl{gap:12px;min-width:0}
+  .Νt{min-width:0}
+  .Νn{font-size:.72rem;letter-spacing:.1em}
+  .Νs2{font-size:.44rem;letter-spacing:.14em}
+  .Η{min-height:auto;padding:124px 0 56px}
+  .Ηd{margin-bottom:28px}
+  .Ηst{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px}
+  .Ηsv{font-size:.88rem}
+  .ΒΑ{flex-direction:column;align-items:stretch}
+  .Β{width:100%;justify-content:center}
+  .Whg,.Sg,.Zg{gap:40px}
+  .Whi,.Pk,.Mc,.ELi{padding:20px 18px}
+  .SiB{padding:16px 18px}
+  .Zrs{max-width:250px;height:210px}
+  .TmBd{padding:18px;min-height:220px}
+  .Eg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:none;height:auto;min-height:0}
+  .Ecv{display:none}
+  .Ecc{grid-column:1 / -1;margin-bottom:4px}
+  .Ecr{width:72px;height:72px;margin-bottom:10px}
+  .Eco{width:72px;height:72px}
+  .Eco img{width:56px;height:56px}
+  .EN{position:static;transform:none;min-width:0}
+  .ENc{width:100%;padding:12px 14px;border-radius:16px;justify-content:flex-start}
+  .ENn{font-size:.56rem}
+  .ENs{margin-left:auto}
+  .EN:last-child{grid-column:1 / -1}
+  .ELg{margin-top:32px;grid-template-columns:1fr}
+  .Rdk{grid-template-columns:1fr;gap:28px}
+  .Rph{padding:0}
+  .Ft{flex-direction:column;align-items:flex-start}
+  .Flk{gap:12px 18px}
+}
+@media(max-width:560px){
+  .Νg,.Νg img{width:38px;height:38px}
+  .Νn{font-size:.68rem}
+  .Νs2{font-size:.42rem}
+  .Ηdg{height:300px}
+  .ΗΝd{width:44px;height:44px}
+  .ΗΝn{font-size:.46rem;max-width:80px;white-space:normal}
+  .Whi,.Pk,.Mc,.ELi{padding:18px 16px}
+  .Zrs{max-width:220px;height:190px}
+  .TmB{padding:10px 14px}
+  .TmT{font-size:.54rem}
+  .EN{grid-column:1 / -1}
+  .ENc{padding:11px 12px}
+}
 </style>
 </head>
 <body>
@@ -368,7 +437,7 @@ footer{padding:40px 0;border-top:1px solid rgba(184,79,255,.1);background:var(--
 </div>
 <canvas id="α"></canvas><div class="Δ"></div>
 <div class="ΝΜ" id="ΝΜ0">
-  <button class="ΝX" id="ΝX0">&#10005;</button>
+  <button class="ΝX" id="ΝX0" type="button" aria-label="Fechar menu">&#10005;</button>
   <a href="#s2" data-k="nav_arch"></a><a href="#s3" data-k="nav_sec"></a><a href="#s4" data-k="nav_modes"></a>
   <a href="#s5b" data-k="nav_zion"></a><a href="#s6" data-k="nav_eco"></a><a href="#s7" data-k="nav_road"></a>
   <a href="#s8" class="ΝΜc" data-k="nav_cta"></a>
@@ -401,7 +470,7 @@ footer{padding:40px 0;border-top:1px solid rgba(184,79,255,.1);background:var(--
         </div>
       </div>
       <a href="#s8" class="Νc" data-k="nav_cta"></a>
-      <button class="ΝΒ" id="ΝΒ0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      <button class="ΝΒ" id="ΝΒ0" type="button" aria-label="Abrir ou fechar menu" aria-controls="ΝΜ0" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
     </div>
   </div></div>
 </nav>
@@ -954,17 +1023,27 @@ void function(){
   })).observe(document.body,{childList:true,subtree:true});
 }();
 // NAV
-const ΝΑ=document.getElementById('Ν0'),ΝΒx=document.getElementById('ΝΒ0'),ΝΜx=document.getElementById('ΝΜ0');
+const ΝΑ=document.getElementById('Ν0'),ΝΒx=document.getElementById('ΝΒ0'),ΝΜx=document.getElementById('ΝΜ0'),ΝXx=document.getElementById('ΝX0');
 window.addEventListener('scroll',()=>ΝΑ.classList.toggle('Νs',scrollY>60),{passive:true});
-ΝΒx.addEventListener('click',()=>ΝΜx.classList.add('open'));
-document.getElementById('ΝX0').addEventListener('click',()=>ΝΜx.classList.remove('open'));
-ΝΜx.querySelectorAll('a').forEach(α=>α.addEventListener('click',()=>ΝΜx.classList.remove('open')));
+const ΝToggle=ο=>{
+  const ανοιχτο=typeof ο==='boolean'?ο:!ΝΜx.classList.contains('open');
+  ΝΜx.classList.toggle('open',ανοιχτο);
+  ΝΒx.classList.toggle('open',ανοιχτο);
+  ΝΒx.setAttribute('aria-expanded',String(ανοιχτο));
+  document.body.classList.toggle('menu-open',ανοιχτο);
+};
+ΝΒx.addEventListener('click',ε=>{ε.stopPropagation();ΝToggle();});
+ΝXx.addEventListener('click',()=>ΝToggle(false));
+ΝΜx.querySelectorAll('a').forEach(α=>α.addEventListener('click',()=>ΝToggle(false)));
+ΝΜx.addEventListener('click',ε=>{if(ε.target===ΝΜx)ΝToggle(false);});
+window.addEventListener('resize',()=>{if(innerWidth>1100)ΝToggle(false);},{passive:true});
+document.addEventListener('keydown',ε=>{if(ε.key==='Escape')ΝToggle(false);});
 // LANG
 const ΛΒx=document.getElementById('ΛΒ0'),ΛDx=document.getElementById('ΛD0');
 ΛΒx.addEventListener('click',ε=>{ε.stopPropagation();const Ο=ΛDx.classList.toggle('open');ΛΒx.classList.toggle('open',Ο);});
 document.addEventListener('click',()=>{ΛDx.classList.remove('open');ΛΒx.classList.remove('open');});
 document.querySelectorAll('.ΛO').forEach(Ο=>Ο.addEventListener('click',ε=>{ε.stopPropagation();ΦΑ(Ο.dataset.lang);ΛDx.classList.remove('open');ΛΒx.classList.remove('open');}));
-document.querySelectorAll('#ΝΜL0 button').forEach(Β=>Β.addEventListener('click',()=>ΦΑ(Β.dataset.lang)));
+document.querySelectorAll('#ΝΜL0 button').forEach(Β=>Β.addEventListener('click',()=>{ΦΑ(Β.dataset.lang);ΝToggle(false);}));
 ΦΑ(ΦΩ);
 // PARTICLES
 const ΠC=document.getElementById('α'),ΠX=ΠC.getContext('2d');
