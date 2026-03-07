@@ -1,0 +1,33 @@
+{
+  "name": "obelisk-z",
+  "version": "1.0.0",
+  "description": "Landing institucional premium da OBELISK-Z para deploy na Vercel.",
+  "private": true,
+  "scripts": {
+    "extract:legacy": "node scripts/extract-legacy.mjs",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zettaceo/obelisk-z.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zettaceo/obelisk-z/issues"
+  },
+  "homepage": "https://github.com/zettaceo/obelisk-z#readme",
+  "dependencies": {
+    "next": "^16.1.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.1.6"
+  }
+}
