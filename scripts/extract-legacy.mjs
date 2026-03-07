@@ -74,6 +74,12 @@ runtime = runtime.replace(/\/\/ SENTINEL:[\s\S]*?\/\/ NAV/g, '// NAV');
 runtime = runtime.replace(/\/\/ AEGIS:[\s\S]*?\/\/ NAV/g, '// NAV');
 runtime = runtime.replace(/debugger;\s*/g, '');
 
+// Evita falha em runtime caso o id legado do <html> não exista.
+runtime = runtime.replace(
+  "document.getElementById('Φ').setAttribute('lang',ΦΛ[λ].ΦH);",
+  "(document.getElementById('Φ')||document.documentElement).setAttribute('lang',ΦΛ[λ].ΦH);"
+);
+
 // Define PT como idioma padrão.
 runtime = runtime.replace(
   "let ΦΩ=localStorage.getItem('Φ_ω')||'en';",
@@ -259,7 +265,7 @@ writeFileSync(
 
 // Fallback estático para ambientes Vercel mal configurados.
 const staticFallbackHtml = `<!DOCTYPE html>
-<html lang="pt-BR">
+<html id="Φ" lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">

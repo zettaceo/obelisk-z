@@ -285,7 +285,7 @@ let ΦΩ=localStorage.getItem('Φ_ω')||'pt';
 function ΦΑ(λ){
   if(!T[λ])return;
   ΦΩ=λ;localStorage.setItem('Φ_ω',λ);
-  document.getElementById('Φ').setAttribute('lang',ΦΛ[λ].ΦH);
+  (document.getElementById('Φ')||document.documentElement).setAttribute('lang',ΦΛ[λ].ΦH);
   document.getElementById('ΛF0').textContent=ΦΛ[λ].ΦF;
   document.getElementById('ΛL0').textContent=ΦΛ[λ].ΦL;
   document.querySelectorAll('[data-k]').forEach(Ε=>{
