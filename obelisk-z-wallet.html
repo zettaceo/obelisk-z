@@ -276,8 +276,8 @@ body{background:var(--ν0);color:var(--τ1);font-family:var(--Ψ);line-height:1.
 .Er1{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(184,79,255,.35);animation:ΩΚ 3s ease-in-out infinite}
 .Er2{position:absolute;inset:-10px;border-radius:50%;border:1px solid rgba(184,79,255,.15);animation:ΩΚ 3s ease-in-out infinite .6s}
 .Er3{position:absolute;inset:-22px;border-radius:50%;border:1px solid rgba(184,79,255,.06);animation:ΩΚ 3s ease-in-out infinite 1.2s}
-.Eco{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--πd),var(--μd));display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(184,79,255,.5),0 0 80px rgba(184,79,255,.2);position:relative;z-index:2}
-.Eco img{width:50px;height:50px;object-fit:contain;filter:drop-shadow(0 0 6px rgba(255,255,255,.4))}
+.Eco{width:80px;height:80px;display:flex;align-items:center;justify-content:center;position:relative;z-index:2}
+.Eco img{width:72px;height:72px;object-fit:contain;filter:drop-shadow(0 0 16px rgba(184,79,255,.85)) drop-shadow(0 0 32px rgba(255,62,181,.45))}
 .Ecl{font-family:var(--Φ);font-size:.6rem;letter-spacing:.18em;color:var(--πl)}
 .EN{position:absolute;transform:translate(-50%,-50%);z-index:10;display:flex;flex-direction:column;align-items:center;gap:8px}
 .ENc{display:flex;align-items:center;gap:10px;padding:11px 18px;border-radius:100px;background:rgba(14,5,32,.9);border:1px solid var(--β);backdrop-filter:blur(16px);cursor:default;transition:all .35s;white-space:nowrap;box-shadow:0 4px 24px rgba(0,0,0,.5)}
@@ -356,6 +356,40 @@ footer{padding:40px 0;border-top:1px solid rgba(184,79,255,.1);background:var(--
 @keyframes ΩΘ{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 @keyframes ΩΚ{0%,100%{box-shadow:0 0 0 0 rgba(184,79,255,.2)}50%{box-shadow:0 0 0 10px rgba(184,79,255,0)}}
 @keyframes Ω2d{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+/* RESPONSIVE — MOBILE & SMALL SCREENS */
+@media(max-width:768px){
+  .Ξ{padding:0 clamp(16px,4vw,32px)}
+  .h2{font-size:clamp(1.4rem,5vw,2.2rem)}
+  .Β{padding:12px 20px;font-size:.68rem}
+  .Tst{flex-wrap:wrap}
+  .Ts{min-width:calc(50% - 6px)}
+  .Flk{gap:14px}
+  .Ft{flex-direction:column;align-items:flex-start;gap:14px}
+}
+@media(max-width:640px){
+  .ENs{display:none}
+  .ENc{padding:8px 12px;gap:6px}
+  .ENi{width:22px;height:22px}
+  .ENi svg{width:10px;height:10px}
+  .ENn{font-size:.56rem}
+  .Eg{transform:scale(0.85);transform-origin:center center;height:260px;margin-bottom:-20px}
+  .Zrs{height:200px}
+  .ZrI{width:170px}
+  .Ecr{width:90px;height:90px}
+  .Eco img{width:58px;height:58px}
+  .ELg{margin-top:36px}
+}
+@media(max-width:420px){
+  .Eg{transform:scale(0.7);height:210px;margin-bottom:-50px}
+  .Ecr{width:80px;height:80px}
+  .Eco img{width:52px;height:52px}
+  .ΝΒ svg{width:20px;height:20px}
+  .ΛΒ{padding:6px 10px;font-size:.58rem}
+}
+/* NAV HAMBURGER ACTIVE STATE */
+@media(max-width:1100px){
+  .ΝΒ.active svg{opacity:.7}
+}
 </style>
 </head>
 <body>
@@ -956,7 +990,7 @@ void function(){
 // NAV
 const ΝΑ=document.getElementById('Ν0'),ΝΒx=document.getElementById('ΝΒ0'),ΝΜx=document.getElementById('ΝΜ0');
 window.addEventListener('scroll',()=>ΝΑ.classList.toggle('Νs',scrollY>60),{passive:true});
-ΝΒx.addEventListener('click',()=>ΝΜx.classList.add('open'));
+ΝΒx.addEventListener('click',()=>ΝΜx.classList.toggle('open'));
 document.getElementById('ΝX0').addEventListener('click',()=>ΝΜx.classList.remove('open'));
 ΝΜx.querySelectorAll('a').forEach(α=>α.addEventListener('click',()=>ΝΜx.classList.remove('open')));
 // LANG
