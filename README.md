@@ -14,8 +14,11 @@ Projeto institucional da OBELISK-Z reestruturado para arquitetura moderna com Ne
 - `app/opengraph-image.js` e `app/twitter-image.js` — imagens sociais dinâmicas
 - `components/` — casca da página institucional
 - `content/` — fragmento HTML legado já separado
+- `content/fragments/` — fragmentos por seção (componentização fase 3)
 - `public/runtime/` — script runtime legado já separado
 - `public/assets/` — imagens extraídas do legado (sem base64 inline em produção)
+- `public/index.html` — fallback estático de segurança para ambientes mal configurados
+- `vercel.json` — força detecção/configuração correta de build no deploy
 - `legacy/` — backup do HTML monolítico original
 - `scripts/extract-legacy.mjs` — extrator para regenerar CSS/HTML/runtime
 

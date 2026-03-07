@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="theme-color" content="#06020f">
+  <title>OBELISK-Z</title>
+  <meta name="description" content="Infraestrutura institucional para operação segura no ecossistema ZETTA.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>/* ╔══════════════════════════════════════════╗
+   ║ PHANTOM-CSS // OBELISK-Z DESIGN MATRIX  ║
+   ║ CLASSIFICATION: INTERNAL USE ONLY       ║
+   ╚══════════════════════════════════════════╝ */
+:root {
+  --ν0:#06020f;--ν1:#0a0418;--ν2:#0e0520;--ν3:#140830;
+  --π:#b84fff;--πd:#8b20e8;--πl:#d580ff;--πx:rgba(184,79,255,.08);--πg:rgba(184,79,255,.35);
+  --μ:#ff3eb5;--μd:#cc1f8a;--μl:#ff80cc;--μx:rgba(255,62,181,.07);
+  --κ:#00d4ff;--κd:#0099cc;
+  --γ:#c4a55a;--γl:#e8c97e;
+  --τ1:#f5eeff;--τ2:rgba(215,190,255,.72);--τ3:rgba(170,130,220,.48);--τ4:rgba(120,80,180,.32);
+  --σ1:rgba(20,6,48,.7);--σ2:rgba(35,10,80,.5);
+  --β:rgba(184,79,255,.12);--βh:rgba(184,79,255,.35);
+  --Φ:'Orbitron',monospace;--Ψ:'Syne',sans-serif;--Ω:'Space Mono',monospace;
+  --ρ:120px;--ρm:72px;--δ:12px;--δl:20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ν0);color:var(--τ1);font-family:var(--Ψ);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--ν0)}::-webkit-scrollbar-thumb{background:var(--πd);border-radius:2px}
+.Ξ{max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+.Λ{padding:var(--ρ) 0;position:relative}
+@media(max-width:768px){.Λ{padding:var(--ρm) 0}}
+#α{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.35}
+.Δ{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(184,79,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(184,79,255,.018) 1px,transparent 1px);
+  background-size:80px 80px}
+.h1{font-family:var(--Φ);font-size:clamp(2.2rem,5.5vw,5rem);font-weight:800;line-height:1.05;letter-spacing:-.01em}
+.h2{font-family:var(--Φ);font-size:clamp(1.6rem,3.5vw,2.8rem);font-weight:700;line-height:1.1}
+.Θ{background:linear-gradient(135deg,var(--π) 0%,var(--μ) 50%,var(--πl) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.Σ{display:inline-flex;align-items:center;gap:10px;font-family:var(--Ω);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--π);margin-bottom:18px}
+.Σ::before{content:'';width:28px;height:1px;background:linear-gradient(90deg,transparent,var(--π))}
+.Π{font-family:var(--Ω);font-size:.58rem;color:var(--τ4);letter-spacing:.2em;margin-right:6px}
+.Β{display:inline-flex;align-items:center;gap:8px;font-family:var(--Φ);font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:14px 28px;border-radius:var(--δ);text-decoration:none;border:none;cursor:pointer;transition:all .3s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden}
+.Β::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,.06);opacity:0;transition:opacity .2s}
+.Β:hover::before{opacity:1}
+.Β1{background:linear-gradient(135deg,var(--πd),var(--μd));color:white;box-shadow:0 0 32px var(--πg),0 4px 20px rgba(0,0,0,.4)}
+.Β1:hover{transform:translateY(-2px);box-shadow:0 0 56px var(--πg),0 8px 28px rgba(0,0,0,.5)}
+.Β2{background:transparent;color:var(--τ2);border:1px solid rgba(184,79,255,.2)}
+.Β2:hover{border-color:var(--π);color:var(--πl);transform:translateY(-2px)}
+.ΒΑ{display:flex;gap:14px;flex-wrap:wrap}
+.ΒΔ{height:1px;background:linear-gradient(90deg,transparent,rgba(184,79,255,.15),rgba(255,62,181,.1),transparent)}
+/* NAV */
+.Ν{position:fixed;top:0;left:0;right:0;z-index:900;padding:20px 0;transition:all .4s;border-bottom:1px solid transparent}
+.Ν.Νs{padding:14px 0;background:rgba(6,2,15,.92);backdrop-filter:blur(24px) saturate(1.5);border-bottom-color:rgba(184,79,255,.12)}
+.Νi{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.Νl{display:flex;align-items:center;gap:14px;text-decoration:none;flex-shrink:0}
+.Νg{position:relative;width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.Νg img{width:44px;height:44px;object-fit:contain;position:relative;z-index:2;filter:drop-shadow(0 0 8px rgba(184,79,255,.6));transition:filter .3s}
+.Νl:hover .Νg img{filter:drop-shadow(0 0 16px rgba(255,62,181,.8))}
+.Νr{position:absolute;border-radius:50%;border:1px solid;animation:ΩΩ 4s linear infinite;pointer-events:none}
+.Νr1{width:52px;height:20px;top:50%;left:50%;transform:translate(-50%,-50%) rotateX(70deg);border-color:rgba(255,62,181,.5);animation-duration:3s}
+.Νr2{width:60px;height:24px;top:50%;left:50%;transform:translate(-50%,-50%) rotateX(70deg);border-color:rgba(184,79,255,.3);animation-duration:4.5s;animation-direction:reverse}
+.Νt{display:flex;flex-direction:column}
+.Νn{font-family:var(--Φ);font-size:.8rem;font-weight:700;letter-spacing:.14em;color:var(--τ1);line-height:1}
+.Νs2{font-family:var(--Ω);font-size:.5rem;letter-spacing:.2em;color:var(--τ4);text-transform:uppercase;margin-top:2px}
+.Νlk{display:flex;align-items:center;gap:4px;list-style:none}
+.Νlk a{display:block;padding:7px 12px;font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--τ3);text-decoration:none;border-radius:8px;transition:color .2s,background .2s;white-space:nowrap}
+.Νlk a:hover{color:var(--τ1);background:rgba(184,79,255,.08)}
+.Νrg{display:flex;align-items:center;gap:10px}
+.Νc{font-family:var(--Φ);font-size:.65rem;font-weight:700;letter-spacing:.1em;padding:9px 18px;border-radius:var(--δ);background:linear-gradient(135deg,var(--πd),var(--μd));color:white;text-decoration:none;box-shadow:0 0 24px var(--πx);transition:all .3s;white-space:nowrap}
+.Νc:hover{transform:translateY(-2px);box-shadow:0 0 40px var(--πg)}
+.ΛΣ{position:relative;flex-shrink:0}
+.ΛΒ{display:flex;align-items:center;gap:6px;padding:7px 12px;border-radius:var(--δ);background:rgba(184,79,255,.06);border:1px solid rgba(184,79,255,.18);color:var(--τ2);cursor:pointer;font-family:var(--Ω);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;transition:all .2s;white-space:nowrap}
+.ΛΒ:hover{background:rgba(184,79,255,.12);color:var(--τ1);border-color:rgba(184,79,255,.35)}
+.ΛΒ svg{width:11px;height:11px;opacity:.6;transition:transform .25s}
+.ΛΒ.open svg{transform:rotate(180deg)}
+.ΛD{position:absolute;top:calc(100% + 8px);right:0;min-width:160px;background:rgba(8,3,20,.98);border:1px solid rgba(184,79,255,.2);border-radius:var(--δ);padding:6px;display:none;flex-direction:column;gap:2px;backdrop-filter:blur(24px);box-shadow:0 20px 48px rgba(0,0,0,.8);z-index:200}
+.ΛD.open{display:flex}
+.ΛO{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;cursor:pointer;transition:background .15s;border:none;background:none;width:100%;text-align:left}
+.ΛO:hover{background:rgba(184,79,255,.12)}
+.ΛO.Χ{background:rgba(184,79,255,.08)}
+.ΛO.Χ .ΛN{color:var(--πl)}
+.ΛF{font-size:1rem;line-height:1}
+.ΛN{font-size:.78rem;color:var(--τ1);font-family:var(--Ψ)}
+.ΛC{font-size:.58rem;color:var(--τ4);font-family:var(--Ω);letter-spacing:.1em;margin-left:auto}
+.ΝΒ{display:none;background:none;border:none;cursor:pointer;padding:4px;color:var(--τ2)}
+.ΝΒ svg{width:22px;height:22px}
+.ΝΜ{display:none;position:fixed;inset:0;z-index:800;background:rgba(6,2,15,.97);backdrop-filter:blur(24px);flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.ΝΜ.open{display:flex}
+.ΝΜ a{font-family:var(--Φ);font-size:1rem;letter-spacing:.15em;text-transform:uppercase;color:var(--τ2);text-decoration:none;padding:16px 40px;border-radius:10px;width:100%;text-align:center;transition:all .2s}
+.ΝΜ a:hover{color:var(--πl);background:rgba(184,79,255,.08)}
+.ΝΜc{background:linear-gradient(135deg,var(--πd),var(--μd)) !important;color:white !important;margin-top:8px}
+.ΝΜL{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+.ΝΜL button{padding:7px 14px;border-radius:var(--δ);border:1px solid rgba(184,79,255,.2);background:rgba(184,79,255,.06);color:var(--τ3);font-family:var(--Ω);font-size:.62rem;cursor:pointer;transition:all .2s}
+.ΝΜL button.Χ,.ΝΜL button:hover{background:rgba(184,79,255,.18);color:var(--πl);border-color:rgba(184,79,255,.4)}
+.ΝX{position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;color:var(--τ3);font-size:1.4rem;padding:8px;transition:color .2s}
+.ΝX:hover{color:var(--τ1)}
+@media(max-width:1100px){.Νlk{display:none}.Νc{display:none}.ΝΒ{display:block}}
+/* HERO */
+.Η{min-height:100vh;padding:160px 0 80px;position:relative;display:flex;align-items:center;overflow:hidden}
+.Ηb{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.Ηb::before{content:'';position:absolute;top:-20%;left:-15%;width:70vw;height:70vw;border-radius:50%;background:radial-gradient(circle,rgba(184,79,255,.07) 0%,transparent 65%)}
+.Ηb::after{content:'';position:absolute;bottom:-20%;right:-15%;width:55vw;height:55vw;border-radius:50%;background:radial-gradient(circle,rgba(255,62,181,.06) 0%,transparent 65%)}
+.Ηi{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.Ηc{position:relative;z-index:2}
+.Ηe{display:inline-flex;align-items:center;gap:10px;padding:7px 16px;border-radius:100px;border:1px solid rgba(184,79,255,.25);background:rgba(184,79,255,.07);margin-bottom:28px}
+.Ηed{width:6px;height:6px;border-radius:50%;background:var(--π);animation:ΩΑ 2.5s ease-in-out infinite}
+.Ηet{font-family:var(--Ω);font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--πl)}
+.Ητ{margin-bottom:14px}
+.Ητ .ln{display:block;color:var(--τ1);font-size:clamp(2.4rem,5.5vw,5.2rem)}
+.Ητ .la{display:block;font-size:clamp(2.4rem,5.5vw,5.2rem)}
+.Ηs{font-family:var(--Φ);font-size:clamp(.9rem,1.5vw,1.05rem);font-weight:500;letter-spacing:.06em;color:var(--τ3);margin-bottom:20px;line-height:1.5}
+.Ηd{font-size:clamp(.95rem,1.5vw,1.05rem);color:var(--τ2);line-height:1.82;max-width:520px;margin-bottom:40px}
+.Ηst{display:flex;gap:32px;flex-wrap:wrap;padding-top:32px;border-top:1px solid rgba(184,79,255,.1);margin-top:8px}
+.Ηsl{font-family:var(--Ω);font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:var(--τ4);display:block;margin-bottom:4px}
+.Ηsv{font-family:var(--Φ);font-size:.95rem;font-weight:700;color:var(--τ1)}
+.Ηsv span{color:var(--πl)}
+.Ηdg{position:relative;display:flex;align-items:center;justify-content:center;height:540px;z-index:2}
+.Ηcv{position:absolute;inset:0;width:100%;height:100%}
+.Ηct{position:relative;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.Ηcw{position:relative;width:130px;height:130px;display:flex;align-items:center;justify-content:center}
+.Ηcw img{width:96px;height:96px;object-fit:contain;position:relative;z-index:3;filter:drop-shadow(0 0 24px rgba(184,79,255,.8)) drop-shadow(0 0 48px rgba(255,62,181,.3));animation:ΩΓ 4s ease-in-out infinite}
+.Ηrs{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.Ηcl{font-family:var(--Φ);font-size:.58rem;letter-spacing:.18em;color:var(--πl);margin-top:14px;line-height:1.6}
+.ΗΝ{position:absolute;display:flex;flex-direction:column;align-items:center;gap:6px;transform:translate(-50%,-50%);z-index:10;cursor:default}
+.ΗΝd{width:52px;height:52px;border-radius:50%;background:var(--σ1);border:1px solid var(--β);display:flex;align-items:center;justify-content:center;backdrop-filter:blur(12px);transition:all .35s;box-shadow:0 4px 20px rgba(0,0,0,.5)}
+.ΗΝ:hover .ΗΝd{border-color:var(--π);box-shadow:0 0 24px rgba(184,79,255,.4);transform:scale(1.12)}
+.ΗΝd svg{width:22px;height:22px}
+.ΗΝn{font-family:var(--Ω);font-size:.5rem;letter-spacing:.15em;text-transform:uppercase;color:var(--τ3);text-align:center;white-space:nowrap;transition:color .3s;line-height:1.4}
+.ΗΝ:hover .ΗΝn{color:var(--πl)}
+@media(max-width:1024px){.Ηi{grid-template-columns:1fr}.Ηc{max-width:640px}.Ηdg{height:420px}}
+@media(max-width:640px){.Η{padding:130px 0 60px}.Ηdg{height:340px}.Ηst{gap:20px}}
+/* WHAT */
+.Wh{background:linear-gradient(180deg,var(--ν1) 0%,var(--ν2) 100%)}
+.Whg{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.Whm{display:inline-block;width:3px;height:40px;background:linear-gradient(to bottom,var(--π),transparent);margin-bottom:24px;border-radius:2px}
+.Wht p{color:var(--τ2);line-height:1.85;margin-bottom:20px;font-size:1.05rem}
+.Wht p strong{color:var(--πl);font-weight:600}
+.Whc{display:flex;flex-direction:column;gap:12px}
+.Whi{padding:20px 24px;background:var(--σ1);border:1px solid var(--β);border-radius:var(--δ);backdrop-filter:blur(12px);display:flex;align-items:flex-start;gap:16px;transition:all .3s cubic-bezier(.16,1,.3,1);cursor:default}
+.Whi:hover{border-color:rgba(184,79,255,.3);background:rgba(184,79,255,.05);transform:translateX(6px)}
+.Whii{width:42px;height:42px;flex-shrink:0;border-radius:10px;background:rgba(184,79,255,.08);border:1px solid rgba(184,79,255,.15);display:flex;align-items:center;justify-content:center;transition:all .3s}
+.Whi:hover .Whii{background:rgba(184,79,255,.15);box-shadow:0 0 16px rgba(184,79,255,.2)}
+.Whii.μ{background:rgba(255,62,181,.08);border-color:rgba(255,62,181,.15)}
+.Whii.γ{background:rgba(196,165,90,.08);border-color:rgba(196,165,90,.15)}
+.Whii svg{width:18px;height:18px}
+.WhiT{font-family:var(--Φ);font-size:.7rem;font-weight:600;letter-spacing:.1em;color:var(--τ1);margin-bottom:4px}
+.WhiD{font-size:.82rem;color:var(--τ3);line-height:1.6}
+@media(max-width:900px){.Whg{grid-template-columns:1fr;gap:48px}}
+/* PILLARS */
+.Pg{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.Pk{padding:36px 28px;background:var(--σ1);border:1px solid var(--β);border-radius:var(--δl);backdrop-filter:blur(16px);position:relative;overflow:hidden;transition:all .4s cubic-bezier(.16,1,.3,1);cursor:default}
+.Pk::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--π),transparent);opacity:0;transition:opacity .4s}
+.Pk::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(184,79,255,.07),transparent 60%);opacity:0;transition:opacity .4s}
+.Pk:hover{transform:translateY(-8px);border-color:rgba(184,79,255,.3);box-shadow:0 24px 60px rgba(0,0,0,.6),0 0 48px rgba(184,79,255,.1)}
+.Pk:hover::before,.Pk:hover::after{opacity:1}
+.Pk.μ::before{background:linear-gradient(90deg,transparent,var(--μ),transparent)}.Pk.μ::after{background:radial-gradient(ellipse at 50% 0%,rgba(255,62,181,.07),transparent 60%)}.Pk.μ:hover{border-color:rgba(255,62,181,.3)}
+.Pk.γ::before{background:linear-gradient(90deg,transparent,var(--γ),transparent)}.Pk.γ::after{background:radial-gradient(ellipse at 50% 0%,rgba(196,165,90,.07),transparent 60%)}.Pk.γ:hover{border-color:rgba(196,165,90,.3)}
+.PkN{font-family:var(--Ω);font-size:.55rem;letter-spacing:.25em;color:var(--τ4);margin-bottom:20px;display:block}
+.PkI{width:56px;height:56px;border-radius:var(--δ);background:rgba(184,79,255,.08);border:1px solid rgba(184,79,255,.15);display:flex;align-items:center;justify-content:center;margin-bottom:24px;transition:all .3s}
+.Pk:hover .PkI{background:rgba(184,79,255,.15);box-shadow:0 0 20px rgba(184,79,255,.2)}
+.Pk.μ .PkI{background:rgba(255,62,181,.08);border-color:rgba(255,62,181,.15)}.Pk.γ .PkI{background:rgba(196,165,90,.08);border-color:rgba(196,165,90,.15)}
+.PkI svg{width:26px;height:26px}
+.PkT{font-family:var(--Φ);font-size:.9rem;font-weight:700;letter-spacing:.06em;margin-bottom:12px;color:var(--τ1)}
+.PkD{font-size:.87rem;color:var(--τ3);line-height:1.7}
+@media(max-width:1100px){.Pg{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.Pg{grid-template-columns:1fr}}
+/* SECURITY */
+.Sg{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start}
+.Sl{display:flex;flex-direction:column;gap:12px}
+.Si{display:flex;align-items:stretch;position:relative;cursor:default;transition:all .3s}
+.SiN{display:flex;align-items:center;justify-content:center;width:52px;flex-shrink:0;font-family:var(--Ω);font-size:.6rem;font-weight:700;letter-spacing:.1em;color:var(--πl);background:rgba(184,79,255,.07);border:1px solid rgba(184,79,255,.12);border-right:none;border-radius:var(--δ) 0 0 var(--δ);padding:16px 0;transition:all .3s}
+.SiB{flex:1;padding:18px 22px;background:var(--σ1);border:1px solid var(--β);border-radius:0 var(--δ) var(--δ) 0;backdrop-filter:blur(12px);transition:all .3s}
+.Si:hover .SiB{border-color:rgba(184,79,255,.3);background:rgba(184,79,255,.05)}.Si:hover .SiN{color:var(--π);background:rgba(184,79,255,.15);border-color:rgba(184,79,255,.25)}
+.SiT{font-family:var(--Φ);font-size:.75rem;font-weight:600;letter-spacing:.08em;color:var(--τ1);margin-bottom:4px}
+.SiD{font-size:.82rem;color:var(--τ3);line-height:1.5}
+.SiC{position:absolute;left:26px;bottom:-6px;width:1px;height:12px;background:linear-gradient(to bottom,var(--πd),transparent)}
+.Sw{position:sticky;top:120px}
+.SP{position:relative;width:100%;display:flex;flex-direction:column;align-items:center;gap:0;margin-top:40px}
+.SPl{width:var(--w);padding:14px 20px;border-radius:var(--δ);display:flex;align-items:center;justify-content:space-between;font-family:var(--Ω);font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;border:1px solid;backdrop-filter:blur(8px);transition:all .4s;cursor:default;position:relative;margin-bottom:3px}
+.SPl:hover{transform:scaleX(1.015);z-index:10}
+.SPl1{--w:94%;border-color:rgba(184,79,255,.08);color:var(--τ4);background:rgba(184,79,255,.025);border-radius:0 0 var(--δ) var(--δ)}
+.SPl2{--w:86%;border-color:rgba(184,79,255,.13);color:var(--τ3);background:rgba(184,79,255,.04)}
+.SPl3{--w:78%;border-color:rgba(255,62,181,.18);color:rgba(255,128,204,.7);background:rgba(255,62,181,.04)}
+.SPl4{--w:70%;border-color:rgba(184,79,255,.28);color:var(--πl);background:rgba(184,79,255,.07)}
+.SPl5{--w:62%;border-color:rgba(184,79,255,.5);color:white;background:linear-gradient(135deg,rgba(184,79,255,.15),rgba(255,62,181,.1));box-shadow:0 0 24px rgba(184,79,255,.2);border-radius:var(--δ) var(--δ) 0 0}
+.SPb{padding:3px 8px;border-radius:100px;font-size:.5rem;letter-spacing:.12em;background:rgba(184,79,255,.15);border:1px solid rgba(184,79,255,.25);color:var(--πl)}
+.SPl5 .SPb{background:rgba(255,62,181,.2);border-color:rgba(255,62,181,.4);color:var(--μl)}
+.Stl{text-align:center;margin-bottom:20px}.Stl span{font-family:var(--Ω);font-size:.55rem;letter-spacing:.25em;color:var(--π);text-transform:uppercase;animation:ΩΖ 3s ease-in-out infinite}
+.Sin{margin-top:20px;padding:18px 20px;background:rgba(184,79,255,.04);border:1px solid rgba(184,79,255,.1);border-radius:var(--δ);text-align:center}
+.SinM{font-family:var(--Ω);font-size:.6rem;letter-spacing:.2em;color:var(--τ4);margin-bottom:6px}
+.SinE{font-family:var(--Φ);font-size:.82rem;color:var(--πl);letter-spacing:.08em}
+.SinS{font-family:var(--Ω);font-size:.65rem;color:var(--τ3);margin-top:6px}
+@media(max-width:1024px){.Sg{grid-template-columns:1fr}.Sw{position:static;margin-top:48px}}
+/* MODES */
+.Mg{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.Mc{padding:40px 32px;background:var(--σ1);border:1px solid var(--β);border-radius:var(--δl);backdrop-filter:blur(16px);position:relative;overflow:hidden;cursor:default;transition:all .4s cubic-bezier(.16,1,.3,1)}
+.Mc::after{content:'';position:absolute;inset:0;opacity:0;transition:opacity .4s;pointer-events:none}
+.Mc.M1::after{background:radial-gradient(ellipse at 50% 100%,rgba(184,79,255,.09),transparent 55%)}.Mc.M2::after{background:radial-gradient(ellipse at 50% 100%,rgba(255,62,181,.09),transparent 55%)}.Mc.M3::after{background:radial-gradient(ellipse at 50% 100%,rgba(196,165,90,.09),transparent 55%)}
+.Mc:hover{transform:translateY(-8px)}.Mc:hover::after{opacity:1}
+.Mc.M1:hover{border-color:rgba(184,79,255,.35);box-shadow:0 28px 60px rgba(0,0,0,.6),0 0 40px rgba(184,79,255,.1)}.Mc.M2:hover{border-color:rgba(255,62,181,.35);box-shadow:0 28px 60px rgba(0,0,0,.6),0 0 40px rgba(255,62,181,.1)}.Mc.M3:hover{border-color:rgba(196,165,90,.35);box-shadow:0 28px 60px rgba(0,0,0,.6),0 0 40px rgba(196,165,90,.1)}
+.Mbg{display:inline-block;padding:5px 14px;border-radius:100px;font-family:var(--Ω);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:28px;font-weight:700}
+.Mc.M1 .Mbg{background:rgba(184,79,255,.1);border:1px solid rgba(184,79,255,.25);color:var(--πl)}.Mc.M2 .Mbg{background:rgba(255,62,181,.1);border:1px solid rgba(255,62,181,.25);color:var(--μl)}.Mc.M3 .Mbg{background:rgba(196,165,90,.1);border:1px solid rgba(196,165,90,.25);color:var(--γ)}
+.Mci{width:68px;height:68px;border-radius:var(--δl);display:flex;align-items:center;justify-content:center;margin-bottom:24px;transition:all .3s}
+.Mc.M1 .Mci{background:rgba(184,79,255,.08);border:1px solid rgba(184,79,255,.15)}.Mc.M2 .Mci{background:rgba(255,62,181,.08);border:1px solid rgba(255,62,181,.15)}.Mc.M3 .Mci{background:rgba(196,165,90,.08);border:1px solid rgba(196,165,90,.15)}
+.Mc:hover .Mci{transform:scale(1.05)}.Mci svg{width:32px;height:32px}
+.McN{font-family:var(--Φ);font-size:1.05rem;font-weight:700;letter-spacing:.06em;margin-bottom:12px;color:var(--τ1)}
+.McD{font-size:.9rem;color:var(--τ3);line-height:1.72}
+.McF{margin-top:24px;list-style:none;display:flex;flex-direction:column;gap:9px}
+.McF li{display:flex;align-items:center;gap:10px;font-size:.8rem;color:var(--τ3);font-family:var(--Ω)}
+.McF li::before{content:'';width:16px;height:1px;flex-shrink:0}
+.Mc.M1 .McF li::before{background:var(--π)}.Mc.M2 .McF li::before{background:var(--μ)}.Mc.M3 .McF li::before{background:var(--γ)}
+@media(max-width:900px){.Mg{grid-template-columns:1fr}}
+/* ZION */
+.Zg{display:grid;grid-template-columns:1fr 1.3fr;gap:60px;align-items:center}
+.Zp{color:var(--τ2);font-size:1.02rem;line-height:1.85;margin-bottom:16px}
+.Zcl{display:flex;flex-direction:column;gap:10px;margin-top:28px}
+.Zc{display:flex;align-items:center;gap:12px;font-size:.85rem;color:var(--τ3)}
+.Zc::before{content:'';width:20px;height:1px;background:linear-gradient(90deg,var(--π),transparent);flex-shrink:0}
+.Zno{display:flex;align-items:center;gap:12px;padding:14px 20px;border-radius:var(--δ);background:rgba(196,165,90,.06);border:1px solid rgba(196,165,90,.18);margin-top:32px}
+.Znd{width:6px;height:6px;border-radius:50%;background:var(--γ);flex-shrink:0;animation:ΩΑ 2s ease-in-out infinite}
+.ZnT{font-family:var(--Ω);font-size:.62rem;letter-spacing:.1em;color:var(--γl)}
+.Zrw{position:relative;display:flex;flex-direction:column;align-items:center}
+.Zrs{position:relative;width:100%;max-width:340px;margin:0 auto;display:flex;align-items:center;justify-content:center;height:260px}
+.Zrg{position:absolute;bottom:10%;left:50%;transform:translateX(-50%);width:200px;height:60px;border-radius:50%;background:radial-gradient(ellipse,rgba(184,79,255,.5),transparent 70%);filter:blur(20px);animation:ΩΗ 3s ease-in-out infinite}
+.Zrr{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotateX(80deg);border:1px solid rgba(184,79,255,.3);border-radius:50%;animation:ΩΩ 6s linear infinite}
+.Zrr2{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotateX(80deg);border:1px solid rgba(255,62,181,.2);border-radius:50%;animation:ΩΩ 9s linear infinite reverse}
+.ZrI{position:relative;z-index:2;width:220px;height:auto;object-fit:contain;filter:drop-shadow(0 0 30px rgba(184,79,255,.5)) drop-shadow(0 20px 40px rgba(184,79,255,.3));animation:ΩΘ 4s ease-in-out infinite}
+.Tm{background:rgba(4,1,12,.96);border:1px solid rgba(184,79,255,.22);border-radius:var(--δl);overflow:hidden;font-family:var(--Ω);box-shadow:0 32px 80px rgba(0,0,0,.7),0 0 60px rgba(184,79,255,.06);margin-top:20px}
+.TmB{padding:12px 18px;background:rgba(184,79,255,.06);border-bottom:1px solid rgba(184,79,255,.12);display:flex;align-items:center;gap:8px}
+.TmD{width:10px;height:10px;border-radius:50%}
+.TmD:nth-child(1){background:#ff5f57}.TmD:nth-child(2){background:#febc2e}.TmD:nth-child(3){background:#28c840}
+.TmT{margin-left:8px;font-size:.6rem;letter-spacing:.15em;color:var(--τ4)}
+.TmBd{padding:24px;min-height:260px;font-size:.78rem;line-height:1.9;overflow-y:auto;max-height:300px}
+.Tl{display:block;margin-bottom:2px}
+.Tp{color:var(--πl)}.Tc{color:var(--τ2)}.To{color:var(--τ3)}.Tk{color:var(--μl)}.Tv{color:var(--πl)}
+.Tv.ok{color:#28c840}.Tv.warn{color:#febc2e}.Tv.route{color:var(--γ)}
+.Tcsr{display:inline-block;width:8px;height:14px;background:var(--πl);vertical-align:middle;animation:ΩΒ .9s step-end infinite;margin-left:2px}
+.Tdv{height:1px;background:rgba(184,79,255,.1);margin:10px 0}
+.Tst{display:flex;gap:12px;margin-top:12px}
+.Ts{flex:1;padding:12px 14px;border-radius:var(--δ)}
+.TsA{background:rgba(184,79,255,.04);border:1px solid rgba(184,79,255,.1)}.TsB{background:rgba(255,62,181,.04);border:1px solid rgba(255,62,181,.08)}.TsC{background:rgba(196,165,90,.04);border:1px solid rgba(196,165,90,.08)}
+.TsL{font-family:var(--Ω);font-size:.52rem;letter-spacing:.18em;color:var(--τ4);margin-bottom:4px}
+.TsV{font-family:var(--Φ);font-size:.7rem}
+.TsA .TsV{color:var(--πl)}.TsB .TsV{color:var(--μl)}.TsC .TsV{color:var(--γ)}
+@media(max-width:1024px){.Zg{grid-template-columns:1fr}}
+/* ECOSYSTEM */
+.Eg{position:relative;width:100%;max-width:680px;margin:0 auto;height:500px;display:flex;align-items:center;justify-content:center}
+.Ecv{position:absolute;inset:0;width:100%;height:100%}
+.Ecc{position:relative;z-index:10;text-align:center;display:flex;flex-direction:column;align-items:center}
+.Ecr{position:relative;width:110px;height:110px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+.Er1{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(184,79,255,.35);animation:ΩΚ 3s ease-in-out infinite}
+.Er2{position:absolute;inset:-10px;border-radius:50%;border:1px solid rgba(184,79,255,.15);animation:ΩΚ 3s ease-in-out infinite .6s}
+.Er3{position:absolute;inset:-22px;border-radius:50%;border:1px solid rgba(184,79,255,.06);animation:ΩΚ 3s ease-in-out infinite 1.2s}
+.Eco{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--πd),var(--μd));display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(184,79,255,.5),0 0 80px rgba(184,79,255,.2);position:relative;z-index:2}
+.Eco img{width:50px;height:50px;object-fit:contain;filter:drop-shadow(0 0 6px rgba(255,255,255,.4))}
+.Ecl{font-family:var(--Φ);font-size:.6rem;letter-spacing:.18em;color:var(--πl)}
+.EN{position:absolute;transform:translate(-50%,-50%);z-index:10;display:flex;flex-direction:column;align-items:center;gap:8px}
+.ENc{display:flex;align-items:center;gap:10px;padding:11px 18px;border-radius:100px;background:rgba(14,5,32,.9);border:1px solid var(--β);backdrop-filter:blur(16px);cursor:default;transition:all .35s;white-space:nowrap;box-shadow:0 4px 24px rgba(0,0,0,.5)}
+.ENc:hover{border-color:rgba(184,79,255,.4);background:rgba(184,79,255,.08);transform:scale(1.07);box-shadow:0 8px 32px rgba(0,0,0,.5),0 0 24px rgba(184,79,255,.2)}
+.ENi{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ENi svg{width:14px;height:14px}
+.ENn{font-family:var(--Φ);font-size:.62rem;letter-spacing:.1em;color:var(--τ1)}
+.ENs{font-size:.58rem;font-family:var(--Ω);color:var(--τ4);margin-left:4px;white-space:nowrap}
+.ELg{margin-top:56px;display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.ELi{padding:22px 18px;text-align:center;background:var(--σ1);border:1px solid var(--β);border-radius:var(--δ);backdrop-filter:blur(12px);transition:all .35s;cursor:default;position:relative;overflow:hidden}
+.ELi:hover{border-color:rgba(184,79,255,.25);background:rgba(184,79,255,.04);transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.5)}
+.ELii{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+.ELii svg{width:18px;height:18px}
+.ELn{font-family:var(--Φ);font-size:.65rem;letter-spacing:.1em;color:var(--πl);margin-bottom:8px}
+.ELd{font-size:.75rem;color:var(--τ4);line-height:1.55}
+@media(max-width:900px){.ELg{grid-template-columns:repeat(2,1fr)}.Eg{height:380px}}@media(max-width:560px){.ELg{grid-template-columns:1fr}.Eg{height:300px}}
+/* ROADMAP */
+.Rdk{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.Rdk::before{content:'';position:absolute;left:12.5%;right:12.5%;top:40px;height:1px;background:linear-gradient(90deg,var(--πd),var(--μd),var(--π),rgba(196,165,90,.5))}
+.Rph{padding:0 16px;position:relative}
+.Rpd{width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 32px;position:relative;z-index:2;transition:transform .3s}
+.Rpd:hover{transform:scale(1.1)}
+.Rph:nth-child(1) .Rpd{background:linear-gradient(135deg,rgba(184,79,255,.2),rgba(184,79,255,.05));border:1px solid rgba(184,79,255,.45);box-shadow:0 0 28px rgba(184,79,255,.2)}
+.Rph:nth-child(2) .Rpd{background:linear-gradient(135deg,rgba(255,62,181,.15),rgba(255,62,181,.04));border:1px solid rgba(255,62,181,.35);box-shadow:0 0 24px rgba(255,62,181,.15)}
+.Rph:nth-child(3) .Rpd{background:linear-gradient(135deg,rgba(184,79,255,.1),rgba(255,62,181,.1));border:1px solid rgba(200,80,230,.3)}
+.Rph:nth-child(4) .Rpd{background:linear-gradient(135deg,rgba(196,165,90,.12),rgba(196,165,90,.03));border:1px solid rgba(196,165,90,.25)}
+.Rpd svg{width:28px;height:28px}
+.RpN{font-family:var(--Ω);font-size:.55rem;letter-spacing:.2em;color:var(--τ4);text-align:center;margin-bottom:8px}
+.RpNm{font-family:var(--Φ);font-size:.82rem;font-weight:600;letter-spacing:.06em;text-align:center;margin-bottom:20px;color:var(--τ1)}
+.Rpi{list-style:none}
+.Rpi li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.8rem;color:var(--τ3);display:flex;align-items:flex-start;gap:8px;line-height:1.4}
+.Rpi li::before{content:'';width:12px;height:1px;flex-shrink:0;margin-top:8px}
+.Rph:nth-child(1) .Rpi li::before{background:var(--πd)}.Rph:nth-child(2) .Rpi li::before{background:var(--μd)}.Rph:nth-child(4) .Rpi li::before{background:var(--γ)}
+@media(max-width:900px){.Rdk{grid-template-columns:1fr 1fr;gap:40px}.Rdk::before{display:none}}@media(max-width:560px){.Rdk{grid-template-columns:1fr}}
+/* CTA + FOOTER */
+.CF{position:relative;overflow:hidden;padding:140px 0;background:var(--ν0)}
+.CFb1{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:400px;border-radius:50%;background:radial-gradient(ellipse,rgba(184,79,255,.08),rgba(255,62,181,.05) 40%,transparent 70%)}
+.CFb2{position:absolute;top:40%;left:35%;transform:translate(-50%,-50%);width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(184,79,255,.05),transparent 70%);animation:ΩΑp 4s ease-in-out infinite}
+.CFi{position:relative;z-index:1;text-align:center}
+.CFi .h2{max-width:700px;margin:0 auto 20px}
+.CFd{font-size:1.05rem;color:var(--τ2);line-height:1.8;max-width:540px;margin:0 auto 48px}
+.CFi .ΒΑ{justify-content:center}
+.CFf{margin-top:40px;font-family:var(--Ω);font-size:.6rem;letter-spacing:.12em;color:var(--τ4)}
+footer{padding:40px 0;border-top:1px solid rgba(184,79,255,.1);background:var(--ν0)}
+.Ft{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.Fl{display:flex;align-items:center;gap:10px;text-decoration:none}
+.FlG img{width:28px;height:28px;object-fit:contain;filter:drop-shadow(0 0 6px rgba(184,79,255,.5))}
+.FlN{font-family:var(--Φ);font-size:.72rem;font-weight:700;letter-spacing:.12em;color:var(--τ2)}
+.Flk{display:flex;gap:24px;flex-wrap:wrap}
+.Flk a{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--τ4);text-decoration:none;transition:color .2s;font-family:var(--Ω)}
+.Flk a:hover{color:var(--πl)}
+.Fcp{font-family:var(--Ω);font-size:.6rem;letter-spacing:.08em;color:var(--τ4)}
+/* REVEAL */
+.Rv{opacity:0;transform:translateY(32px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.Rv.Χ{opacity:1;transform:none}
+.RvL{opacity:0;transform:translateX(-36px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.RvL.Χ{opacity:1;transform:none}
+.RvR{opacity:0;transform:translateX(36px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.RvR.Χ{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
+/* DEVTOOLS OVERLAY */
+.DT{display:none;position:fixed;inset:0;z-index:99999;background:rgba(4,0,14,.97);backdrop-filter:blur(32px);flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px}
+.DT.Χ{display:flex}
+.DTi{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,rgba(255,50,50,.15),rgba(200,0,0,.05));border:1px solid rgba(255,50,50,.3);display:flex;align-items:center;justify-content:center;margin-bottom:32px;animation:ΩΑ 2s ease-in-out infinite}
+.DTt{font-family:var(--Φ);font-size:clamp(1.2rem,3vw,1.8rem);font-weight:800;letter-spacing:.1em;color:#ff4444;text-transform:uppercase;margin-bottom:16px}
+.DTb{font-family:var(--Ω);font-size:.78rem;color:var(--τ3);line-height:1.8;max-width:480px;margin-bottom:28px;letter-spacing:.04em}
+.DTr{font-family:var(--Ω);font-size:.65rem;color:rgba(255,68,68,.5);letter-spacing:.15em;border:1px solid rgba(255,68,68,.15);padding:10px 20px;border-radius:var(--δ);background:rgba(255,68,68,.04)}
+/* KEYFRAMES */
+@keyframes ΩΑ{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+@keyframes ΩΑp{0%,100%{opacity:1;transform:scale(1) translate(-50%,-50%)}50%{opacity:.7;transform:scale(.94) translate(-50%,-50%)}}
+@keyframes ΩΩ{from{transform:translate(-50%,-50%) rotateX(70deg) rotate(0deg)}to{transform:translate(-50%,-50%) rotateX(70deg) rotate(360deg)}}
+@keyframes ΩΒ{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes ΩΓ{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-10px) scale(1.03)}}
+@keyframes ΩΖ{0%,100%{opacity:1;transform:translateY(0)}50%{opacity:.6;transform:translateY(-4px)}}
+@keyframes ΩΗ{0%,100%{opacity:.8;transform:translateX(-50%) scaleX(1)}50%{opacity:1;transform:translateX(-50%) scaleX(1.3)}}
+@keyframes ΩΘ{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes ΩΚ{0%,100%{box-shadow:0 0 0 0 rgba(184,79,255,.2)}50%{box-shadow:0 0 0 10px rgba(184,79,255,0)}}
+@keyframes Ω2d{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+
+/* ===== Premium overrides (estrutura Vercel) ===== */
+
+/* Integra fontes do next/font às variáveis originais do layout */
+:root{
+  --Φ:var(--font-orbitron),monospace;
+  --Ψ:var(--font-syne),sans-serif;
+  --Ω:var(--font-space-mono),monospace;
+}
+
+/* Evita wrappers extras alterarem o layout legado */
+.legacy-fragment{display:contents}
+
+/* Remove a bolinha rosa sólida atrás da logo central e aplica acabamento premium discreto */
+.Eco{
+  width:auto;
+  height:auto;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  position:relative;
+  isolation:isolate;
+}
+.Eco::before{
+  content:'';
+  position:absolute;
+  width:74px;
+  height:74px;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  border:1px solid rgba(184,79,255,.34);
+  box-shadow:0 0 26px rgba(184,79,255,.28), inset 0 0 18px rgba(184,79,255,.08);
+  background:radial-gradient(circle, rgba(184,79,255,.08) 0%, rgba(184,79,255,0) 68%);
+  z-index:-1;
+}
+.Eco img{
+  width:56px;
+  height:56px;
+  filter:drop-shadow(0 0 8px rgba(184,79,255,.35));
+}
+
+/* Refino visual do Zion sem alterar composição da seção */
+.ZrI{
+  width:clamp(168px, 24vw, 232px);
+  filter:drop-shadow(0 0 26px rgba(184,79,255,.42)) drop-shadow(0 16px 28px rgba(184,79,255,.22));
+}
+.Zrg{
+  opacity:.62;
+  filter:blur(26px);
+}
+.Zrr,.Zrr2{
+  opacity:.8;
+}
+
+/* Responsividade robusta: dispositivos pequenos */
+@media (max-width: 768px){
+  .Ν{padding:14px 0}
+  .Ξ{padding:0 clamp(14px,4vw,22px)}
+  .ENc{padding:9px 12px;gap:8px}
+  .ENn{font-size:.54rem}
+  .ENs{display:none}
+  .Ecr{width:96px;height:96px}
+  .Eco::before{width:64px;height:64px}
+  .Eco img{width:48px;height:48px}
+}
+
+@media (max-width: 520px){
+  .h1{font-size:clamp(1.8rem,10vw,2.4rem)}
+  .h2{font-size:clamp(1.2rem,7vw,1.7rem)}
+  .EN{transform:translate(-50%,-50%) scale(.88)}
+  #e0{top:8% !important}
+  #e1{left:86% !important}
+  #e4{left:14% !important}
+  .Zrr,.Zrr2{display:none}
+  .Zrg{opacity:.44}
+  .ΒΑ{display:grid;grid-template-columns:1fr;max-width:100%}
+  .Β{justify-content:center;width:100%}
+  .Ηst{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .Ηst > div{min-width:0}
+  .TmBd{font-size:.72rem;padding:16px}
+  .Rdk{gap:26px}
+  .Rdi{padding:0 10px}
+  .Pk,.Mc{padding:28px 20px}
+}
+
+@media (max-width: 390px){
+  .Νn{font-size:.68rem}
+  .Νs2{display:none}
+  .Ηd,.Wht p,.Zp{font-size:.9rem;line-height:1.7}
+  .EN{transform:translate(-50%,-50%) scale(.8)}
+  .ENc{padding:8px 10px}
+  .Ecr{width:82px;height:82px}
+  .Eco::before{width:56px;height:56px}
+  .Eco img{width:40px;height:40px}
+  .Ηcw img{width:78px;height:78px}
+  .ΗΝd{width:44px;height:44px}
+  .ΗΝn{font-size:.43rem}
+  .ΝΜ a{padding:12px 24px}
+}
+
+/* Telas muito grandes (desktop ultrawide e TV) */
+@media (min-width: 1800px){
+  html{font-size:17px}
+  .Ξ{max-width:1520px}
+}
+
+@media (min-width: 2560px){
+  html{font-size:19px}
+  .Ξ{max-width:1880px}
+}
+
+/* Acessibilidade para quem prefere menos animação */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation:none !important;
+    transition:none !important;
+    scroll-behavior:auto !important;
+  }
+}
+</style>
+  <style>:root{--Φ:'Orbitron',monospace;--Ψ:'Syne',sans-serif;--Ω:'Space Mono',monospace;}</style>
+</head>
+<body>
+<canvas id="α"></canvas><div class="Δ"></div>
+<div class="ΝΜ" id="ΝΜ0">
+  <button class="ΝX" id="ΝX0">&#10005;</button>
+  <a href="#s2" data-k="nav_arch"></a><a href="#s3" data-k="nav_sec"></a><a href="#s4" data-k="nav_modes"></a>
+  <a href="#s5b" data-k="nav_zion"></a><a href="#s6" data-k="nav_eco"></a><a href="#s7" data-k="nav_road"></a>
+  <a href="#s8" class="ΝΜc" data-k="nav_cta"></a>
+  <div class="ΝΜL" id="ΝΜL0">
+    <button data-lang="en" class="Χ">&#127482;&#127480; EN</button>
+    <button data-lang="pt">&#127463;&#127479; PT</button>
+    <button data-lang="es">&#127466;&#127480; ES</button>
+    <button data-lang="zh">&#127464;&#127475; &#20013;&#25991;</button>
+  </div>
+</div>
+<nav class="Ν" id="Ν0">
+  <div class="Ξ"><div class="Νi">
+    <a href="#" class="Νl">
+      <div class="Νg"><img src="/assets/obelisk-z-logo.png" alt="" style="width:44px;height:44px;object-fit:contain;"><div class="Νr Νr1"></div><div class="Νr Νr2"></div></div>
+      <div class="Νt"><span class="Νn">OBELISK-Z</span><span class="Νs2">ZETTA Ecosystem</span></div>
+    </a>
+    <ul class="Νlk">
+      <li><a href="#s2" data-k="nav_arch"></a></li><li><a href="#s3" data-k="nav_sec"></a></li>
+      <li><a href="#s4" data-k="nav_modes"></a></li><li><a href="#s5b" data-k="nav_zion"></a></li>
+      <li><a href="#s6" data-k="nav_eco"></a></li><li><a href="#s7" data-k="nav_road"></a></li>
+    </ul>
+    <div class="Νrg">
+      <div class="ΛΣ" id="ΛΣ0">
+        <button class="ΛΒ" id="ΛΒ0"><span id="ΛF0">&#127482;&#127480;</span><span id="ΛL0">EN</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="ΛD" id="ΛD0">
+          <button class="ΛO Χ" data-lang="en"><span class="ΛF">&#127482;&#127480;</span><span class="ΛN">English</span><span class="ΛC">EN</span></button>
+          <button class="ΛO" data-lang="pt"><span class="ΛF">&#127463;&#127479;</span><span class="ΛN">Portugu&#234;s</span><span class="ΛC">PT</span></button>
+          <button class="ΛO" data-lang="es"><span class="ΛF">&#127466;&#127480;</span><span class="ΛN">Espa&#241;ol</span><span class="ΛC">ES</span></button>
+          <button class="ΛO" data-lang="zh"><span class="ΛF">&#127464;&#127475;</span><span class="ΛN">&#20013;&#25991;</span><span class="ΛC">ZH</span></button>
+        </div>
+      </div>
+      <a href="#s8" class="Νc" data-k="nav_cta"></a>
+      <button class="ΝΒ" id="ΝΒ0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div></div>
+</nav>
+<!-- HERO -->
+<section class="Λ Η" id="s1"><div class="Ηb"></div><div class="Ξ"><div class="Ηi">
+  <div class="Ηc">
+    <div class="Ηe"><div class="Ηed"></div><span class="Ηet" data-k="hero_eyebrow"></span></div>
+    <h1 class="h1 Ητ"><span class="ln">OBELISK-Z</span><span class="la Θ">WALLET</span></h1>
+    <p class="Ηs" data-k="hero_subtitle"></p><p class="Ηd" data-k="hero_desc"></p>
+    <div class="ΒΑ">
+      <a href="#s2" class="Β Β1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg><span data-k="hero_cta1"></span></a>
+      <a href="#s3" class="Β Β2" data-k="hero_cta2"></a>
+      <a href="#s8" class="Β Β2" style="border-color:rgba(196,165,90,.25);color:var(--γ);" data-k="hero_cta3"></a>
+    </div>
+    <div class="Ηst">
+      <div><span class="Ηsl" data-k="stat1_l"></span><div class="Ηsv">Multi<span>chain</span></div></div>
+      <div><span class="Ηsl" data-k="stat2_l"></span><div class="Ηsv"><span>5</span> <span data-k="stat2_v"></span></div></div>
+      <div><span class="Ηsl" data-k="stat3_l"></span><div class="Ηsv">Non-<span>Custodial</span></div></div>
+      <div><span class="Ηsl" data-k="stat4_l"></span><div class="Ηsv">ZION <span>AI</span></div></div>
+    </div>
+  </div>
+  <div class="Ηdg">
+    <canvas class="Ηcv" id="Ηcv0"></canvas>
+    <div class="Ηct"><div class="Ηcw">
+      <img src="/assets/obelisk-z-logo.png" alt="" style="width:96px;height:96px;object-fit:contain;position:relative;z-index:3;filter:drop-shadow(0 0 24px rgba(184,79,255,.8)) drop-shadow(0 0 48px rgba(255,62,181,.3));animation:ΩΓ 4s ease-in-out infinite">
+      <svg class="Ηrs" width="200" height="200" style="width:200px;height:200px;">
+        <ellipse cx="100" cy="100" rx="90" ry="30" fill="none" stroke="rgba(255,62,181,0.5)" stroke-width="1.2" style="animation:Ω2d 3s linear infinite;transform-origin:100px 100px"/>
+        <ellipse cx="100" cy="100" rx="110" ry="38" fill="none" stroke="rgba(184,79,255,0.3)" stroke-width="1" style="animation:Ω2d 5s linear infinite reverse;transform-origin:100px 100px"/>
+      </svg>
+    </div><div class="Ηcl" data-k="orbit_center"></div></div>
+    <div class="ΗΝ" id="n0" style="left:50%;top:5%;"><div class="ΗΝd"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b84fff" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div><span class="ΗΝn" data-k="orbit_zion"></span></div>
+    <div class="ΗΝ" id="n1" style="left:89%;top:30%;"><div class="ΗΝd"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b84fff" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span class="ΗΝn" data-k="orbit_sec"></span></div>
+    <div class="ΗΝ" id="n2" style="left:80%;top:78%;"><div class="ΗΝd"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c4a55a" stroke-width="1.5"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div><span class="ΗΝn" data-k="orbit_ghost"></span></div>
+    <div class="ΗΝ" id="n3" style="left:20%;top:78%;"><div class="ΗΝd"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b84fff" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><span class="ΗΝn" data-k="orbit_mc"></span></div>
+    <div class="ΗΝ" id="n4" style="left:11%;top:30%;"><div class="ΗΝd"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff3eb5" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><span class="ΗΝn" data-k="orbit_zetta"></span></div>
+  </div>
+</div></div></section><div class="ΒΔ"></div>
+<!-- WHAT -->
+<section class="Λ Wh" id="s2"><div class="Ξ"><div class="Whg">
+  <div class="RvL">
+    <div class="Σ"><span class="Π">01</span><span data-k="s2_label"></span></div>
+    <h2 class="h2" style="margin-bottom:28px;"><span data-k="s2_h1"></span><br><span class="Θ" data-k="s2_h2"></span></h2>
+    <div class="Whm"></div>
+    <div class="Wht"><p data-k="s2_p1"></p><p data-k="s2_p2"></p><p data-k="s2_p3"></p></div>
+  </div>
+  <div class="Whc RvR">
+    <div class="Whi d1"><div class="Whii"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b84fff" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div><div class="WhiT" data-k="wc1_t"></div><div class="WhiD" data-k="wc1_d"></div></div></div>
+    <div class="Whi d2"><div class="Whii μ"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff3eb5" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><div class="WhiT" data-k="wc2_t"></div><div class="WhiD" data-k="wc2_d"></div></div></div>
+    <div class="Whi d3"><div class="Whii γ"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c4a55a" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div><div><div class="WhiT" data-k="wc3_t"></div><div class="WhiD" data-k="wc3_d"></div></div></div>
+    <div class="Whi d4"><div class="Whii"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b84fff" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div><div class="WhiT" data-k="wc4_t"></div><div class="WhiD" data-k="wc4_d"></div></div></div>
+  </div>
+</div></div></section><div class="ΒΔ"></div>
+<!-- PILLARS -->
+<section class="Λ" id="s3" style="background:var(--ν0);"><div class="Ξ">
+  <div style="text-align:center;margin-bottom:64px;" class="Rv">
+    <div class="Σ" style="justify-content:center;"><span class="Π">02</span><span data-k="s3_label"></span></div>
+    <h2 class="h2"><span data-k="s3_h1"></span><br><span class="Θ" data-k="s3_h2"></span></h2>
+  </div>
+  <div class="Pg">
+    <div class="Pk Rv d1"><span class="PkN" data-k="p1_num"></span><div class="PkI"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#b84fff" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M18 3l3 3-3 3"/></svg></div><h3 class="PkT" data-k="p1_t"></h3><p class="PkD" data-k="p1_d"></p></div>
+    <div class="Pk μ Rv d2"><span class="PkN" data-k="p2_num"></span><div class="PkI" style="background:rgba(255,62,181,.08);border-color:rgba(255,62,181,.15);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ff3eb5" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div><h3 class="PkT" data-k="p2_t"></h3><p class="PkD" data-k="p2_d"></p></div>
+    <div class="Pk Rv d3"><span class="PkN" data-k="p3_num"></span><div class="PkI"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#b84fff" stroke-width="1.5"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div><h3 class="PkT" data-k="p3_t"></h3><p class="PkD" data-k="p3_d"></p></div>
+    <div class="Pk γ Rv d4"><span class="PkN" data-k="p4_num"></span><div class="PkI" style="background:rgba(196,165,90,.08);border-color:rgba(196,165,90,.15);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c4a55a" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div><h3 class="PkT" data-k="p4_t"></h3><p class="PkD" data-k="p4_d"></p></div>
+  </div>
+</div></section><div class="ΒΔ"></div>
+<!-- SECURITY -->
+<section class="Λ" id="s4" style="background:linear-gradient(180deg,var(--ν2) 0%,var(--ν1) 100%);"><div class="Ξ"><div class="Sg">
+  <div class="RvL">
+    <div class="Σ"><span class="Π">03</span><span data-k="s4_label"></span></div>
+    <h2 class="h2" style="margin-bottom:16px;"><span data-k="s4_h1"></span><br><span style="color:var(--πl);" data-k="s4_h2"></span></h2>
+    <p style="color:var(--τ2);font-size:1rem;line-height:1.8;margin-bottom:40px;max-width:440px;" data-k="s4_desc"></p>
+    <div class="Sl">
+      <div class="Si Rv d1"><div class="SiN">L1</div><div class="SiB"><div class="SiT" data-k="l1_t"></div><div class="SiD" data-k="l1_d"></div></div><div class="SiC"></div></div>
+      <div class="Si Rv d2"><div class="SiN">L2</div><div class="SiB"><div class="SiT" data-k="l2_t"></div><div class="SiD" data-k="l2_d"></div></div><div class="SiC"></div></div>
+      <div class="Si Rv d3"><div class="SiN">L3</div><div class="SiB"><div class="SiT" data-k="l3_t"></div><div class="SiD" data-k="l3_d"></div></div><div class="SiC"></div></div>
+      <div class="Si Rv d4"><div class="SiN">L4</div><div class="SiB"><div class="SiT" data-k="l4_t"></div><div class="SiD" data-k="l4_d"></div></div><div class="SiC"></div></div>
+      <div class="Si Rv d5"><div class="SiN">L5</div><div class="SiB"><div class="SiT" data-k="l5_t"></div><div class="SiD" data-k="l5_d"></div></div></div>
+    </div>
+  </div>
+  <div class="Sw RvR">
+    <div class="Stl"><span data-k="stack_label"></span></div>
+    <div class="SP">
+      <div class="SPl SPl5"><span data-k="stack_l5"></span><span class="SPb">ADVISORY</span></div>
+      <div class="SPl SPl4"><span data-k="stack_l4"></span><span class="SPb">PRIVACY</span></div>
+      <div class="SPl SPl3"><span data-k="stack_l3"></span><span class="SPb">ANALYSIS</span></div>
+      <div class="SPl SPl2"><span data-k="stack_l2"></span><span class="SPb">VERIFY</span></div>
+      <div class="SPl SPl1"><span data-k="stack_l1"></span><span class="SPb">CUSTODY</span></div>
+    </div>
+    <div class="Sin"><div class="SinM" data-k="stack_model"></div><div class="SinE" data-k="stack_eval"></div><div class="SinS" data-k="stack_sub"></div></div>
+  </div>
+</div></div></section><div class="ΒΔ"></div>
+<!-- MODES -->
+<section class="Λ" id="s4b" style="background:var(--ν0);"><div class="Ξ">
+  <div style="text-align:center;margin-bottom:64px;" class="Rv">
+    <div class="Σ" style="justify-content:center;"><span class="Π">04</span><span data-k="s5_label"></span></div>
+    <h2 class="h2"><span data-k="s5_h1"></span><br><span class="Θ" data-k="s5_h2"></span></h2>
+    <p style="color:var(--τ2);font-size:1rem;line-height:1.8;max-width:520px;margin:16px auto 0;" data-k="s5_desc"></p>
+  </div>
+  <div class="Mg">
+    <div class="Mc M1 Rv d1"><div class="Mbg" data-k="m1_badge"></div><div class="Mci"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#b84fff" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><h3 class="McN" data-k="m1_name"></h3><p class="McD" data-k="m1_desc"></p><ul class="McF"><li data-k="m1_f1"></li><li data-k="m1_f2"></li><li data-k="m1_f3"></li><li data-k="m1_f4"></li></ul></div>
+    <div class="Mc M2 Rv d2"><div class="Mbg" data-k="m2_badge"></div><div class="Mci"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff3eb5" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div><h3 class="McN" data-k="m2_name"></h3><p class="McD" data-k="m2_desc"></p><ul class="McF"><li data-k="m2_f1"></li><li data-k="m2_f2"></li><li data-k="m2_f3"></li><li data-k="m2_f4"></li></ul></div>
+    <div class="Mc M3 Rv d3"><div class="Mbg" data-k="m3_badge"></div><div class="Mci"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#c4a55a" stroke-width="1.5"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div><h3 class="McN" data-k="m3_name"></h3><p class="McD" data-k="m3_desc"></p><ul class="McF"><li data-k="m3_f1"></li><li data-k="m3_f2"></li><li data-k="m3_f3"></li><li data-k="m3_f4"></li></ul></div>
+  </div>
+</div></section><div class="ΒΔ"></div>
+<!-- ZION -->
+<section class="Λ" id="s5b" style="background:linear-gradient(180deg,var(--ν1) 0%,var(--ν2) 100%);"><div class="Ξ"><div class="Zg">
+  <div class="RvL">
+    <div class="Σ"><span class="Π">05</span><span data-k="s6_label"></span></div>
+    <h2 class="h2" style="margin-bottom:24px;"><span data-k="s6_h1"></span><br><span style="color:var(--πl);" data-k="s6_h2"></span></h2>
+    <p class="Zp" data-k="s6_p1"></p><p class="Zp" data-k="s6_p2"></p>
+    <div class="Zcl"><div class="Zc" data-k="zc1"></div><div class="Zc" data-k="zc2"></div><div class="Zc" data-k="zc3"></div><div class="Zc" data-k="zc4"></div><div class="Zc" data-k="zc5"></div></div>
+    <div class="Zno"><div class="Znd"></div><div class="ZnT" data-k="zion_notice"></div></div>
+  </div>
+  <div class="Zrw RvR">
+    <div class="Zrs">
+      <div class="Zrg"></div>
+      <div class="Zrr" style="width:160px;height:60px;"></div>
+      <div class="Zrr2" style="width:200px;height:76px;"></div>
+      <img src="/assets/legacy-inline-2.png" alt="" class="ZrI">
+    </div>
+    <div class="Tm">
+      <div class="TmB"><div class="TmD"></div><div class="TmD"></div><div class="TmD"></div><span class="TmT">ZION // ADVISORY ENGINE v2.1</span></div>
+      <div class="TmBd" id="Tm0">
+        <span class="Tl"><span class="Tp">zion@obelisk-z</span><span style="color:var(--τ3);"> ~ </span><span class="Tc">analyze transaction --verbose</span></span>
+        <span class="Tl" style="color:var(--τ4);margin-top:6px;">&gt; Initializing advisory session...</span>
+        <div class="Tdv"></div>
+      </div>
+    </div>
+    <div class="Tst"><div class="Ts TsA"><div class="TsL" data-k="term_status"></div><div class="TsV" data-k="term_active"></div></div><div class="Ts TsB"><div class="TsL" data-k="term_last"></div><div class="TsV" id="TsV0">&#8212;&#8212;</div></div><div class="Ts TsC"><div class="TsL" data-k="term_exec"></div><div class="TsV" data-k="term_auth"></div></div></div>
+  </div>
+</div></div></section><div class="ΒΔ"></div>
+<!-- ECOSYSTEM -->
+<section class="Λ" id="s6" style="background:var(--ν0);"><div class="Ξ">
+  <div style="text-align:center;margin-bottom:60px;" class="Rv">
+    <div class="Σ" style="justify-content:center;"><span class="Π">06</span><span data-k="s7_label"></span></div>
+    <h2 class="h2"><span data-k="s7_h1"></span><br><span class="Θ" data-k="s7_h2"></span></h2>
+    <p style="color:var(--τ2);font-size:1rem;line-height:1.8;max-width:520px;margin:16px auto 0;" data-k="s7_desc"></p>
+  </div>
+  <div class="Eg Rv">
+    <canvas class="Ecv" id="Ecv0"></canvas>
+    <div class="Ecc"><div class="Ecr"><div class="Er1"></div><div class="Er2"></div><div class="Er3"></div><div class="Eco"><img src="/assets/obelisk-z-logo.png" alt="" style="width:50px;height:50px;object-fit:contain;filter:drop-shadow(0 0 6px rgba(255,255,255,.4))"></div></div><div class="Ecl">OBELISK-Z</div></div>
+    <div class="EN" id="e0" style="left:50%;top:3%;"><div class="ENc"><div class="ENi" style="background:rgba(184,79,255,.2)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b84fff" stroke-width="2"><path d="M7 16V4m0 0L3 8m4-4l4 4"/><path d="M17 8v12m0 0l4-4m-4 4l-4-4"/></svg></div><span class="ENn">Z-SWAP</span><span class="ENs">DEX Layer</span></div></div>
+    <div class="EN" id="e1" style="left:90%;top:28%;"><div class="ENc"><div class="ENi" style="background:rgba(255,62,181,.2)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff3eb5" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><span class="ENn">Z-FINANCE</span><span class="ENs">Yield</span></div></div>
+    <div class="EN" id="e2" style="left:82%;top:76%;"><div class="ENc"><div class="ENi" style="background:rgba(0,212,255,.2)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div><span class="ENn">ZETTA CHAIN</span><span class="ENs">L1</span></div></div>
+    <div class="EN" id="e3" style="left:18%;top:76%;"><div class="ENc"><div class="ENi" style="background:rgba(196,165,90,.2)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c4a55a" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div><span class="ENn">Z-PAY</span><span class="ENs">Payments</span></div></div>
+    <div class="EN" id="e4" style="left:10%;top:28%;"><div class="ENc"><div class="ENi" style="background:rgba(255,62,181,.2)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff3eb5" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><span class="ENn">Z-PAD</span><span class="ENs">Launchpad</span></div></div>
+  </div>
+  <div class="ELg Rv">
+    <div class="ELi"><div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(184,79,255,.6),transparent)"></div><div class="ELii" style="background:rgba(184,79,255,.1);border:1px solid rgba(184,79,255,.2)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b84fff" stroke-width="1.5"><path d="M7 16V4m0 0L3 8m4-4l4 4"/><path d="M17 8v12m0 0l4-4m-4 4l-4-4"/></svg></div><div class="ELn">Z-SWAP</div><div class="ELd" data-k="eco_zswap"></div></div>
+    <div class="ELi"><div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(255,62,181,.6),transparent)"></div><div class="ELii" style="background:rgba(255,62,181,.1);border:1px solid rgba(255,62,181,.2)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff3eb5" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="ELn">Z-FINANCE</div><div class="ELd" data-k="eco_zfin"></div></div>
+    <div class="ELi"><div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(255,62,181,.5),transparent)"></div><div class="ELii" style="background:rgba(255,62,181,.1);border:1px solid rgba(255,62,181,.2)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff3eb5" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="ELn">Z-PAD</div><div class="ELd" data-k="eco_zpad"></div></div>
+    <div class="ELi"><div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(196,165,90,.6),transparent)"></div><div class="ELii" style="background:rgba(196,165,90,.1);border:1px solid rgba(196,165,90,.2)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c4a55a" stroke-width="1.5"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div><div class="ELn">Z-PAY</div><div class="ELd" data-k="eco_zpay"></div></div>
+    <div class="ELi"><div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(0,212,255,.6),transparent)"></div><div class="ELii" style="background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.2)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div><div class="ELn">ZETTA CHAIN</div><div class="ELd" data-k="eco_zchain"></div></div>
+  </div>
+</div></section><div class="ΒΔ"></div>
+<!-- ROADMAP -->
+<section class="Λ" id="s7" style="background:linear-gradient(180deg,var(--ν1) 0%,var(--ν2) 100%);"><div class="Ξ">
+  <div style="text-align:center;margin-bottom:72px;" class="Rv">
+    <div class="Σ" style="justify-content:center;"><span class="Π">07</span><span data-k="s8_label"></span></div>
+    <h2 class="h2"><span data-k="s8_h1"></span><br><span class="Θ" data-k="s8_h2"></span></h2>
+  </div>
+  <div class="Rdk">
+    <div class="Rph Rv d1"><div class="Rpd"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#b84fff" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div class="RpN" data-k="rp1_num"></div><h4 class="RpNm" data-k="rp1_name"></h4><ul class="Rpi"><li data-k="rp1_i1"></li><li data-k="rp1_i2"></li><li data-k="rp1_i3"></li><li data-k="rp1_i4"></li></ul></div>
+    <div class="Rph Rv d2"><div class="Rpd"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ff3eb5" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div><div class="RpN" data-k="rp2_num"></div><h4 class="RpNm" data-k="rp2_name"></h4><ul class="Rpi"><li data-k="rp2_i1"></li><li data-k="rp2_i2"></li><li data-k="rp2_i3"></li><li data-k="rp2_i4"></li></ul></div>
+    <div class="Rph Rv d3"><div class="Rpd"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#d580ff" stroke-width="1.5"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div><div class="RpN" data-k="rp3_num"></div><h4 class="RpNm" data-k="rp3_name"></h4><ul class="Rpi"><li data-k="rp3_i1"></li><li data-k="rp3_i2"></li><li data-k="rp3_i3"></li><li data-k="rp3_i4"></li></ul></div>
+    <div class="Rph Rv d4"><div class="Rpd"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c4a55a" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="RpN" data-k="rp4_num"></div><h4 class="RpNm" data-k="rp4_name"></h4><ul class="Rpi"><li data-k="rp4_i1"></li><li data-k="rp4_i2"></li><li data-k="rp4_i3"></li><li data-k="rp4_i4"></li></ul></div>
+  </div>
+</div></section><div class="ΒΔ"></div>
+<!-- CTA -->
+<section class="Λ CF" id="s8"><div class="CFb1"></div><div class="CFb2"></div><div class="Ξ"><div class="CFi Rv">
+  <div class="Σ" style="justify-content:center;margin-bottom:24px;"><span class="Π">08</span><span data-k="s9_label"></span></div>
+  <h2 class="h2"><span data-k="s9_h1"></span><br><span class="Θ" data-k="s9_h2"></span></h2>
+  <p class="CFd" data-k="s9_desc"></p>
+  <div class="ΒΑ">
+    <a href="#s2" class="Β Β1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg><span data-k="s9_cta1"></span></a>
+    <a href="mailto:contact@zettaworld.global" class="Β Β2" style="border-color:rgba(196,165,90,.3);color:var(--γ);" data-k="s9_cta2"></a>
+    <a href="#s4" class="Β Β2" data-k="s9_cta3"></a>
+  </div>
+  <div class="CFf" data-k="s9_footnote"></div>
+</div></div></section>
+<footer><div class="Ξ"><div class="Ft">
+  <a href="#" class="Fl"><div class="FlG"><img src="/assets/obelisk-z-logo.png" alt="" style="width:28px;height:28px;object-fit:contain;"></div><span class="FlN">OBELISK-Z WALLET</span></a>
+  <div class="Flk"><a href="#s2" data-k="nav_arch"></a><a href="#s3" data-k="nav_sec"></a><a href="#s4" data-k="nav_modes"></a><a href="#s5b" data-k="nav_zion"></a><a href="#s6" data-k="nav_eco"></a></div>
+  <div class="Fcp" data-k="footer_copy"></div>
+</div></div></footer>
+
+<script>/* BUILD: OZ-1772831157-BLACKOUT | INTEGRITY: 597c29bf980caeb72b79387185e5792e */
+void function(Φ,Ψ,Ω,Λ,Σ,Π){
+'use strict';
+// VECTOR: XOR decoder — key 0x5A (ASCII 'Z')
+const ΦΔ=(σ,κ=0x5A)=>σ.map(χ=>χ^κ).map(χ=>String.fromCharCode(χ)).join('');
+// CIPHER: translation matrix (XOR-encoded strings — no plaintext)
+const T = {
+en:{
+  nav_arch:[27,40,57,50,51,46,63,57,46,47,40,63], nav_sec:[9,63,57,47,40,51,46,35], nav_modes:[23,53,62,63,41], nav_zion:[0,51,53,52,122,27,19],
+  nav_eco:[31,57,53,41,35,41,46,63,55], nav_road:[8,53,59,62,55,59,42], nav_cta:[8,63,43,47,63,41,46,122,27,57,57,63,41,41],
+  hero_eyebrow:[0,31,14,14,27,122,31,57,53,41,35,41,46,63,55,122,8270,122,13,59,54,54,63,46,122,25,53,52,46,40,53,54,122,22,59,35,63,40],
+  hero_subtitle:[14,50,63,122,9,53,44,63,40,63,51,61,52,122,25,53,52,46,40,53,54,122,22,59,35,63,40,80,60,53,40,122,30,51,61,51,46,59,54,122,27,41,41,63,46,41],
+  hero_desc:[21,24,31,22,19,9,17,119,0,122,51,41,122,46,50,63,122,41,63,57,47,40,63,122,59,41,41,63,46,122,57,53,52,46,40,53,54,122,54,59,35,63,40,122,53,60,122,46,50,63,122,0,31,14,14,27,122,63,57,53,41,35,41,46,63,55,122,8270,122,57,53,55,56,51,52,51,52,61,122,55,47,54,46,51,57,50,59,51,52,122,59,57,57,63,41,41,118,122,51,52,46,63,54,54,51,61,63,52,46,122,46,40,59,52,41,59,57,46,51,53,52,122,59,45,59,40,63,52,63,41,41,118,122,42,40,51,44,59,57,35,119,53,40,51,63,52,46,63,62,122,53,42,63,40,59,46,51,53,52,59,54,122,55,53,62,63,41,122,59,52,62,122,0,51,53,52,119,59,41,41,51,41,46,63,62,122,51,52,41,51,61,50,46,41,122,51,52,122,59,122,47,52,51,60,51,63,62,122,63,52,44,51,40,53,52,55,63,52,46,116],
+  hero_cta1:[31,34,42,54,53,40,63,122,27,40,57,50,51,46,63,57,46,47,40,63], hero_cta2:[12,51,63,45,122,9,63,57,47,40,51,46,35,122,22,59,35,63,40,41], hero_cta3:[8,63,43,47,63,41,46,122,31,59,40,54,35,122,27,57,57,63,41,41],
+  stat1_l:[20,63,46,45,53,40,49,122,27,57,57,63,41,41], stat2_l:[9,63,57,47,40,51,46,35,122,22,59,35,63,40,41], stat2_v:[27,57,46,51,44,63], stat3_l:[25,47,41,46,53,62,35,122,23,53,62,63,54], stat4_l:[19,52,46,63,54,54,51,61,63,52,57,63],
+  orbit_zion:[0,19,21,20,122,27,19], orbit_sec:[9,31,25,15,8,19,14,3,80,31,20,29,19,20,31], orbit_ghost:[29,18,21,9,14,80,23,21,30,31], orbit_mc:[23,15,22,14,19,25,18,27,19,20,80,27,25,25,31,9,9], orbit_zetta:[0,31,14,14,27,80,31,25,21,9,3,9,14,31,23],
+  s2_label:[13,18,27,14,122,19,9,122,21,24,31,22,19,9,17,119,0],
+  s2_h1:[20,53,46,122,16,47,41,46,122,59,122,13,59,54,54,63,46,116], s2_h2:[27,122,30,51,61,51,46,59,54,122,27,41,41,63,46,122,25,53,52,46,40,53,54,122,31,52,44,51,40,53,52,55,63,52,46,116],
+  s2_p1:[23,53,41,46,122,45,59,54,54,63,46,41,122,60,53,57,47,41,122,53,52,122,41,46,53,40,59,61,63,122,59,52,62,122,46,40,59,52,41,60,63,40,41,116,122,102,41,46,40,53,52,61,100,21,24,31,22,19,9,17,119,0,122,51,41,122,62,63,41,51,61,52,63,62,122,59,41,122,59,122,57,53,52,46,40,53,54,122,54,59,35,63,40,102,117,41,46,40,53,52,61,100,122,60,53,40,122,62,51,61,51,46,59,54,122,59,41,41,63,46,122,53,42,63,40,59,46,51,53,52,41,118,122,42,40,53,44,51,62,51,52,61,122,44,51,41,51,56,51,54,51,46,35,118,122,41,63,57,47,40,51,46,35,122,59,45,59,40,63,52,63,41,41,118,122,59,52,62,122,51,52,46,63,54,54,51,61,63,52,46,122,59,41,41,51,41,46,59,52,57,63,122,59,57,40,53,41,41,122,55,47,54,46,51,42,54,63,122,56,54,53,57,49,57,50,59,51,52,122,52,63,46,45,53,40,49,41,116],
+  s2_p2:[13,51,46,50,51,52,122,46,50,63,122,0,31,14,14,27,122,63,57,53,41,35,41,46,63,55,118,122,46,50,63,122,45,59,54,54,63,46,122,59,57,46,41,122,59,41,122,46,50,63,122,102,41,46,40,53,52,61,100,42,40,51,55,59,40,35,122,63,52,46,40,35,122,42,53,51,52,46,122,46,53,122,62,63,57,63,52,46,40,59,54,51,32,63,62,122,51,52,60,40,59,41,46,40,47,57,46,47,40,63,102,117,41,46,40,53,52,61,100,118,122,63,52,59,56,54,51,52,61,122,47,41,63,40,41,122,46,53,122,51,52,46,63,40,59,57,46,122,45,51,46,50,122,42,40,53,46,53,57,53,54,41,122,45,50,51,54,63,122,55,59,51,52,46,59,51,52,51,52,61,122,60,47,54,54,122,41,53,44,63,40,63,51,61,52,46,35,122,53,44,63,40,122,46,50,63,51,40,122,59,41,41,63,46,41,116],
+  s2_p3:[31,44,63,40,35,122,51,52,46,63,40,59,57,46,51,53,52,122,60,54,53,45,41,122,46,50,40,53,47,61,50,122,54,59,35,63,40,63,62,122,63,44,59,54,47,59,46,51,53,52,122,55,63,57,50,59,52,51,41,55,41,122,8270,122,60,40,53,55,122,57,53,52,46,40,59,57,46,122,59,52,59,54,35,41,51,41,122,46,53,122,40,53,47,46,63,122,44,63,40,51,60,51,57,59,46,51,53,52,122,8270,122,56,63,60,53,40,63,122,63,34,63,57,47,46,51,53,52,122,40,63,59,57,50,63,41,122,46,50,63,122,52,63,46,45,53,40,49,116],
+  wc1_t:[28,47,54,54,122,27,41,41,63,46,122,9,53,44,63,40,63,51,61,52,46,35], wc1_d:[20,53,52,119,57,47,41,46,53,62,51,59,54,122,59,40,57,50,51,46,63,57,46,47,40,63,116,122,3,53,47,40,122,49,63,35,41,122,40,63,55,59,51,52,122,47,52,62,63,40,122,35,53,47,40,122,63,34,57,54,47,41,51,44,63,122,57,53,52,46,40,53,54,122,59,46,122,63,44,63,40,35,122,42,53,51,52,46,122,51,52,122,46,50,63,122,46,40,59,52,41,59,57,46,51,53,52,122,54,51,60,63,57,35,57,54,63,116],
+  wc2_t:[22,59,35,63,40,63,62,122,9,63,57,47,40,51,46,35,122,31,44,59,54,47,59,46,51,53,52], wc2_d:[28,51,44,63,122,51,52,62,63,42,63,52,62,63,52,46,122,41,63,57,47,40,51,46,35,122,54,59,35,63,40,41,122,63,44,59,54,47,59,46,63,122,63,59,57,50,122,51,52,46,63,40,59,57,46,51,53,52,122,56,63,60,53,40,63,122,59,52,62,122,62,47,40,51,52,61,122,63,34,63,57,47,46,51,53,52,118,122,42,40,53,44,51,62,51,52,61,122,57,53,52,46,51,52,47,53,47,41,122,40,51,41,49,122,59,45,59,40,63,52,63,41,41,116],
+  wc3_t:[0,51,53,52,122,19,52,46,63,54,54,51,61,63,52,57,63,122,19,52,46,63,61,40,59,46,51,53,52], wc3_d:[25,53,52,46,63,34,46,47,59,54,122,59,52,59,54,35,46,51,57,59,54,122,59,41,41,51,41,46,59,52,57,63,122,50,63,54,42,41,122,47,41,63,40,41,122,47,52,62,63,40,41,46,59,52,62,122,40,53,47,46,63,41,118,122,40,51,41,49,41,118,122,59,52,62,122,53,47,46,57,53,55,63,41,122,56,63,60,53,40,63,122,57,53,52,60,51,40,55,51,52,61,122,59,52,35,122,53,42,63,40,59,46,51,53,52,116],
+  wc4_t:[31,57,53,41,35,41,46,63,55,119,29,40,59,62,63,122,27,40,57,50,51,46,63,57,46,47,40,63], wc4_d:[20,59,46,51,44,63,122,57,53,52,52,63,57,46,51,44,51,46,35,122,46,53,122,0,119,9,45,59,42,118,122,0,119,28,51,52,59,52,57,63,118,122,0,119,10,59,62,118,122,0,119,10,59,35,118,122,59,52,62,122,46,50,63,122,0,63,46,46,59,122,25,50,59,51,52,122,60,40,53,55,122,59,122,41,51,52,61,54,63,122,47,52,51,60,51,63,62,122,63,52,44,51,40,53,52,55,63,52,46,116],
+  s3_label:[25,21,8,31,122,10,19,22,22,27,8,9], s3_h1:[28,53,47,40,122,10,40,51,52,57,51,42,54,63,41,116], s3_h2:[21,52,63,122,25,53,52,46,40,53,54,122,22,59,35,63,40,116],
+  p1_num:[106,107,122,117,122,9,21,12,31,8,31,19,29,20,14,3], p1_t:[9,53,44,63,40,63,51,61,52,46,35], p1_d:[15,41,63,40,41,122,55,59,51,52,46,59,51,52,122,60,47,54,54,122,57,47,41,46,53,62,35,122,59,52,62,122,57,53,52,46,40,53,54,122,53,44,63,40,122,46,50,63,51,40,122,59,41,41,63,46,41,116,122,21,24,31,22,19,9,17,119,0,122,51,41,122,56,47,51,54,46,122,59,40,53,47,52,62,122,46,50,63,122,42,40,51,52,57,51,42,54,63,122,46,50,59,46,122,53,45,52,63,40,41,50,51,42,122,59,52,62,122,57,53,52,46,40,53,54,122,55,47,41,46,122,40,63,55,59,51,52,122,63,34,57,54,47,41,51,44,63,54,35,122,45,51,46,50,122,46,50,63,122,47,41,63,40,122,8270,122,59,46,122,63,44,63,40,35,122,53,42,63,40,59,46,51,53,52,59,54,122,54,59,35,63,40,116],
+  p2_num:[106,104,122,117,122,9,31,25,15,8,19,14,3], p2_t:[9,63,57,47,40,51,46,35], p2_d:[31,44,63,40,35,122,51,52,46,63,40,59,57,46,51,53,52,122,51,41,122,63,44,59,54,47,59,46,63,62,122,46,50,40,53,47,61,50,122,54,59,35,63,40,63,62,122,41,63,57,47,40,51,46,35,122,55,63,57,50,59,52,51,41,55,41,122,62,63,41,51,61,52,63,62,122,46,53,122,40,63,62,47,57,63,122,40,51,41,49,122,59,52,62,122,51,55,42,40,53,44,63,122,46,40,59,52,41,59,57,46,51,53,52,122,59,45,59,40,63,52,63,41,41,122,56,63,60,53,40,63,122,53,42,63,40,59,46,51,53,52,41,122,40,63,59,57,50,122,63,34,63,57,47,46,51,53,52,122,41,46,59,46,63,122,53,52,122,46,50,63,122,52,63,46,45,53,40,49,116],
+  p3_num:[106,105,122,117,122,10,8,19,12,27,25,3], p3_t:[10,40,51,44,59,57,35], p3_d:[21,42,63,40,59,46,51,53,52,59,54,122,55,53,62,63,41,122,59,54,54,53,45,122,47,41,63,40,41,122,46,53,122,57,53,52,46,40,53,54,122,50,53,45,122,46,50,63,51,40,122,45,59,54,54,63,46,122,51,52,46,63,40,59,57,46,41,122,45,51,46,50,122,42,47,56,54,51,57,122,56,54,53,57,49,57,50,59,51,52,122,51,52,60,40,59,41,46,40,47,57,46,47,40,63,122,8270,122,60,40,53,55,122,41,46,59,52,62,59,40,62,122,44,51,41,51,56,51,54,51,46,35,122,46,53,122,61,50,53,41,46,119,54,63,44,63,54,122,53,42,63,40,59,46,51,53,52,59,54,122,42,40,51,44,59,57,35,122,45,51,46,50,122,40,63,62,47,57,63,62,122,59,62,62,40,63,41,41,122,63,34,42,53,41,47,40,63,116],
+  p4_num:[106,110,122,117,122,19,20,14,31,22,22,19,29,31,20,25,31], p4_t:[19,52,46,63,54,54,51,61,63,52,57,63], p4_d:[0,51,53,52,122,42,40,53,44,51,62,63,41,122,59,52,59,54,35,46,51,57,59,54,122,59,41,41,51,41,46,59,52,57,63,122,46,53,122,50,63,54,42,122,47,41,63,40,41,122,56,63,46,46,63,40,122,47,52,62,63,40,41,46,59,52,62,122,40,51,41,49,41,118,122,40,53,47,46,63,41,118,122,59,52,62,122,42,53,41,41,51,56,54,63,122,53,47,46,57,53,55,63,41,122,56,63,60,53,40,63,122,63,34,63,57,47,46,51,52,61,122,46,40,59,52,41,59,57,46,51,53,52,41,122,8270,122,59,57,46,51,52,61,122,59,41,122,59,52,122,59,62,44,51,41,53,40,35,122,54,59,35,63,40,118,122,52,63,44,63,40,122,59,47,46,53,52,53,55,53,47,41,54,35,116],
+  s4_label:[9,31,25,15,8,19,14,3,122,27,8,25,18,19,14,31,25,14,15,8,31], s4_h1:[9,63,57,47,40,51,46,35], s4_h2:[56,35,122,30,63,41,51,61,52],
+  s4_desc:[21,24,31,22,19,9,17,119,0,122,51,52,46,63,61,40,59,46,63,41,122,55,47,54,46,51,42,54,63,122,41,63,57,47,40,51,46,35,122,54,59,35,63,40,41,122,46,50,59,46,122,53,42,63,40,59,46,63,122,56,63,60,53,40,63,122,59,52,62,122,62,47,40,51,52,61,122,56,54,53,57,49,57,50,59,51,52,122,51,52,46,63,40,59,57,46,51,53,52,41,118,122,61,51,44,51,52,61,122,47,41,63,40,41,122,44,51,41,51,56,51,54,51,46,35,122,59,52,62,122,57,53,52,46,40,53,54,122,53,44,63,40,122,46,40,59,52,41,59,57,46,51,53,52,122,40,51,41,49,122,59,46,122,63,44,63,40,35,122,41,46,59,61,63,116],
+  l1_t:[27,41,41,63,46,122,25,47,41,46,53,62,35,122,23,53,62,63,54], l1_d:[20,53,52,119,57,47,41,46,53,62,51,59,54,122,59,40,57,50,51,46,63,57,46,47,40,63,122,62,63,41,51,61,52,63,62,122,46,53,122,42,40,63,41,63,40,44,63,122,47,41,63,40,122,53,45,52,63,40,41,50,51,42,116,122,10,40,51,44,59,46,63,122,49,63,35,41,122,52,63,44,63,40,122,54,63,59,44,63,122,46,50,63,122,47,41,63,40,125,41,122,63,52,44,51,40,53,52,55,63,52,46,116],
+  l2_t:[8,53,47,46,63,122,12,63,40,51,60,51,57,59,46,51,53,52], l2_d:[31,44,59,54,47,59,46,51,53,52,122,53,60,122,59,44,59,51,54,59,56,54,63,122,46,40,59,52,41,59,57,46,51,53,52,122,40,53,47,46,63,41,122,59,57,40,53,41,41,122,54,51,43,47,51,62,51,46,35,122,41,53,47,40,57,63,41,122,56,63,60,53,40,63,122,63,34,63,57,47,46,51,53,52,122,51,41,122,57,53,52,60,51,40,55,63,62,116],
+  l3_t:[25,53,52,46,40,59,57,46,122,27,45,59,40,63,52,63,41,41], l3_d:[12,63,40,51,60,51,57,59,46,51,53,52,122,55,63,57,50,59,52,51,41,55,41,122,46,50,59,46,122,50,63,54,42,122,51,62,63,52,46,51,60,35,122,42,53,46,63,52,46,51,59,54,122,57,53,52,46,40,59,57,46,122,40,51,41,49,41,122,59,52,62,122,59,52,53,55,59,54,53,47,41,122,56,63,50,59,44,51,53,40,122,42,59,46,46,63,40,52,41,116],
+  l4_t:[21,42,63,40,59,46,51,53,52,59,54,122,10,40,51,44,59,57,35], l4_d:[23,53,62,63,41,122,46,50,59,46,122,40,63,62,47,57,63,122,63,34,42,53,41,47,40,63,122,62,47,40,51,52,61,122,53,52,119,57,50,59,51,52,122,51,52,46,63,40,59,57,46,51,53,52,41,118,122,42,40,53,44,51,62,51,52,61,122,57,53,52,60,51,61,47,40,59,56,54,63,122,44,51,41,51,56,51,54,51,46,35,122,54,63,44,63,54,41,116],
+  l5_t:[0,51,53,52,122,27,41,41,51,41,46,63,62,122,19,52,41,51,61,50,46,41], l5_d:[27,52,59,54,35,46,51,57,59,54,122,41,47,42,42,53,40,46,122,46,50,59,46,122,50,63,54,42,41,122,47,41,63,40,41,122,63,44,59,54,47,59,46,63,122,40,51,41,49,122,57,53,52,46,63,34,46,122,56,63,60,53,40,63,122,63,34,63,57,47,46,51,53,52,122,8270,122,46,50,63,122,60,51,52,59,54,122,59,62,44,51,41,53,40,35,122,57,50,63,57,49,42,53,51,52,46,116],
+  stack_label:[10,8,21,14,31,25,14,19,21,20,122,9,14,27,25,17], stack_active:[27,25,14,19,12,31,122,10,8,21,14,31,25,14,19,21,20],
+  stack_l1:[27,9,9,31,14,122,25,15,9,14,21,30,3,122,23,21,30,31,22,122,8270,122,22,107], stack_l2:[8,21,15,14,31,122,12,31,8,19,28,19,25,27,14,19,21,20,122,8270,122,22,104], stack_l3:[25,21,20,14,8,27,25,14,122,27,13,27,8,31,20,31,9,9,122,8270,122,22,105], stack_l4:[21,10,31,8,27,14,19,21,20,27,22,122,10,8,19,12,27,25,3,122,8270,122,22,110], stack_l5:[0,19,21,20,122,19,20,9,19,29,18,14,9,122,8270,122,22,111],
+  stack_model:[9,31,25,15,8,19,14,3,122,23,21,30,31,22], stack_eval:[10,40,63,119,31,34,63,57,47,46,51,53,52,122,31,44,59,54,47,59,46,51,53,52], stack_sub:[27,54,54,122,54,59,35,63,40,41,122,59,57,46,51,44,63,122,56,63,60,53,40,63,122,52,63,46,45,53,40,49,122,56,40,53,59,62,57,59,41,46],
+  s5_label:[21,10,31,8,27,14,19,21,20,27,22,122,23,21,30,31,9], s5_h1:[14,50,40,63,63,122,23,53,62,63,41,116], s5_h2:[21,52,63,122,31,52,44,51,40,53,52,55,63,52,46,116],
+  s5_desc:[25,53,52,60,51,61,47,40,63,122,50,53,45,122,21,24,31,22,19,9,17,119,0,122,51,52,46,63,40,59,57,46,41,122,45,51,46,50,122,56,54,53,57,49,57,50,59,51,52,122,51,52,60,40,59,41,46,40,47,57,46,47,40,63,122,8270,122,60,40,53,55,122,41,46,59,52,62,59,40,62,122,59,57,57,63,41,41,122,46,53,122,55,59,34,51,55,47,55,122,42,40,51,44,59,57,35,122,53,42,63,40,59,46,51,53,52,116],
+  m1_badge:[9,46,59,52,62,59,40,62,122,23,53,62,63], m1_name:[9,46,59,52,62,59,40,62,122,27,57,57,63,41,41], m1_desc:[30,63,41,51,61,52,63,62,122,60,53,40,122,63,44,63,40,35,62,59,35,122,55,47,54,46,51,57,50,59,51,52,122,59,41,41,63,46,122,55,59,52,59,61,63,55,63,52,46,122,45,51,46,50,122,60,47,54,54,122,63,57,53,41,35,41,46,63,55,122,51,52,46,63,61,40,59,46,51,53,52,122,59,52,62,122,0,51,53,52,122,59,62,44,51,41,53,40,35,122,41,47,42,42,53,40,46,122,59,57,46,51,44,63,116],
+  m1_f1:[23,47,54,46,51,57,50,59,51,52,122,59,41,41,63,46,122,44,51,41,51,56,51,54,51,46,35], m1_f2:[31,57,53,41,35,41,46,63,55,122,42,40,53,46,53,57,53,54,122,59,57,57,63,41,41], m1_f3:[0,51,53,52,122,59,62,44,51,41,53,40,35,122,59,57,46,51,44,63], m1_f4:[9,46,59,52,62,59,40,62,122,40,53,47,46,63,122,63,44,59,54,47,59,46,51,53,52],
+  m2_badge:[10,40,53,46,63,57,46,63,62,122,23,53,62,63], m2_name:[10,40,53,46,63,57,46,63,62,122,23,53,62,63], m2_desc:[31,52,50,59,52,57,63,62,122,44,63,40,51,60,51,57,59,46,51,53,52,122,54,59,35,63,40,41,122,59,57,46,51,44,59,46,63,122,60,53,40,122,50,51,61,50,63,40,119,40,51,41,49,122,51,52,46,63,40,59,57,46,51,53,52,41,116,122,27,54,54,122,60,51,44,63,122,41,63,57,47,40,51,46,35,122,54,59,35,63,40,41,122,59,42,42,54,35,122,45,51,46,50,122,50,63,51,61,50,46,63,52,63,62,122,57,53,52,46,40,59,57,46,122,41,57,40,47,46,51,52,35,116],
+  m2_f1:[27,54,54,122,111,122,41,63,57,47,40,51,46,35,122,54,59,35,63,40,41,122,59,57,46,51,44,63], m2_f2:[31,52,50,59,52,57,63,62,122,57,53,52,46,40,59,57,46,122,44,63,40,51,60,51,57,59,46,51,53,52], m2_f3:[0,51,53,52,122,40,51,41,49,122,41,57,53,40,51,52,61,122,63,54,63,44,59,46,63,62], m2_f4:[10,40,63,119,63,34,63,57,47,46,51,53,52,122,57,53,52,60,51,40,55,59,46,51,53,52,122,61,59,46,63,41],
+  m3_badge:[29,50,53,41,46,122,23,53,62,63], m3_name:[29,50,53,41,46,122,23,53,62,63], m3_desc:[10,40,51,44,59,57,35,119,60,53,57,47,41,63,62,122,53,42,63,40,59,46,51,53,52,59,54,122,63,52,44,51,40,53,52,55,63,52,46,122,62,63,41,51,61,52,63,62,122,46,53,122,40,63,62,47,57,63,122,59,62,62,40,63,41,41,122,63,34,42,53,41,47,40,63,122,59,52,62,122,51,52,46,63,40,59,57,46,51,53,52,122,44,51,41,51,56,51,54,51,46,35,122,62,47,40,51,52,61,122,53,52,119,57,50,59,51,52,122,53,42,63,40,59,46,51,53,52,41,116],
+  m3_f1:[8,63,62,47,57,63,62,122,59,62,62,40,63,41,41,122,63,34,42,53,41,47,40,63], m3_f2:[9,63,54,63,57,46,51,44,63,122,51,52,46,63,40,59,57,46,51,53,52,122,44,51,41,51,56,51,54,51,46,35], m3_f3:[10,40,51,44,59,57,35,119,53,40,51,63,52,46,63,62,122,40,53,47,46,51,52,61], m3_f4:[23,51,52,51,55,59,54,122,53,52,119,57,50,59,51,52,122,60,53,53,46,42,40,51,52,46],
+  s6_label:[19,20,14,31,22,22,19,29,31,20,25,31,122,22,27,3,31,8], s6_h1:[0,51,53,52], s6_h2:[27,62,44,51,41,53,40,35,122,19,52,46,63,54,54,51,61,63,52,57,63],
+  s6_p1:[0,51,53,52,122,59,57,46,41,122,59,41,122,59,52,122,59,52,59,54,35,46,51,57,59,54,122,54,59,35,63,40,122,45,51,46,50,51,52,122,46,50,63,122,21,24,31,22,19,9,17,119,0,122,63,52,44,51,40,53,52,55,63,52,46,116,122,19,46,122,63,44,59,54,47,59,46,63,41,122,53,52,119,57,50,59,51,52,122,62,59,46,59,118,122,46,40,59,52,41,59,57,46,51,53,52,122,40,53,47,46,63,41,118,122,59,52,62,122,57,53,52,46,40,59,57,46,122,41,51,61,52,59,54,41,122,46,53,122,42,40,53,44,51,62,63,122,57,53,52,46,63,34,46,47,59,54,122,51,52,41,51,61,50,46,41,122,56,63,60,53,40,63,122,47,41,63,40,41,122,63,34,63,57,47,46,63,122,53,42,63,40,59,46,51,53,52,41,116],
+  s6_p2:[0,51,53,52,122,62,53,63,41,122,52,53,46,122,63,34,63,57,47,46,63,122,46,40,59,52,41,59,57,46,51,53,52,41,122,59,47,46,53,52,53,55,53,47,41,54,35,116,122,27,54,54,122,53,42,63,40,59,46,51,53,52,41,122,40,63,55,59,51,52,122,47,52,62,63,40,122,47,41,63,40,122,59,47,46,50,53,40,51,32,59,46,51,53,52,122,8270,122,0,51,53,52,122,42,40,53,44,51,62,63,41,122,51,52,41,51,61,50,46,118,122,47,41,63,40,41,122,40,63,46,59,51,52,122,62,63,57,51,41,51,53,52,122,59,47,46,50,53,40,51,46,35,116],
+  zc1:[25,53,52,46,40,59,57,46,122,40,51,41,49,122,41,51,61,52,59,54,122,59,52,59,54,35,41,51,41], zc2:[22,51,43,47,51,62,51,46,35,122,40,53,47,46,63,122,63,44,59,54,47,59,46,51,53,52], zc3:[21,52,119,57,50,59,51,52,122,42,59,46,46,63,40,52,122,40,63,57,53,61,52,51,46,51,53,52], zc4:[31,34,63,57,47,46,51,53,52,122,53,47,46,57,53,55,63,122,42,40,53,48,63,57,46,51,53,52], zc5:[25,53,52,46,63,34,46,47,59,54,122,40,51,41,49,122,41,57,53,40,51,52,61],
+  zion_notice:[27,30,12,19,9,21,8,3,122,21,20,22,3,122,237,122,20,21,122,27,15,14,21,20,21,23,21,15,9,122,31,2,31,25,15,14,19,21,20,122,237,122,15,9,31,8,122,27,15,14,18,21,8,19,0,27,14,19,21,20,122,8,31,11,15,19,8,31,30],
+  term_status:[9,31,9,9,19,21,20,122,9,14,27,14,15,9], term_active:[27,25,14,19,12,31], term_last:[22,27,9,14,122,27,20,27,22,3,9,19,9], term_exec:[31,2,31,25,15,14,19,21,20], term_auth:[15,9,31,8,122,27,15,14,18],
+  s7_label:[31,25,21,9,3,9,14,31,23,122,19,20,14,31,29,8,27,14,19,21,20], s7_h1:[24,47,51,54,46,122,60,53,40,122,46,50,63], s7_h2:[0,31,14,14,27,122,31,57,53,41,35,41,46,63,55],
+  s7_desc:[21,24,31,22,19,9,17,119,0,122,51,41,122,62,63,41,51,61,52,63,62,122,46,53,122,53,42,63,40,59,46,63,122,59,41,122,46,50,63,122,47,52,51,60,51,63,62,122,45,59,54,54,63,46,122,54,59,35,63,40,122,60,53,40,122,46,50,63,122,0,31,14,14,27,122,63,57,53,41,35,41,46,63,55,122,8270,122,42,40,53,44,51,62,51,52,61,122,52,59,46,51,44,63,122,59,57,57,63,41,41,122,46,53,122,63,44,63,40,35,122,42,40,53,46,53,57,53,54,122,60,40,53,55,122,59,122,41,51,52,61,54,63,122,41,53,44,63,40,63,51,61,52,122,63,52,44,51,40,53,52,55,63,52,46,116],
+  eco_zswap:[30,63,57,63,52,46,40,59,54,51,32,63,62,122,59,41,41,63,46,122,63,34,57,50,59,52,61,63,122,54,59,35,63,40,122,45,51,46,50,51,52,122,46,50,63,122,0,31,14,14,27,122,63,57,53,41,35,41,46,63,55],
+  eco_zfin:[28,51,52,59,52,57,51,59,54,122,51,52,60,40,59,41,46,40,47,57,46,47,40,63,122,59,52,62,122,35,51,63,54,62,122,59,57,57,63,41,41,122,42,40,53,46,53,57,53,54,41],
+  eco_zpad:[10,59,40,46,51,57,51,42,59,46,51,53,52,122,54,59,35,63,40,122,60,53,40,122,63,57,53,41,35,41,46,63,55,122,42,40,53,48,63,57,46,122,54,59,47,52,57,50,63,41],
+  eco_zpay:[10,59,35,55,63,52,46,122,51,52,60,40,59,41,46,40,47,57,46,47,40,63,122,60,53,40,122,62,51,61,51,46,59,54,122,59,41,41,63,46,122,46,40,59,52,41,59,57,46,51,53,52,41],
+  eco_zchain:[20,59,46,51,44,63,122,56,54,53,57,49,57,50,59,51,52,122,54,59,35,63,40,122,42,53,45,63,40,51,52,61,122,46,50,63,122,0,31,14,14,27,122,63,57,53,41,35,41,46,63,55],
+  s8_label:[30,31,12,31,22,21,10,23,31,20,14,122,8,21,27,30,23,27,10], s8_h1:[28,53,47,40,122,10,50,59,41,63,41,116], s8_h2:[27,122,25,53,55,42,54,63,46,63,122,27,40,57,50,51,46,63,57,46,47,40,63,116],
+  rp1_num:[10,18,27,9,31,122,106,107], rp1_name:[28,53,47,52,62,59,46,51,53,52], rp1_i1:[23,47,54,46,51,57,50,59,51,52,122,45,59,54,54,63,46,122,57,53,40,63], rp1_i2:[9,63,57,47,40,63,122,59,41,41,63,46,122,55,59,52,59,61,63,55,63,52,46], rp1_i3:[14,40,59,52,41,59,57,46,51,53,52,122,44,51,41,51,56,51,54,51,46,35,122,54,59,35,63,40], rp1_i4:[19,52,51,46,51,59,54,122,63,57,53,41,35,41,46,63,55,122,57,53,52,52,63,57,46,51,44,51,46,35],
+  rp2_num:[10,18,27,9,31,122,106,104], rp2_name:[19,52,46,63,54,54,51,61,63,52,57,63], rp2_i1:[0,51,53,52,122,59,62,44,51,41,53,40,35,122,51,52,46,63,61,40,59,46,51,53,52], rp2_i2:[8,53,47,46,63,122,59,45,59,40,63,52,63,41,41,122,41,35,41,46,63,55,41], rp2_i3:[8,51,41,49,122,63,44,59,54,47,59,46,51,53,52,122,46,53,53,54,41], rp2_i4:[25,53,52,46,40,59,57,46,122,41,51,61,52,59,54,122,59,52,59,54,35,41,51,41],
+  rp3_num:[10,18,27,9,31,122,106,105], rp3_name:[10,40,51,44,59,57,35,122,31,34,42,59,52,41,51,53,52], rp3_i1:[29,50,53,41,46,122,55,53,62,63,122,59,40,57,50,51,46,63,57,46,47,40,63], rp3_i2:[9,63,54,63,57,46,51,44,63,122,51,52,46,63,40,59,57,46,51,53,52,122,44,51,41,51,56,51,54,51,46,35], rp3_i3:[27,62,44,59,52,57,63,62,122,53,42,63,40,59,46,51,53,52,59,54,122,57,53,52,46,40,53,54], rp3_i4:[10,40,51,44,59,57,35,119,53,40,51,63,52,46,63,62,122,40,53,47,46,51,52,61],
+  rp4_num:[10,18,27,9,31,122,106,110], rp4_name:[31,57,53,41,35,41,46,63,55,122,19,52,46,63,61,40,59,46,51,53,52], rp4_i1:[20,59,46,51,44,63,122,0,119,9,45,59,42,122,51,52,46,63,40,59,57,46,51,53,52], rp4_i2:[0,119,28,51,52,59,52,57,63,122,54,51,43,47,51,62,51,46,35,122,57,53,52,52,63,57,46,51,44,51,46,35], rp4_i3:[0,119,10,59,62,122,42,59,40,46,51,57,51,42,59,46,51,53,52,122,54,59,35,63,40], rp4_i4:[0,63,46,46,59,122,25,50,59,51,52,122,57,53,55,42,59,46,51,56,51,54,51,46,35],
+  s9_label:[31,27,8,22,3,122,27,25,25,31,9,9], s9_h1:[25,53,52,46,40,53,54,122,3,53,47,40,122,30,51,61,51,46,59,54,122,27,41,41,63,46,41], s9_h2:[27,57,40,53,41,41,122,46,50,63,122,0,31,14,14,27,122,31,57,53,41,35,41,46,63,55],
+  s9_desc:[31,34,42,54,53,40,63,122,45,59,54,54,63,46,122,59,40,57,50,51,46,63,57,46,47,40,63,118,122,47,52,62,63,40,41,46,59,52,62,122,46,50,63,122,41,63,57,47,40,51,46,35,122,54,59,35,63,40,41,118,122,59,52,62,122,40,63,43,47,63,41,46,122,63,59,40,54,35,122,59,57,57,63,41,41,122,46,53,122,46,50,63,122,21,24,31,22,19,9,17,119,0,122,63,52,44,51,40,53,52,55,63,52,46,116],
+  s9_cta1:[31,34,42,54,53,40,63,122,27,40,57,50,51,46,63,57,46,47,40,63], s9_cta2:[8,63,43,47,63,41,46,122,31,59,40,54,35,122,27,57,57,63,41,41], s9_cta3:[12,51,63,45,122,9,63,57,47,40,51,46,35,122,22,59,35,63,40,41],
+  s9_footnote:[21,24,31,22,19,9,17,119,0,122,51,41,122,47,52,62,63,40,122,62,63,44,63,54,53,42,55,63,52,46,122,237,122,0,31,14,14,27,122,31,57,53,41,35,41,46,63,55,122,237,122,57,53,52,46,59,57,46,26,32,63,46,46,59,45,53,40,54,62,116,61,54,53,56,59,54],
+  footer_copy:[243,122,104,106,104,111,122,0,31,14,14,27,122,31,57,53,41,35,41,46,63,55,116,122,27,54,54,122,40,51,61,50,46,41,122,40,63,41,63,40,44,63,62,116],
+},
+
+pt:{
+  nav_arch:[27,40,43,47,51,46,63,46,47,40,59], nav_sec:[9,63,61,47,40,59,52,189,59], nav_modes:[23,53,62,53,41], nav_zion:[0,51,53,52,122,27,19],
+  nav_eco:[31,57,53,41,41,51,41,46,63,55,59], nav_road:[8,53,59,62,55,59,42], nav_cta:[9,53,54,51,57,51,46,59,40,122,27,57,63,41,41,53],
+  hero_eyebrow:[31,57,53,41,41,51,41,46,63,55,59,122,0,31,14,14,27,122,8270,122,25,59,55,59,62,59,122,62,63,122,25,53,52,46,40,53,54,63,122,62,59,122,13,59,54,54,63,46],
+  hero_subtitle:[27,122,25,59,55,59,62,59,122,9,53,56,63,40,59,52,59,122,62,63,122,25,53,52,46,40,53,54,63,80,42,59,40,59,122,27,46,51,44,53,41,122,30,51,61,51,46,59,51,41],
+  hero_desc:[21,24,31,22,19,9,17,119,0,122,179,122,59,122,57,59,55,59,62,59,122,62,63,122,57,53,52,46,40,53,54,63,122,41,63,61,47,40,53,122,62,63,122,59,46,51,44,53,41,122,62,53,122,63,57,53,41,41,51,41,46,63,55,59,122,0,31,14,14,27,122,8270,122,57,53,55,56,51,52,59,52,62,53,122,59,57,63,41,41,53,122,55,47,54,46,51,57,50,59,51,52,118,122,57,53,52,41,57,51,176,52,57,51,59,122,51,52,46,63,54,51,61,63,52,46,63,122,62,63,122,46,40,59,52,41,59,189,175,63,41,118,122,55,53,62,53,41,122,53,42,63,40,59,57,51,53,52,59,51,41,122,53,40,51,63,52,46,59,62,53,41,122,186,122,42,40,51,44,59,57,51,62,59,62,63,122,63,122,51,52,41,51,61,50,46,41,122,59,41,41,51,41,46,51,62,53,41,122,42,63,54,53,122,0,51,53,52,122,63,55,122,47,55,122,59,55,56,51,63,52,46,63,122,47,52,51,60,51,57,59,62,53,116],
+  hero_cta1:[31,34,42,54,53,40,59,40,122,27,40,43,47,51,46,63,46,47,40,59], hero_cta2:[12,63,40,122,25,59,55,59,62,59,41,122,62,63,122,9,63,61,47,40,59,52,189,59], hero_cta3:[9,53,54,51,57,51,46,59,40,122,27,57,63,41,41,53,122,27,52,46,63,57,51,42,59,62,53],
+  stat1_l:[27,57,63,41,41,53,122,186,122,8,63,62,63], stat2_l:[25,59,55,59,62,59,41,122,62,63,122,9,63,61,47,40,59,52,189,59], stat2_v:[27,46,51,44,59,41], stat3_l:[23,53,62,63,54,53,122,62,63,122,25,47,41,46,169,62,51,59], stat4_l:[19,52,46,63,54,51,61,176,52,57,51,59],
+  orbit_zion:[0,19,21,20,122,27,19], orbit_sec:[31,20,29,19,20,31,122,30,31,80,9,31,29,15,8,27,20,157,27], orbit_ghost:[23,21,30,21,80,29,18,21,9,14], orbit_mc:[27,25,31,9,9,21,80,23,15,22,14,19,25,18,27,19,20], orbit_zetta:[31,25,21,9,9,19,9,14,31,23,27,80,0,31,14,14,27],
+  s2_label:[21,122,11,15,31,122,147,122,21,24,31,22,19,9,17,119,0],
+  s2_h1:[20,185,53,122,179,122,41,169,122,47,55,59,122,13,59,54,54,63,46,116], s2_h2:[15,55,122,27,55,56,51,63,52,46,63,122,62,63,122,25,53,52,46,40,53,54,63,122,62,63,122,27,46,51,44,53,41,122,30,51,61,51,46,59,51,41,116],
+  s2_p1:[27,122,55,59,51,53,40,51,59,122,62,59,41,122,45,59,54,54,63,46,41,122,60,53,57,59,122,63,55,122,59,40,55,59,32,63,52,59,55,63,52,46,53,122,63,122,46,40,59,52,41,60,63,40,176,52,57,51,59,41,116,122,102,41,46,40,53,52,61,100,21,24,31,22,19,9,17,119,0,122,179,122,42,40,53,48,63,46,59,62,59,122,57,53,55,53,122,47,55,59,122,57,59,55,59,62,59,122,62,63,122,57,53,52,46,40,53,54,63,102,117,41,46,40,53,52,61,100,122,42,59,40,59,122,53,42,63,40,59,189,175,63,41,122,57,53,55,122,59,46,51,44,53,41,122,62,51,61,51,46,59,51,41,118,122,60,53,40,52,63,57,63,52,62,53,122,44,51,41,51,56,51,54,51,62,59,62,63,118,122,57,53,52,41,57,51,176,52,57,51,59,122,62,63,122,41,63,61,47,40,59,52,189,59,122,63,122,59,41,41,51,41,46,176,52,57,51,59,122,51,52,46,63,54,51,61,63,52,46,63,122,63,55,122,55,160,54,46,51,42,54,59,41,122,40,63,62,63,41,122,56,54,53,57,49,57,50,59,51,52,116],
+  s2_p2:[30,63,52,46,40,53,122,62,53,122,63,57,53,41,41,51,41,46,63,55,59,122,0,31,14,14,27,118,122,59,122,45,59,54,54,63,46,122,59,46,47,59,122,57,53,55,53,122,53,122,102,41,46,40,53,52,61,100,42,53,52,46,53,122,62,63,122,63,52,46,40,59,62,59,122,42,40,51,52,57,51,42,59,54,122,42,59,40,59,122,59,122,51,52,60,40,59,63,41,46,40,47,46,47,40,59,122,62,63,41,57,63,52,46,40,59,54,51,32,59,62,59,102,117,41,46,40,53,52,61,100,118,122,42,63,40,55,51,46,51,52,62,53,122,43,47,63,122,53,41,122,47,41,47,187,40,51,53,41,122,51,52,46,63,40,59,48,59,55,122,57,53,55,122,42,40,53,46,53,57,53,54,53,41,122,55,59,52,46,63,52,62,53,122,41,53,56,63,40,59,52,51,59,122,46,53,46,59,54,122,41,53,56,40,63,122,41,63,47,41,122,59,46,51,44,53,41,116],
+  s2_p3:[25,59,62,59,122,51,52,46,63,40,59,189,185,53,122,42,59,41,41,59,122,42,53,40,122,55,63,57,59,52,51,41,55,53,41,122,62,63,122,59,44,59,54,51,59,189,185,53,122,63,55,122,57,59,55,59,62,59,41,122,8270,122,62,63,41,62,63,122,59,52,187,54,51,41,63,122,62,63,122,57,53,52,46,40,59,46,53,41,122,59,46,179,122,44,63,40,51,60,51,57,59,189,185,53,122,62,63,122,40,53,46,59,41,122,8270,122,59,52,46,63,41,122,43,47,63,122,59,122,63,34,63,57,47,189,185,53,122,57,50,63,61,47,63,122,186,122,40,63,62,63,116],
+  wc1_t:[9,53,56,63,40,59,52,51,59,122,14,53,46,59,54,122,41,53,56,40,63,122,27,46,51,44,53,41], wc1_d:[27,40,43,47,51,46,63,46,47,40,59,122,52,185,53,119,57,47,41,46,53,62,51,59,54,116,122,9,47,59,41,122,57,50,59,44,63,41,122,42,63,40,55,59,52,63,57,63,55,122,41,53,56,122,41,63,47,122,57,53,52,46,40,53,54,63,122,63,34,57,54,47,41,51,44,53,122,63,55,122,46,53,62,53,41,122,53,41,122,55,53,55,63,52,46,53,41,122,62,53,122,57,51,57,54,53,122,62,63,122,44,51,62,59,122,62,59,122,46,40,59,52,41,59,189,185,53,116],
+  wc2_t:[27,44,59,54,51,59,189,185,53,122,62,63,122,9,63,61,47,40,59,52,189,59,122,63,55,122,25,59,55,59,62,59,41], wc2_d:[25,51,52,57,53,122,57,59,55,59,62,59,41,122,62,63,122,41,63,61,47,40,59,52,189,59,122,51,52,62,63,42,63,52,62,63,52,46,63,41,122,59,44,59,54,51,59,55,122,57,59,62,59,122,51,52,46,63,40,59,189,185,53,122,59,52,46,63,41,122,63,122,62,47,40,59,52,46,63,122,59,122,63,34,63,57,47,189,185,53,118,122,60,53,40,52,63,57,63,52,62,53,122,57,53,52,41,57,51,176,52,57,51,59,122,57,53,52,46,183,52,47,59,122,62,63,122,40,51,41,57,53,116],
+  wc3_t:[19,52,46,63,61,40,59,189,185,53,122,62,63,122,19,52,46,63,54,51,61,176,52,57,51,59,122,0,51,53,52], wc3_d:[27,41,41,51,41,46,176,52,57,51,59,122,59,52,59,54,183,46,51,57,59,122,57,53,52,46,63,34,46,47,59,54,122,59,48,47,62,59,122,53,41,122,47,41,47,187,40,51,53,41,122,59,122,63,52,46,63,52,62,63,40,122,40,53,46,59,41,118,122,40,51,41,57,53,41,122,63,122,40,63,41,47,54,46,59,62,53,41,122,59,52,46,63,41,122,62,63,122,57,53,52,60,51,40,55,59,40,122,43,47,59,54,43,47,63,40,122,53,42,63,40,59,189,185,53,116],
+  wc4_t:[27,40,43,47,51,46,63,46,47,40,59,122,62,63,122,20,183,44,63,54,122,31,57,53,41,41,51,41,46,63,55,59], wc4_d:[25,53,52,63,57,46,51,44,51,62,59,62,63,122,52,59,46,51,44,59,122,57,53,55,122,0,119,9,45,59,42,118,122,0,119,28,51,52,59,52,57,63,118,122,0,119,10,59,62,118,122,0,119,10,59,35,122,63,122,59,122,0,63,46,46,59,122,25,50,59,51,52,122,59,122,42,59,40,46,51,40,122,62,63,122,47,55,122,160,52,51,57,53,122,59,55,56,51,63,52,46,63,122,47,52,51,60,51,57,59,62,53,116],
+  s3_label:[10,19,22,27,8,31,9,122,28,15,20,30,27,23,31,20,14,27,19,9], s3_h1:[11,47,59,46,40,53,122,10,40,51,52,57,183,42,51,53,41,116], s3_h2:[15,55,59,122,25,59,55,59,62,59,122,62,63,122,25,53,52,46,40,53,54,63,116],
+  p1_num:[106,107,122,117,122,9,21,24,31,8,27,20,19,27], p1_t:[9,53,56,63,40,59,52,51,59], p1_d:[21,41,122,47,41,47,187,40,51,53,41,122,55,59,52,46,176,55,122,57,47,41,46,169,62,51,59,122,63,122,57,53,52,46,40,53,54,63,122,46,53,46,59,54,122,41,53,56,40,63,122,41,63,47,41,122,59,46,51,44,53,41,116,122,21,24,31,22,19,9,17,119,0,122,179,122,57,53,52,41,46,40,47,183,62,59,122,63,55,122,46,53,40,52,53,122,62,53,122,42,40,51,52,57,183,42,51,53,122,62,63,122,43,47,63,122,59,122,42,40,53,42,40,51,63,62,59,62,63,122,63,122,53,122,57,53,52,46,40,53,54,63,122,62,63,44,63,55,122,42,63,40,55,59,52,63,57,63,40,122,63,34,57,54,47,41,51,44,59,55,63,52,46,63,122,57,53,55,122,53,122,47,41,47,187,40,51,53,122,8270,122,63,55,122,57,59,62,59,122,57,59,55,59,62,59,122,53,42,63,40,59,57,51,53,52,59,54,116],
+  p2_num:[106,104,122,117,122,9,31,29,15,8,27,20,157,27], p2_t:[9,63,61,47,40,59,52,189,59], p2_d:[25,59,62,59,122,51,52,46,63,40,59,189,185,53,122,179,122,59,44,59,54,51,59,62,59,122,42,53,40,122,55,63,57,59,52,51,41,55,53,41,122,62,63,122,41,63,61,47,40,59,52,189,59,122,63,55,122,57,59,55,59,62,59,41,122,42,40,53,48,63,46,59,62,53,41,122,42,59,40,59,122,40,63,62,47,32,51,40,122,40,51,41,57,53,122,63,122,55,63,54,50,53,40,59,40,122,59,122,57,53,52,41,57,51,176,52,57,51,59,122,62,63,122,46,40,59,52,41,59,189,185,53,122,59,52,46,63,41,122,43,47,63,122,59,41,122,53,42,63,40,59,189,175,63,41,122,57,50,63,61,47,63,55,122,59,53,122,63,41,46,59,62,53,122,62,63,122,63,34,63,57,47,189,185,53,122,52,59,122,40,63,62,63,116],
+  p3_num:[106,105,122,117,122,10,8,19,12,27,25,19,30,27,30,31], p3_t:[10,40,51,44,59,57,51,62,59,62,63], p3_d:[21,41,122,55,53,62,53,41,122,53,42,63,40,59,57,51,53,52,59,51,41,122,42,63,40,55,51,46,63,55,122,43,47,63,122,53,41,122,47,41,47,187,40,51,53,41,122,57,53,52,46,40,53,54,63,55,122,57,53,55,53,122,41,47,59,122,45,59,54,54,63,46,122,51,52,46,63,40,59,61,63,122,57,53,55,122,59,122,51,52,60,40,59,63,41,46,40,47,46,47,40,59,122,42,160,56,54,51,57,59,122,62,63,122,56,54,53,57,49,57,50,59,51,52,122,8270,122,62,63,41,62,63,122,44,51,41,51,56,51,54,51,62,59,62,63,122,42,59,62,40,185,53,122,59,46,179,122,42,40,51,44,59,57,51,62,59,62,63,122,53,42,63,40,59,57,51,53,52,59,54,122,62,63,122,52,183,44,63,54,122,61,50,53,41,46,122,57,53,55,122,63,34,42,53,41,51,189,185,53,122,62,63,122,63,52,62,63,40,63,189,53,122,40,63,62,47,32,51,62,59,116],
+  p4_num:[106,110,122,117,122,19,20,14,31,22,19,29,144,20,25,19,27], p4_t:[19,52,46,63,54,51,61,176,52,57,51,59], p4_d:[21,122,0,51,53,52,122,60,53,40,52,63,57,63,122,59,41,41,51,41,46,176,52,57,51,59,122,59,52,59,54,183,46,51,57,59,122,42,59,40,59,122,59,48,47,62,59,40,122,53,41,122,47,41,47,187,40,51,53,41,122,59,122,63,52,46,63,52,62,63,40,122,55,63,54,50,53,40,122,40,51,41,57,53,41,118,122,40,53,46,59,41,122,63,122,42,53,41,41,183,44,63,51,41,122,40,63,41,47,54,46,59,62,53,41,122,59,52,46,63,41,122,62,63,122,63,34,63,57,47,46,59,40,122,46,40,59,52,41,59,189,175,63,41,122,8270,122,59,46,47,59,52,62,53,122,57,53,55,53,122,47,55,59,122,57,59,55,59,62,59,122,62,63,122,59,41,41,63,41,41,53,40,51,59,118,122,52,47,52,57,59,122,62,63,122,60,53,40,55,59,122,59,47,46,174,52,53,55,59,116],
+  s4_label:[27,8,11,15,19,14,31,14,15,8,27,122,30,31,122,9,31,29,15,8,27,20,157,27], s4_h1:[9,63,61,47,40,59,52,189,59], s4_h2:[42,53,40,122,30,63,41,51,61,52],
+  s4_desc:[21,24,31,22,19,9,17,119,0,122,51,52,46,63,61,40,59,122,55,160,54,46,51,42,54,59,41,122,57,59,55,59,62,59,41,122,62,63,122,41,63,61,47,40,59,52,189,59,122,43,47,63,122,53,42,63,40,59,55,122,59,52,46,63,41,122,63,122,62,47,40,59,52,46,63,122,59,41,122,51,52,46,63,40,59,189,175,63,41,122,56,54,53,57,49,57,50,59,51,52,118,122,62,59,52,62,53,122,59,53,41,122,47,41,47,187,40,51,53,41,122,44,51,41,51,56,51,54,51,62,59,62,63,122,63,122,57,53,52,46,40,53,54,63,122,41,53,56,40,63,122,53,122,40,51,41,57,53,122,62,63,122,46,40,59,52,41,59,189,185,53,122,63,55,122,57,59,62,59,122,63,41,46,187,61,51,53,116],
+  l1_t:[23,53,62,63,54,53,122,62,63,122,25,47,41,46,169,62,51,59,122,62,63,122,27,46,51,44,53,41], l1_d:[27,40,43,47,51,46,63,46,47,40,59,122,52,185,53,119,57,47,41,46,53,62,51,59,54,122,42,40,53,48,63,46,59,62,59,122,42,59,40,59,122,42,40,63,41,63,40,44,59,40,122,59,122,42,40,53,42,40,51,63,62,59,62,63,122,62,53,122,47,41,47,187,40,51,53,116,122,27,41,122,57,50,59,44,63,41,122,42,40,51,44,59,62,59,41,122,52,47,52,57,59,122,41,59,63,55,122,62,53,122,59,55,56,51,63,52,46,63,122,62,53,122,47,41,47,187,40,51,53,116],
+  l2_t:[12,63,40,51,60,51,57,59,189,185,53,122,62,63,122,8,53,46,59], l2_d:[27,44,59,54,51,59,189,185,53,122,62,59,41,122,40,53,46,59,41,122,62,63,122,46,40,59,52,41,59,189,185,53,122,62,51,41,42,53,52,183,44,63,51,41,122,63,55,122,60,53,52,46,63,41,122,62,63,122,54,51,43,47,51,62,63,32,122,59,52,46,63,41,122,43,47,63,122,59,122,63,34,63,57,47,189,185,53,122,41,63,48,59,122,57,53,52,60,51,40,55,59,62,59,116],
+  l3_t:[25,53,52,41,57,51,176,52,57,51,59,122,62,63,122,25,53,52,46,40,59,46,53], l3_d:[23,63,57,59,52,51,41,55,53,41,122,62,63,122,44,63,40,51,60,51,57,59,189,185,53,122,43,47,63,122,59,48,47,62,59,55,122,59,122,51,62,63,52,46,51,60,51,57,59,40,122,40,51,41,57,53,41,122,42,53,46,63,52,57,51,59,51,41,122,62,63,122,57,53,52,46,40,59,46,53,41,122,63,122,42,59,62,40,175,63,41,122,62,63,122,57,53,55,42,53,40,46,59,55,63,52,46,53,122,59,52,174,55,59,54,53,41,116],
+  l4_t:[10,40,51,44,59,57,51,62,59,62,63,122,21,42,63,40,59,57,51,53,52,59,54], l4_d:[23,53,62,53,41,122,43,47,63,122,40,63,62,47,32,63,55,122,59,122,63,34,42,53,41,51,189,185,53,122,62,47,40,59,52,46,63,122,51,52,46,63,40,59,189,175,63,41,122,53,52,119,57,50,59,51,52,118,122,60,53,40,52,63,57,63,52,62,53,122,52,183,44,63,51,41,122,62,63,122,44,51,41,51,56,51,54,51,62,59,62,63,122,57,53,52,60,51,61,47,40,187,44,63,51,41,116],
+  l5_t:[19,52,41,51,61,50,46,41,122,27,41,41,51,41,46,51,62,53,41,122,42,63,54,53,122,0,51,53,52], l5_d:[9,47,42,53,40,46,63,122,59,52,59,54,183,46,51,57,53,122,43,47,63,122,59,48,47,62,59,122,53,41,122,47,41,47,187,40,51,53,41,122,59,122,59,44,59,54,51,59,40,122,53,122,57,53,52,46,63,34,46,53,122,62,63,122,40,51,41,57,53,122,59,52,46,63,41,122,62,59,122,63,34,63,57,47,189,185,53,122,8270,122,53,122,42,53,52,46,53,122,62,63,122,44,63,40,51,60,51,57,59,189,185,53,122,60,51,52,59,54,122,62,63,122,59,41,41,63,41,41,53,40,51,59,116],
+  stack_label:[10,19,22,18,27,122,30,31,122,10,8,21,14,31,157,153,21], stack_active:[10,8,21,14,31,157,153,21,122,27,14,19,12,27],
+  stack_l1:[23,21,30,31,22,21,122,30,31,122,25,15,9,14,137,30,19,27,122,8270,122,22,107], stack_l2:[12,31,8,19,28,19,25,27,157,153,21,122,30,31,122,8,21,14,27,122,8270,122,22,104], stack_l3:[25,21,20,9,25,19,144,20,25,19,27,122,30,31,122,25,21,20,14,8,27,14,21,122,8270,122,22,105], stack_l4:[10,8,19,12,27,25,19,30,27,30,31,122,21,10,31,8,27,25,19,21,20,27,22,122,8270,122,22,110], stack_l5:[19,20,9,19,29,18,14,9,122,0,19,21,20,122,8270,122,22,111],
+  stack_model:[23,21,30,31,22,21,122,30,31,122,9,31,29,15,8,27,20,157,27], stack_eval:[27,44,59,54,51,59,189,185,53,122,10,40,179,119,31,34,63,57,47,189,185,53], stack_sub:[14,53,62,59,41,122,59,41,122,57,59,55,59,62,59,41,122,59,46,51,44,59,41,122,59,52,46,63,41,122,62,59,122,46,40,59,52,41,55,51,41,41,185,53,122,52,59,122,40,63,62,63],
+  s5_label:[23,21,30,21,9,122,21,10,31,8,27,25,19,21,20,27,19,9], s5_h1:[14,40,176,41,122,23,53,62,53,41,116], s5_h2:[15,55,122,27,55,56,51,63,52,46,63,116],
+  s5_desc:[25,53,52,60,51,61,47,40,63,122,57,53,55,53,122,59,122,21,24,31,22,19,9,17,119,0,122,51,52,46,63,40,59,61,63,122,57,53,55,122,59,122,51,52,60,40,59,63,41,46,40,47,46,47,40,59,122,56,54,53,57,49,57,50,59,51,52,122,8270,122,62,53,122,59,57,63,41,41,53,122,42,59,62,40,185,53,122,186,122,53,42,63,40,59,189,185,53,122,57,53,55,122,55,187,34,51,55,59,122,42,40,51,44,59,57,51,62,59,62,63,116],
+  m1_badge:[23,53,62,53,122,10,59,62,40,185,53], m1_name:[27,57,63,41,41,53,122,10,59,62,40,185,53], m1_desc:[10,40,53,48,63,46,59,62,53,122,42,59,40,59,122,61,63,41,46,185,53,122,57,53,46,51,62,51,59,52,59,122,62,63,122,59,46,51,44,53,41,122,55,47,54,46,51,57,50,59,51,52,122,57,53,55,122,51,52,46,63,61,40,59,189,185,53,122,57,53,55,42,54,63,46,59,122,59,53,122,63,57,53,41,41,51,41,46,63,55,59,122,63,122,41,47,42,53,40,46,63,122,59,46,51,44,53,122,62,63,122,59,41,41,63,41,41,53,40,51,59,122,62,53,122,0,51,53,52,116],
+  m1_f1:[12,51,41,51,56,51,54,51,62,59,62,63,122,62,63,122,59,46,51,44,53,41,122,55,47,54,46,51,57,50,59,51,52], m1_f2:[27,57,63,41,41,53,122,59,122,42,40,53,46,53,57,53,54,53,41,122,62,53,122,63,57,53,41,41,51,41,46,63,55,59], m1_f3:[27,41,41,63,41,41,53,40,51,59,122,0,51,53,52,122,59,46,51,44,59], m1_f4:[27,44,59,54,51,59,189,185,53,122,62,63,122,40,53,46,59,122,42,59,62,40,185,53],
+  m2_badge:[23,53,62,53,122,10,40,53,46,63,61,51,62,53], m2_name:[23,53,62,53,122,10,40,53,46,63,61,51,62,53], m2_desc:[25,59,55,59,62,59,41,122,62,63,122,44,63,40,51,60,51,57,59,189,185,53,122,59,42,40,51,55,53,40,59,62,59,41,122,41,185,53,122,59,46,51,44,59,62,59,41,122,42,59,40,59,122,51,52,46,63,40,59,189,175,63,41,122,62,63,122,55,59,51,53,40,122,40,51,41,57,53,116,122,14,53,62,59,41,122,59,41,122,57,51,52,57,53,122,57,59,55,59,62,59,41,122,62,63,122,41,63,61,47,40,59,52,189,59,122,41,63,122,59,42,54,51,57,59,55,122,57,53,55,122,63,41,57,40,47,46,183,52,51,53,122,62,63,122,57,53,52,46,40,59,46,53,122,63,54,63,44,59,62,53,116],
+  m2_f1:[14,53,62,59,41,122,59,41,122,111,122,57,59,55,59,62,59,41,122,62,63,122,41,63,61,47,40,59,52,189,59,122,59,46,51,44,59,41], m2_f2:[12,63,40,51,60,51,57,59,189,185,53,122,62,63,122,57,53,52,46,40,59,46,53,122,59,42,40,51,55,53,40,59,62,59], m2_f3:[10,53,52,46,47,59,189,185,53,122,62,63,122,40,51,41,57,53,122,0,51,53,52,122,63,54,63,44,59,62,59], m2_f4:[29,59,46,63,41,122,62,63,122,57,53,52,60,51,40,55,59,189,185,53,122,42,40,179,119,63,34,63,57,47,189,185,53],
+  m3_badge:[23,53,62,53,122,29,50,53,41,46], m3_name:[23,53,62,53,122,29,50,53,41,46], m3_desc:[27,55,56,51,63,52,46,63,122,53,42,63,40,59,57,51,53,52,59,54,122,60,53,57,59,62,53,122,63,55,122,42,40,51,44,59,57,51,62,59,62,63,122,42,40,53,48,63,46,59,62,53,122,42,59,40,59,122,40,63,62,47,32,51,40,122,59,122,63,34,42,53,41,51,189,185,53,122,62,63,122,63,52,62,63,40,63,189,53,41,122,63,122,59,122,44,51,41,51,56,51,54,51,62,59,62,63,122,62,63,122,51,52,46,63,40,59,189,175,63,41,122,62,47,40,59,52,46,63,122,53,42,63,40,59,189,175,63,41,122,53,52,119,57,50,59,51,52,116],
+  m3_f1:[31,34,42,53,41,51,189,185,53,122,62,63,122,63,52,62,63,40,63,189,53,122,40,63,62,47,32,51,62,59], m3_f2:[12,51,41,51,56,51,54,51,62,59,62,63,122,62,63,122,51,52,46,63,40,59,189,185,53,122,41,63,54,63,46,51,44,59], m3_f3:[8,53,46,63,59,55,63,52,46,53,122,53,40,51,63,52,46,59,62,53,122,186,122,42,40,51,44,59,57,51,62,59,62,63], m3_f4:[10,63,61,59,62,59,122,55,183,52,51,55,59,122,53,52,119,57,50,59,51,52],
+  s6_label:[25,27,23,27,30,27,122,30,31,122,19,20,14,31,22,19,29,144,20,25,19,27], s6_h1:[0,51,53,52], s6_h2:[19,52,46,63,54,51,61,176,52,57,51,59,122,62,63,122,27,41,41,63,41,41,53,40,51,59],
+  s6_p1:[21,122,0,51,53,52,122,59,46,47,59,122,57,53,55,53,122,47,55,59,122,57,59,55,59,62,59,122,59,52,59,54,183,46,51,57,59,122,62,63,52,46,40,53,122,62,53,122,59,55,56,51,63,52,46,63,122,21,24,31,22,19,9,17,119,0,116,122,31,54,63,122,59,44,59,54,51,59,122,62,59,62,53,41,122,53,52,119,57,50,59,51,52,118,122,40,53,46,59,41,122,62,63,122,46,40,59,52,41,59,189,185,53,122,63,122,41,51,52,59,51,41,122,62,63,122,57,53,52,46,40,59,46,53,41,122,42,59,40,59,122,60,53,40,52,63,57,63,40,122,51,52,41,51,61,50,46,41,122,57,53,52,46,63,34,46,47,59,51,41,122,59,52,46,63,41,122,43,47,63,122,53,41,122,47,41,47,187,40,51,53,41,122,63,34,63,57,47,46,63,55,122,53,42,63,40,59,189,175,63,41,116],
+  s6_p2:[21,122,0,51,53,52,122,52,185,53,122,63,34,63,57,47,46,59,122,46,40,59,52,41,59,189,175,63,41,122,62,63,122,60,53,40,55,59,122,59,47,46,174,52,53,55,59,116,122,14,53,62,59,41,122,59,41,122,53,42,63,40,59,189,175,63,41,122,42,63,40,55,59,52,63,57,63,55,122,41,53,56,122,59,47,46,53,40,51,32,59,189,185,53,122,62,53,122,47,41,47,187,40,51,53,122,8270,122,53,122,0,51,53,52,122,60,53,40,52,63,57,63,122,51,52,41,51,61,50,46,118,122,53,41,122,47,41,47,187,40,51,53,41,122,40,63,46,176,55,122,59,122,59,47,46,53,40,51,62,59,62,63,122,62,63,122,62,63,57,51,41,185,53,116],
+  zc1:[27,52,187,54,51,41,63,122,62,63,122,41,51,52,59,51,41,122,62,63,122,40,51,41,57,53,122,62,63,122,57,53,52,46,40,59,46,53,41], zc2:[27,44,59,54,51,59,189,185,53,122,62,63,122,40,53,46,59,122,62,63,122,54,51,43,47,51,62,63,32], zc3:[8,63,57,53,52,50,63,57,51,55,63,52,46,53,122,62,63,122,42,59,62,40,175,63,41,122,53,52,119,57,50,59,51,52], zc4:[10,40,53,48,63,189,185,53,122,62,63,122,40,63,41,47,54,46,59,62,53,122,62,63,122,63,34,63,57,47,189,185,53], zc5:[10,53,52,46,47,59,189,185,53,122,62,63,122,40,51,41,57,53,122,57,53,52,46,63,34,46,47,59,54],
+  zion_notice:[9,21,23,31,20,14,31,122,27,9,9,31,9,9,21,8,19,27,122,237,122,9,31,23,122,31,2,31,25,15,157,153,21,122,27,15,14,142,20,21,23,27,122,237,122,27,15,14,21,8,19,0,27,157,153,21,122,30,21,122,15,9,15,155,8,19,21,122,20,31,25,31,9,9,155,8,19,27],
+  term_status:[9,14,27,14,15,9,122,30,27,122,9,31,9,9,153,21], term_active:[27,14,19,12,27], term_last:[128,22,14,19,23,27,122,27,20,155,22,19,9,31], term_exec:[31,2,31,25,15,157,153,21], term_auth:[27,15,14,18,122,15,9,15,155,8,19,21],
+  s7_label:[19,20,14,31,29,8,27,157,153,21,122,27,21,122,31,25,21,9,9,19,9,14,31,23,27], s7_h1:[25,53,52,41,46,40,47,183,62,53,122,42,59,40,59,122,53], s7_h2:[31,57,53,41,41,51,41,46,63,55,59,122,0,31,14,14,27],
+  s7_desc:[27,122,21,24,31,22,19,9,17,119,0,122,179,122,42,40,53,48,63,46,59,62,59,122,42,59,40,59,122,53,42,63,40,59,40,122,57,53,55,53,122,59,122,57,59,55,59,62,59,122,62,63,122,45,59,54,54,63,46,122,47,52,51,60,51,57,59,62,59,122,62,53,122,63,57,53,41,41,51,41,46,63,55,59,122,0,31,14,14,27,122,8270,122,60,53,40,52,63,57,63,52,62,53,122,59,57,63,41,41,53,122,52,59,46,51,44,53,122,59,122,57,59,62,59,122,42,40,53,46,53,57,53,54,53,122,59,122,42,59,40,46,51,40,122,62,63,122,47,55,122,160,52,51,57,53,122,59,55,56,51,63,52,46,63,122,41,53,56,63,40,59,52,53,116],
+  eco_zswap:[25,59,55,59,62,59,122,62,63,122,46,40,53,57,59,122,62,63,41,57,63,52,46,40,59,54,51,32,59,62,59,122,62,63,122,59,46,51,44,53,41,122,62,63,52,46,40,53,122,62,53,122,63,57,53,41,41,51,41,46,63,55,59,122,0,31,14,14,27],
+  eco_zfin:[19,52,60,40,59,63,41,46,40,47,46,47,40,59,122,60,51,52,59,52,57,63,51,40,59,122,63,122,42,40,53,46,53,57,53,54,53,41,122,62,63,122,59,57,63,41,41,53,122,59,122,40,63,52,62,51,55,63,52,46,53],
+  eco_zpad:[25,59,55,59,62,59,122,62,63,122,42,59,40,46,51,57,51,42,59,189,185,53,122,42,59,40,59,122,54,59,52,189,59,55,63,52,46,53,41,122,62,63,122,42,40,53,48,63,46,53,41,122,62,53,122,63,57,53,41,41,51,41,46,63,55,59],
+  eco_zpay:[19,52,60,40,59,63,41,46,40,47,46,47,40,59,122,62,63,122,42,59,61,59,55,63,52,46,53,122,42,59,40,59,122,46,40,59,52,41,59,189,175,63,41,122,57,53,55,122,59,46,51,44,53,41,122,62,51,61,51,46,59,51,41],
+  eco_zchain:[25,59,55,59,62,59,122,56,54,53,57,49,57,50,59,51,52,122,52,59,46,51,44,59,122,43,47,63,122,59,54,51,55,63,52,46,59,122,53,122,63,57,53,41,41,51,41,46,63,55,59,122,0,31,14,14,27],
+  s8_label:[8,21,27,30,23,27,10,122,30,31,122,30,31,9,31,20,12,21,22,12,19,23,31,20,14,21], s8_h1:[11,47,59,46,40,53,122,28,59,41,63,41,116], s8_h2:[15,55,59,122,27,40,43,47,51,46,63,46,47,40,59,122,25,53,55,42,54,63,46,59,116],
+  rp1_num:[28,27,9,31,122,106,107], rp1_name:[28,47,52,62,59,189,185,53], rp1_i1:[25,53,40,63,122,62,59,122,45,59,54,54,63,46,122,55,47,54,46,51,57,50,59,51,52], rp1_i2:[29,63,41,46,185,53,122,41,63,61,47,40,59,122,62,63,122,59,46,51,44,53,41], rp1_i3:[25,59,55,59,62,59,122,62,63,122,44,51,41,51,56,51,54,51,62,59,62,63,122,62,63,122,46,40,59,52,41,59,189,175,63,41], rp1_i4:[25,53,52,63,57,46,51,44,51,62,59,62,63,122,51,52,51,57,51,59,54,122,59,53,122,63,57,53,41,41,51,41,46,63,55,59],
+  rp2_num:[28,27,9,31,122,106,104], rp2_name:[19,52,46,63,54,51,61,176,52,57,51,59], rp2_i1:[19,52,46,63,61,40,59,189,185,53,122,62,53,122,59,41,41,63,41,41,53,40,122,0,51,53,52], rp2_i2:[9,51,41,46,63,55,59,41,122,62,63,122,57,53,52,41,57,51,176,52,57,51,59,122,62,63,122,40,53,46,59], rp2_i3:[28,63,40,40,59,55,63,52,46,59,41,122,62,63,122,59,44,59,54,51,59,189,185,53,122,62,63,122,40,51,41,57,53], rp2_i4:[27,52,187,54,51,41,63,122,62,63,122,41,51,52,59,51,41,122,62,63,122,57,53,52,46,40,59,46,53],
+  rp3_num:[28,27,9,31,122,106,105], rp3_name:[31,34,42,59,52,41,185,53,122,62,63,122,10,40,51,44,59,57,51,62,59,62,63], rp3_i1:[27,40,43,47,51,46,63,46,47,40,59,122,62,53,122,55,53,62,53,122,29,50,53,41,46], rp3_i2:[12,51,41,51,56,51,54,51,62,59,62,63,122,41,63,54,63,46,51,44,59,122,62,63,122,51,52,46,63,40,59,189,175,63,41], rp3_i3:[25,53,52,46,40,53,54,63,122,53,42,63,40,59,57,51,53,52,59,54,122,59,44,59,52,189,59,62,53], rp3_i4:[8,53,46,63,59,55,63,52,46,53,122,53,40,51,63,52,46,59,62,53,122,186,122,42,40,51,44,59,57,51,62,59,62,63],
+  rp4_num:[28,27,9,31,122,106,110], rp4_name:[19,52,46,63,61,40,59,189,185,53,122,59,53,122,31,57,53,41,41,51,41,46,63,55,59], rp4_i1:[19,52,46,63,40,59,189,185,53,122,52,59,46,51,44,59,122,57,53,55,122,0,119,9,45,59,42], rp4_i2:[25,53,52,63,57,46,51,44,51,62,59,62,63,122,62,63,122,54,51,43,47,51,62,63,32,122,0,119,28,51,52,59,52,57,63], rp4_i3:[25,59,55,59,62,59,122,62,63,122,42,59,40,46,51,57,51,42,59,189,185,53,122,0,119,10,59,62], rp4_i4:[25,53,55,42,59,46,51,56,51,54,51,62,59,62,63,122,57,53,55,122,0,63,46,46,59,122,25,50,59,51,52],
+  s9_label:[27,25,31,9,9,21,122,27,20,14,31,25,19,10,27,30,21], s9_h1:[25,53,52,46,40,53,54,63,122,9,63,47,41,122,27,46,51,44,53,41,122,30,51,61,51,46,59,51,41], s9_h2:[31,55,122,14,53,62,53,122,53,122,31,57,53,41,41,51,41,46,63,55,59,122,0,31,14,14,27],
+  s9_desc:[31,34,42,54,53,40,63,122,59,122,59,40,43,47,51,46,63,46,47,40,59,122,62,59,122,45,59,54,54,63,46,118,122,63,52,46,63,52,62,59,122,59,41,122,57,59,55,59,62,59,41,122,62,63,122,41,63,61,47,40,59,52,189,59,122,63,122,41,53,54,51,57,51,46,63,122,59,57,63,41,41,53,122,59,52,46,63,57,51,42,59,62,53,122,59,53,122,59,55,56,51,63,52,46,63,122,21,24,31,22,19,9,17,119,0,116],
+  s9_cta1:[31,34,42,54,53,40,59,40,122,27,40,43,47,51,46,63,46,47,40,59], s9_cta2:[9,53,54,51,57,51,46,59,40,122,27,57,63,41,41,53,122,27,52,46,63,57,51,42,59,62,53], s9_cta3:[12,63,40,122,25,59,55,59,62,59,41,122,62,63,122,9,63,61,47,40,59,52,189,59],
+  s9_footnote:[21,24,31,22,19,9,17,119,0,122,63,41,46,187,122,63,55,122,62,63,41,63,52,44,53,54,44,51,55,63,52,46,53,122,237,122,31,57,53,41,41,51,41,46,63,55,59,122,0,31,14,14,27,122,237,122,57,53,52,46,59,57,46,26,32,63,46,46,59,45,53,40,54,62,116,61,54,53,56,59,54],
+  footer_copy:[243,122,104,106,104,111,122,31,57,53,41,41,51,41,46,63,55,59,122,0,31,14,14,27,116,122,14,53,62,53,41,122,53,41,122,62,51,40,63,51,46,53,41,122,40,63,41,63,40,44,59,62,53,41,116],
+},
+
+es:{
+  nav_arch:[27,40,43,47,51,46,63,57,46,47,40,59], nav_sec:[9,63,61,47,40,51,62,59,62], nav_modes:[23,53,62,53,41], nav_zion:[0,51,53,52,122,27,19],
+  nav_eco:[31,57,53,41,51,41,46,63,55,59], nav_road:[8,53,59,62,55,59,42], nav_cta:[9,53,54,51,57,51,46,59,40,122,27,57,57,63,41,53],
+  hero_eyebrow:[31,57,53,41,51,41,46,63,55,59,122,0,31,14,14,27,122,8270,122,25,59,42,59,122,62,63,122,25,53,52,46,40,53,54,122,62,63,122,13,59,54,54,63,46],
+  hero_subtitle:[22,59,122,25,59,42,59,122,62,63,122,25,53,52,46,40,53,54,122,9,53,56,63,40,59,52,59,80,42,59,40,59,122,27,57,46,51,44,53,41,122,30,51,61,51,46,59,54,63,41],
+  hero_desc:[21,24,31,22,19,9,17,119,0,122,63,41,122,54,59,122,57,59,42,59,122,62,63,122,57,53,52,46,40,53,54,122,41,63,61,47,40,53,122,62,63,122,59,57,46,51,44,53,41,122,62,63,54,122,63,57,53,41,51,41,46,63,55,59,122,0,31,14,14,27,122,8270,122,57,53,55,56,51,52,59,52,62,53,122,59,57,57,63,41,53,122,55,47,54,46,51,57,50,59,51,52,118,122,57,53,52,57,51,63,52,57,51,59,122,51,52,46,63,54,51,61,63,52,46,63,122,62,63,122,46,40,59,52,41,59,57,57,51,53,52,63,41,118,122,55,53,62,53,41,122,53,42,63,40,59,46,51,44,53,41,122,53,40,51,63,52,46,59,62,53,41,122,59,122,54,59,122,42,40,51,44,59,57,51,62,59,62,122,63,122,51,52,41,51,61,50,46,41,122,59,41,51,41,46,51,62,53,41,122,42,53,40,122,0,51,53,52,122,63,52,122,47,52,122,63,52,46,53,40,52,53,122,47,52,51,60,51,57,59,62,53,116],
+  hero_cta1:[31,34,42,54,53,40,59,40,122,27,40,43,47,51,46,63,57,46,47,40,59], hero_cta2:[12,63,40,122,25,59,42,59,41,122,62,63,122,9,63,61,47,40,51,62,59,62], hero_cta3:[9,53,54,51,57,51,46,59,40,122,27,57,57,63,41,53,122,27,52,46,51,57,51,42,59,62,53],
+  stat1_l:[27,57,57,63,41,53,122,59,122,8,63,62], stat2_l:[25,59,42,59,41,122,62,63,122,9,63,61,47,40,51,62,59,62], stat2_v:[27,57,46,51,44,59,41], stat3_l:[23,53,62,63,54,53,122,62,63,122,25,47,41,46,53,62,51,59], stat4_l:[19,52,46,63,54,51,61,63,52,57,51,59],
+  orbit_zion:[0,19,21,20,122,27,19], orbit_sec:[23,21,14,21,8,122,30,31,80,9,31,29,15,8,19,30,27,30], orbit_ghost:[23,21,30,21,80,29,18,21,9,14], orbit_mc:[27,25,25,31,9,21,80,23,15,22,14,19,25,18,27,19,20], orbit_zetta:[31,25,21,9,19,9,14,31,23,27,80,0,31,14,14,27],
+  s2_label:[11,15,147,122,31,9,122,21,24,31,22,19,9,17,119,0],
+  s2_h1:[20,53,122,9,53,54,53,122,47,52,59,122,13,59,54,54,63,46,116], s2_h2:[15,52,122,31,52,46,53,40,52,53,122,62,63,122,25,53,52,46,40,53,54,122,62,63,122,27,57,46,51,44,53,41,122,30,51,61,51,46,59,54,63,41,116],
+  s2_p1:[22,59,122,55,59,35,53,40,183,59,122,62,63,122,54,59,41,122,45,59,54,54,63,46,41,122,41,63,122,57,63,52,46,40,59,52,122,63,52,122,59,54,55,59,57,63,52,59,55,51,63,52,46,53,122,35,122,46,40,59,52,41,60,63,40,63,52,57,51,59,41,116,122,102,41,46,40,53,52,61,100,21,24,31,22,19,9,17,119,0,122,63,41,46,187,122,62,51,41,63,171,59,62,59,122,57,53,55,53,122,47,52,59,122,57,59,42,59,122,62,63,122,57,53,52,46,40,53,54,102,117,41,46,40,53,52,61,100,122,42,59,40,59,122,53,42,63,40,59,57,51,53,52,63,41,122,57,53,52,122,59,57,46,51,44,53,41,122,62,51,61,51,46,59,54,63,41,118,122,42,40,53,42,53,40,57,51,53,52,59,52,62,53,122,44,51,41,51,56,51,54,51,62,59,62,118,122,57,53,52,57,51,63,52,57,51,59,122,62,63,122,41,63,61,47,40,51,62,59,62,122,35,122,59,41,51,41,46,63,52,57,51,59,122,51,52,46,63,54,51,61,63,52,46,63,122,63,52,122,55,160,54,46,51,42,54,63,41,122,40,63,62,63,41,122,56,54,53,57,49,57,50,59,51,52,116],
+  s2_p2:[30,63,52,46,40,53,122,62,63,54,122,63,57,53,41,51,41,46,63,55,59,122,0,31,14,14,27,118,122,54,59,122,45,59,54,54,63,46,122,59,57,46,160,59,122,57,53,55,53,122,63,54,122,102,41,46,40,53,52,61,100,42,47,52,46,53,122,62,63,122,63,52,46,40,59,62,59,122,42,40,51,52,57,51,42,59,54,122,59,122,54,59,122,51,52,60,40,59,63,41,46,40,47,57,46,47,40,59,122,62,63,41,57,63,52,46,40,59,54,51,32,59,62,59,102,117,41,46,40,53,52,61,100,118,122,42,63,40,55,51,46,51,63,52,62,53,122,59,122,54,53,41,122,47,41,47,59,40,51,53,41,122,51,52,46,63,40,59,57,46,47,59,40,122,57,53,52,122,42,40,53,46,53,57,53,54,53,41,122,55,59,52,46,63,52,51,63,52,62,53,122,42,54,63,52,59,122,41,53,56,63,40,59,52,183,59,122,41,53,56,40,63,122,41,47,41,122,59,57,46,51,44,53,41,116],
+  s2_p3:[25,59,62,59,122,51,52,46,63,40,59,57,57,51,169,52,122,60,54,47,35,63,122,59,122,46,40,59,44,179,41,122,62,63,122,55,63,57,59,52,51,41,55,53,41,122,62,63,122,63,44,59,54,47,59,57,51,169,52,122,42,53,40,122,57,59,42,59,41,122,8270,122,62,63,41,62,63,122,59,52,187,54,51,41,51,41,122,62,63,122,57,53,52,46,40,59,46,53,41,122,50,59,41,46,59,122,44,63,40,51,60,51,57,59,57,51,169,52,122,62,63,122,40,47,46,59,41,122,8270,122,59,52,46,63,41,122,62,63,122,43,47,63,122,54,59,122,63,48,63,57,47,57,51,169,52,122,54,54,63,61,47,63,122,59,122,54,59,122,40,63,62,116],
+  wc1_t:[9,53,56,63,40,59,52,183,59,122,14,53,46,59,54,122,41,53,56,40,63,122,27,57,46,51,44,53,41], wc1_d:[27,40,43,47,51,46,63,57,46,47,40,59,122,52,53,119,57,47,41,46,53,62,51,59,54,116,122,14,47,41,122,57,54,59,44,63,41,122,42,63,40,55,59,52,63,57,63,52,122,56,59,48,53,122,46,47,122,57,53,52,46,40,53,54,122,63,34,57,54,47,41,51,44,53,122,63,52,122,57,59,62,59,122,42,47,52,46,53,122,62,63,54,122,57,51,57,54,53,122,62,63,122,44,51,62,59,122,62,63,122,54,59,122,46,40,59,52,41,59,57,57,51,169,52,116],
+  wc2_t:[31,44,59,54,47,59,57,51,169,52,122,62,63,122,9,63,61,47,40,51,62,59,62,122,42,53,40,122,25,59,42,59,41], wc2_d:[25,51,52,57,53,122,57,59,42,59,41,122,62,63,122,41,63,61,47,40,51,62,59,62,122,51,52,62,63,42,63,52,62,51,63,52,46,63,41,122,63,44,59,54,160,59,52,122,57,59,62,59,122,51,52,46,63,40,59,57,57,51,169,52,122,59,52,46,63,41,122,35,122,62,47,40,59,52,46,63,122,54,59,122,63,48,63,57,47,57,51,169,52,118,122,42,40,53,42,53,40,57,51,53,52,59,52,62,53,122,57,53,52,57,51,63,52,57,51,59,122,57,53,52,46,51,52,47,59,122,62,63,54,122,40,51,63,41,61,53,116],
+  wc3_t:[19,52,46,63,61,40,59,57,51,169,52,122,62,63,122,19,52,46,63,54,51,61,63,52,57,51,59,122,0,51,53,52], wc3_d:[22,59,122,59,41,51,41,46,63,52,57,51,59,122,59,52,59,54,183,46,51,57,59,122,57,53,52,46,63,34,46,47,59,54,122,59,35,47,62,59,122,59,122,54,53,41,122,47,41,47,59,40,51,53,41,122,59,122,57,53,55,42,40,63,52,62,63,40,122,40,47,46,59,41,118,122,40,51,63,41,61,53,41,122,35,122,40,63,41,47,54,46,59,62,53,41,122,59,52,46,63,41,122,62,63,122,57,53,52,60,51,40,55,59,40,122,57,47,59,54,43,47,51,63,40,122,53,42,63,40,59,57,51,169,52,116],
+  wc4_t:[27,40,43,47,51,46,63,57,46,47,40,59,122,62,63,122,20,51,44,63,54,122,31,57,53,41,51,41,46,63,55,59], wc4_d:[25,53,52,63,57,46,51,44,51,62,59,62,122,52,59,46,51,44,59,122,57,53,52,122,0,119,9,45,59,42,118,122,0,119,28,51,52,59,52,57,63,118,122,0,119,10,59,62,118,122,0,119,10,59,35,122,35,122,54,59,122,0,63,46,46,59,122,25,50,59,51,52,122,62,63,41,62,63,122,47,52,122,160,52,51,57,53,122,63,52,46,53,40,52,53,122,47,52,51,60,51,57,59,62,53,116],
+  s3_label:[10,19,22,27,8,31,9,122,28,15,20,30,27,23,31,20,14,27,22,31,9], s3_h1:[25,47,59,46,40,53,122,10,40,51,52,57,51,42,51,53,41,116], s3_h2:[15,52,59,122,25,59,42,59,122,62,63,122,25,53,52,46,40,53,54,116],
+  p1_num:[106,107,122,117,122,9,21,24,31,8,27,20,151,27], p1_t:[9,53,56,63,40,59,52,183,59], p1_d:[22,53,41,122,47,41,47,59,40,51,53,41,122,55,59,52,46,51,63,52,63,52,122,57,47,41,46,53,62,51,59,122,35,122,57,53,52,46,40,53,54,122,46,53,46,59,54,122,41,53,56,40,63,122,41,47,41,122,59,57,46,51,44,53,41,116,122,21,24,31,22,19,9,17,119,0,122,41,63,122,57,53,52,41,46,40,47,35,63,122,59,54,40,63,62,63,62,53,40,122,62,63,54,122,42,40,51,52,57,51,42,51,53,122,62,63,122,43,47,63,122,54,59,122,42,40,53,42,51,63,62,59,62,122,35,122,63,54,122,57,53,52,46,40,53,54,122,62,63,56,63,52,122,42,63,40,55,59,52,63,57,63,40,122,63,34,57,54,47,41,51,44,59,55,63,52,46,63,122,57,53,52,122,63,54,122,47,41,47,59,40,51,53,122,8270,122,63,52,122,57,59,62,59,122,57,59,42,59,122,53,42,63,40,59,46,51,44,59,116],
+  p2_num:[106,104,122,117,122,9,31,29,15,8,19,30,27,30], p2_t:[9,63,61,47,40,51,62,59,62], p2_d:[25,59,62,59,122,51,52,46,63,40,59,57,57,51,169,52,122,63,41,122,63,44,59,54,47,59,62,59,122,42,53,40,122,55,63,57,59,52,51,41,55,53,41,122,62,63,122,41,63,61,47,40,51,62,59,62,122,42,53,40,122,57,59,42,59,41,122,62,51,41,63,171,59,62,53,41,122,42,59,40,59,122,40,63,62,47,57,51,40,122,63,54,122,40,51,63,41,61,53,122,35,122,55,63,48,53,40,59,40,122,54,59,122,57,53,52,57,51,63,52,57,51,59,122,62,63,122,46,40,59,52,41,59,57,57,51,169,52,122,59,52,46,63,41,122,62,63,122,43,47,63,122,54,59,41,122,53,42,63,40,59,57,51,53,52,63,41,122,54,54,63,61,47,63,52,122,59,54,122,63,41,46,59,62,53,122,62,63,122,63,48,63,57,47,57,51,169,52,122,63,52,122,54,59,122,40,63,62,116],
+  p3_num:[106,105,122,117,122,10,8,19,12,27,25,19,30,27,30], p3_t:[10,40,51,44,59,57,51,62,59,62], p3_d:[22,53,41,122,55,53,62,53,41,122,53,42,63,40,59,46,51,44,53,41,122,42,63,40,55,51,46,63,52,122,59,122,54,53,41,122,47,41,47,59,40,51,53,41,122,57,53,52,46,40,53,54,59,40,122,57,169,55,53,122,41,47,122,45,59,54,54,63,46,122,51,52,46,63,40,59,57,46,160,59,122,57,53,52,122,54,59,122,51,52,60,40,59,63,41,46,40,47,57,46,47,40,59,122,42,160,56,54,51,57,59,122,62,63,122,56,54,53,57,49,57,50,59,51,52,122,8270,122,62,63,41,62,63,122,44,51,41,51,56,51,54,51,62,59,62,122,63,41,46,187,52,62,59,40,122,50,59,41,46,59,122,42,40,51,44,59,57,51,62,59,62,122,53,42,63,40,59,46,51,44,59,122,62,63,122,52,51,44,63,54,122,61,50,53,41,46,122,57,53,52,122,63,34,42,53,41,51,57,51,169,52,122,62,63,122,62,51,40,63,57,57,51,169,52,122,40,63,62,47,57,51,62,59,116],
+  p4_num:[106,110,122,117,122,19,20,14,31,22,19,29,31,20,25,19,27], p4_t:[19,52,46,63,54,51,61,63,52,57,51,59], p4_d:[0,51,53,52,122,42,40,53,42,53,40,57,51,53,52,59,122,59,41,51,41,46,63,52,57,51,59,122,59,52,59,54,183,46,51,57,59,122,42,59,40,59,122,59,35,47,62,59,40,122,59,122,54,53,41,122,47,41,47,59,40,51,53,41,122,59,122,57,53,55,42,40,63,52,62,63,40,122,55,63,48,53,40,122,40,51,63,41,61,53,41,118,122,40,47,46,59,41,122,35,122,42,53,41,51,56,54,63,41,122,40,63,41,47,54,46,59,62,53,41,122,59,52,46,63,41,122,62,63,122,63,48,63,57,47,46,59,40,122,46,40,59,52,41,59,57,57,51,53,52,63,41,122,8270,122,59,57,46,47,59,52,62,53,122,57,53,55,53,122,47,52,59,122,57,59,42,59,122,62,63,122,59,41,63,41,53,40,59,55,51,63,52,46,53,118,122,52,47,52,57,59,122,62,63,122,60,53,40,55,59,122,59,47,46,169,52,53,55,59,116],
+  s4_label:[27,8,11,15,19,14,31,25,14,15,8,27,122,30,31,122,9,31,29,15,8,19,30,27,30], s4_h1:[9,63,61,47,40,51,62,59,62], s4_h2:[42,53,40,122,30,51,41,63,171,53],
+  s4_desc:[21,24,31,22,19,9,17,119,0,122,51,52,46,63,61,40,59,122,55,160,54,46,51,42,54,63,41,122,57,59,42,59,41,122,62,63,122,41,63,61,47,40,51,62,59,62,122,43,47,63,122,53,42,63,40,59,52,122,59,52,46,63,41,122,35,122,62,47,40,59,52,46,63,122,54,59,41,122,51,52,46,63,40,59,57,57,51,53,52,63,41,122,56,54,53,57,49,57,50,59,51,52,118,122,62,59,52,62,53,122,59,122,54,53,41,122,47,41,47,59,40,51,53,41,122,44,51,41,51,56,51,54,51,62,59,62,122,35,122,57,53,52,46,40,53,54,122,41,53,56,40,63,122,63,54,122,40,51,63,41,61,53,122,62,63,122,46,40,59,52,41,59,57,57,51,169,52,122,63,52,122,57,59,62,59,122,63,46,59,42,59,116],
+  l1_t:[23,53,62,63,54,53,122,62,63,122,25,47,41,46,53,62,51,59,122,62,63,122,27,57,46,51,44,53,41], l1_d:[27,40,43,47,51,46,63,57,46,47,40,59,122,52,53,119,57,47,41,46,53,62,51,59,54,122,62,51,41,63,171,59,62,59,122,42,59,40,59,122,42,40,63,41,63,40,44,59,40,122,54,59,122,42,40,53,42,51,63,62,59,62,122,62,63,54,122,47,41,47,59,40,51,53,116,122,22,59,41,122,57,54,59,44,63,41,122,42,40,51,44,59,62,59,41,122,52,47,52,57,59,122,41,59,54,63,52,122,62,63,54,122,63,52,46,53,40,52,53,122,62,63,54,122,47,41,47,59,40,51,53,116],
+  l2_t:[12,63,40,51,60,51,57,59,57,51,169,52,122,62,63,122,8,47,46,59], l2_d:[31,44,59,54,47,59,57,51,169,52,122,62,63,122,40,47,46,59,41,122,62,63,122,46,40,59,52,41,59,57,57,51,169,52,122,62,51,41,42,53,52,51,56,54,63,41,122,63,52,122,60,47,63,52,46,63,41,122,62,63,122,54,51,43,47,51,62,63,32,122,59,52,46,63,41,122,62,63,122,57,53,52,60,51,40,55,59,40,122,54,59,122,63,48,63,57,47,57,51,169,52,116],
+  l3_t:[25,53,52,57,51,63,52,57,51,59,122,62,63,122,25,53,52,46,40,59,46,53], l3_d:[23,63,57,59,52,51,41,55,53,41,122,62,63,122,44,63,40,51,60,51,57,59,57,51,169,52,122,43,47,63,122,59,35,47,62,59,52,122,59,122,51,62,63,52,46,51,60,51,57,59,40,122,40,51,63,41,61,53,41,122,42,53,46,63,52,57,51,59,54,63,41,122,62,63,122,57,53,52,46,40,59,46,53,41,122,35,122,42,59,46,40,53,52,63,41,122,62,63,122,57,53,55,42,53,40,46,59,55,51,63,52,46,53,122,59,52,169,55,59,54,53,41,116],
+  l4_t:[10,40,51,44,59,57,51,62,59,62,122,21,42,63,40,59,46,51,44,59], l4_d:[23,53,62,53,41,122,43,47,63,122,40,63,62,47,57,63,52,122,54,59,122,63,34,42,53,41,51,57,51,169,52,122,62,47,40,59,52,46,63,122,51,52,46,63,40,59,57,57,51,53,52,63,41,122,53,52,119,57,50,59,51,52,118,122,42,40,53,42,53,40,57,51,53,52,59,52,62,53,122,52,51,44,63,54,63,41,122,62,63,122,44,51,41,51,56,51,54,51,62,59,62,122,57,53,52,60,51,61,47,40,59,56,54,63,41,116],
+  l5_t:[19,52,41,51,61,50,46,41,122,27,41,51,41,46,51,62,53,41,122,42,53,40,122,0,51,53,52], l5_d:[9,53,42,53,40,46,63,122,59,52,59,54,183,46,51,57,53,122,43,47,63,122,59,35,47,62,59,122,59,122,54,53,41,122,47,41,47,59,40,51,53,41,122,59,122,63,44,59,54,47,59,40,122,63,54,122,57,53,52,46,63,34,46,53,122,62,63,122,40,51,63,41,61,53,122,59,52,46,63,41,122,62,63,122,54,59,122,63,48,63,57,47,57,51,169,52,122,8270,122,63,54,122,42,47,52,46,53,122,62,63,122,44,63,40,51,60,51,57,59,57,51,169,52,122,60,51,52,59,54,122,62,63,122,59,41,63,41,53,40,59,55,51,63,52,46,53,116],
+  stack_label:[10,19,22,27,122,30,31,122,10,8,21,14,31,25,25,19,137,20], stack_active:[10,8,21,14,31,25,25,19,137,20,122,27,25,14,19,12,27],
+  stack_l1:[23,21,30,31,22,21,122,30,31,122,25,15,9,14,21,30,19,27,122,8270,122,22,107], stack_l2:[12,31,8,19,28,19,25,27,25,19,137,20,122,30,31,122,8,15,14,27,122,8270,122,22,104], stack_l3:[25,21,20,25,19,31,20,25,19,27,122,30,31,122,25,21,20,14,8,27,14,21,122,8270,122,22,105], stack_l4:[10,8,19,12,27,25,19,30,27,30,122,21,10,31,8,27,14,19,12,27,122,8270,122,22,110], stack_l5:[19,20,9,19,29,18,14,9,122,0,19,21,20,122,8270,122,22,111],
+  stack_model:[23,21,30,31,22,21,122,30,31,122,9,31,29,15,8,19,30,27,30], stack_eval:[31,44,59,54,47,59,57,51,169,52,122,10,40,63,119,31,48,63,57,47,57,51,169,52], stack_sub:[14,53,62,59,41,122,54,59,41,122,57,59,42,59,41,122,59,57,46,51,44,59,41,122,59,52,46,63,41,122,62,63,122,54,59,122,46,40,59,52,41,55,51,41,51,169,52,122,59,122,54,59,122,40,63,62],
+  s5_label:[23,21,30,21,9,122,21,10,31,8,27,14,19,12,21,9], s5_h1:[14,40,63,41,122,23,53,62,53,41,116], s5_h2:[15,52,122,31,52,46,53,40,52,53,116],
+  s5_desc:[25,53,52,60,51,61,47,40,59,122,57,169,55,53,122,21,24,31,22,19,9,17,119,0,122,51,52,46,63,40,59,57,46,160,59,122,57,53,52,122,54,59,122,51,52,60,40,59,63,41,46,40,47,57,46,47,40,59,122,56,54,53,57,49,57,50,59,51,52,122,8270,122,62,63,41,62,63,122,59,57,57,63,41,53,122,63,41,46,187,52,62,59,40,122,50,59,41,46,59,122,53,42,63,40,59,57,51,169,52,122,57,53,52,122,55,187,34,51,55,59,122,42,40,51,44,59,57,51,62,59,62,116],
+  m1_badge:[23,53,62,53,122,31,41,46,187,52,62,59,40], m1_name:[27,57,57,63,41,53,122,31,41,46,187,52,62,59,40], m1_desc:[30,51,41,63,171,59,62,53,122,42,59,40,59,122,54,59,122,61,63,41,46,51,169,52,122,57,53,46,51,62,51,59,52,59,122,62,63,122,59,57,46,51,44,53,41,122,55,47,54,46,51,57,50,59,51,52,122,57,53,52,122,51,52,46,63,61,40,59,57,51,169,52,122,57,53,55,42,54,63,46,59,122,59,54,122,63,57,53,41,51,41,46,63,55,59,122,35,122,41,53,42,53,40,46,63,122,59,57,46,51,44,53,122,62,63,122,59,41,63,41,53,40,59,55,51,63,52,46,53,122,0,51,53,52,116],
+  m1_f1:[12,51,41,51,56,51,54,51,62,59,62,122,62,63,122,59,57,46,51,44,53,41,122,55,47,54,46,51,57,50,59,51,52], m1_f2:[27,57,57,63,41,53,122,59,122,42,40,53,46,53,57,53,54,53,41,122,62,63,54,122,63,57,53,41,51,41,46,63,55,59], m1_f3:[27,41,63,41,53,40,59,55,51,63,52,46,53,122,0,51,53,52,122,59,57,46,51,44,53], m1_f4:[31,44,59,54,47,59,57,51,169,52,122,62,63,122,40,47,46,59,122,63,41,46,187,52,62,59,40],
+  m2_badge:[23,53,62,53,122,10,40,53,46,63,61,51,62,53], m2_name:[23,53,62,53,122,10,40,53,46,63,61,51,62,53], m2_desc:[25,59,42,59,41,122,62,63,122,44,63,40,51,60,51,57,59,57,51,169,52,122,55,63,48,53,40,59,62,59,41,122,41,63,122,59,57,46,51,44,59,52,122,42,59,40,59,122,51,52,46,63,40,59,57,57,51,53,52,63,41,122,62,63,122,55,59,35,53,40,122,40,51,63,41,61,53,116,122,22,59,41,122,57,51,52,57,53,122,57,59,42,59,41,122,62,63,122,41,63,61,47,40,51,62,59,62,122,41,63,122,59,42,54,51,57,59,52,122,57,53,52,122,63,41,57,40,47,46,51,52,51,53,122,62,63,122,57,53,52,46,40,59,46,53,122,63,54,63,44,59,62,53,116],
+  m2_f1:[22,59,41,122,111,122,57,59,42,59,41,122,62,63,122,41,63,61,47,40,51,62,59,62,122,59,57,46,51,44,59,41], m2_f2:[12,63,40,51,60,51,57,59,57,51,169,52,122,62,63,122,57,53,52,46,40,59,46,53,122,55,63,48,53,40,59,62,59], m2_f3:[10,47,52,46,47,59,57,51,169,52,122,62,63,122,40,51,63,41,61,53,122,0,51,53,52,122,63,54,63,44,59,62,59], m2_f4:[29,59,46,63,41,122,62,63,122,57,53,52,60,51,40,55,59,57,51,169,52,122,42,40,63,119,63,48,63,57,47,57,51,169,52],
+  m3_badge:[23,53,62,53,122,29,50,53,41,46], m3_name:[23,53,62,53,122,29,50,53,41,46], m3_desc:[31,52,46,53,40,52,53,122,53,42,63,40,59,46,51,44,53,122,63,52,60,53,57,59,62,53,122,63,52,122,42,40,51,44,59,57,51,62,59,62,122,62,51,41,63,171,59,62,53,122,42,59,40,59,122,40,63,62,47,57,51,40,122,54,59,122,63,34,42,53,41,51,57,51,169,52,122,62,63,122,62,51,40,63,57,57,51,53,52,63,41,122,35,122,54,59,122,44,51,41,51,56,51,54,51,62,59,62,122,62,63,122,51,52,46,63,40,59,57,57,51,53,52,63,41,122,62,47,40,59,52,46,63,122,53,42,63,40,59,57,51,53,52,63,41,122,53,52,119,57,50,59,51,52,116],
+  m3_f1:[31,34,42,53,41,51,57,51,169,52,122,62,63,122,62,51,40,63,57,57,51,169,52,122,40,63,62,47,57,51,62,59], m3_f2:[12,51,41,51,56,51,54,51,62,59,62,122,62,63,122,51,52,46,63,40,59,57,57,51,169,52,122,41,63,54,63,57,46,51,44,59], m3_f3:[31,52,40,47,46,59,55,51,63,52,46,53,122,53,40,51,63,52,46,59,62,53,122,59,122,54,59,122,42,40,51,44,59,57,51,62,59,62], m3_f4:[18,47,63,54,54,59,122,53,52,119,57,50,59,51,52,122,55,183,52,51,55,59],
+  s6_label:[25,27,10,27,122,30,31,122,19,20,14,31,22,19,29,31,20,25,19,27], s6_h1:[0,51,53,52], s6_h2:[19,52,46,63,54,51,61,63,52,57,51,59,122,62,63,122,27,41,63,41,53,40,59,55,51,63,52,46,53],
+  s6_p1:[0,51,53,52,122,59,57,46,160,59,122,57,53,55,53,122,47,52,59,122,57,59,42,59,122,59,52,59,54,183,46,51,57,59,122,62,63,52,46,40,53,122,62,63,54,122,63,52,46,53,40,52,53,122,21,24,31,22,19,9,17,119,0,116,122,31,44,59,54,160,59,122,62,59,46,53,41,122,53,52,119,57,50,59,51,52,118,122,40,47,46,59,41,122,62,63,122,46,40,59,52,41,59,57,57,51,169,52,122,35,122,41,63,171,59,54,63,41,122,62,63,122,57,53,52,46,40,59,46,53,41,122,42,59,40,59,122,42,40,53,42,53,40,57,51,53,52,59,40,122,51,52,41,51,61,50,46,41,122,57,53,52,46,63,34,46,47,59,54,63,41,122,59,52,46,63,41,122,62,63,122,43,47,63,122,54,53,41,122,47,41,47,59,40,51,53,41,122,63,48,63,57,47,46,63,52,122,53,42,63,40,59,57,51,53,52,63,41,116],
+  s6_p2:[0,51,53,52,122,52,53,122,63,48,63,57,47,46,59,122,46,40,59,52,41,59,57,57,51,53,52,63,41,122,62,63,122,60,53,40,55,59,122,59,47,46,169,52,53,55,59,116,122,14,53,62,59,41,122,54,59,41,122,53,42,63,40,59,57,51,53,52,63,41,122,42,63,40,55,59,52,63,57,63,52,122,56,59,48,53,122,59,47,46,53,40,51,32,59,57,51,169,52,122,62,63,54,122,47,41,47,59,40,51,53,122,8270,122,0,51,53,52,122,42,40,53,42,53,40,57,51,53,52,59,122,51,52,41,51,61,50,46,118,122,54,53,41,122,47,41,47,59,40,51,53,41,122,40,63,46,51,63,52,63,52,122,54,59,122,59,47,46,53,40,51,62,59,62,122,62,63,122,62,63,57,51,41,51,169,52,116],
+  zc1:[27,52,187,54,51,41,51,41,122,62,63,122,41,63,171,59,54,63,41,122,62,63,122,40,51,63,41,61,53,122,62,63,122,57,53,52,46,40,59,46,53,41], zc2:[31,44,59,54,47,59,57,51,169,52,122,62,63,122,40,47,46,59,122,62,63,122,54,51,43,47,51,62,63,32], zc3:[8,63,57,53,52,53,57,51,55,51,63,52,46,53,122,62,63,122,42,59,46,40,53,52,63,41,122,53,52,119,57,50,59,51,52], zc4:[10,40,53,35,63,57,57,51,169,52,122,62,63,122,40,63,41,47,54,46,59,62,53,122,62,63,122,63,48,63,57,47,57,51,169,52], zc5:[10,47,52,46,47,59,57,51,169,52,122,62,63,122,40,51,63,41,61,53,122,57,53,52,46,63,34,46,47,59,54],
+  zion_notice:[9,21,22,21,122,27,9,31,9,21,8,27,23,19,31,20,14,21,122,237,122,9,19,20,122,31,16,31,25,15,25,19,137,20,122,27,15,14,137,20,21,23,27,122,237,122,27,15,14,21,8,19,0,27,25,19,137,20,122,30,31,22,122,15,9,15,27,8,19,21,122,8,31,11,15,31,8,19,30,27],
+  term_status:[31,9,14,27,30,21,122,30,31,122,9,31,9,19,137,20], term_active:[27,25,14,19,12,27], term_last:[128,22,14,19,23,21,122,27,20,155,22,19,9,19,9], term_exec:[31,16,31,25,15,25,19,137,20], term_auth:[27,15,14,18,122,15,9,15,27,8,19,21],
+  s7_label:[19,20,14,31,29,8,27,25,19,137,20,122,27,22,122,31,25,21,9,19,9,14,31,23,27], s7_h1:[25,53,52,41,46,40,47,51,62,53,122,42,59,40,59,122,63,54], s7_h2:[31,57,53,41,51,41,46,63,55,59,122,0,31,14,14,27],
+  s7_desc:[21,24,31,22,19,9,17,119,0,122,63,41,46,187,122,62,51,41,63,171,59,62,59,122,42,59,40,59,122,53,42,63,40,59,40,122,57,53,55,53,122,54,59,122,57,59,42,59,122,62,63,122,45,59,54,54,63,46,122,47,52,51,60,51,57,59,62,59,122,62,63,54,122,63,57,53,41,51,41,46,63,55,59,122,0,31,14,14,27,122,8270,122,42,40,53,42,53,40,57,51,53,52,59,52,62,53,122,59,57,57,63,41,53,122,52,59,46,51,44,53,122,59,122,57,59,62,59,122,42,40,53,46,53,57,53,54,53,122,62,63,41,62,63,122,47,52,122,160,52,51,57,53,122,63,52,46,53,40,52,53,122,41,53,56,63,40,59,52,53,116],
+  eco_zswap:[25,59,42,59,122,62,63,122,51,52,46,63,40,57,59,55,56,51,53,122,62,63,41,57,63,52,46,40,59,54,51,32,59,62,53,122,62,63,122,59,57,46,51,44,53,41,122,62,63,52,46,40,53,122,62,63,54,122,63,57,53,41,51,41,46,63,55,59,122,0,31,14,14,27],
+  eco_zfin:[19,52,60,40,59,63,41,46,40,47,57,46,47,40,59,122,60,51,52,59,52,57,51,63,40,59,122,35,122,42,40,53,46,53,57,53,54,53,41,122,62,63,122,59,57,57,63,41,53,122,59,122,40,63,52,62,51,55,51,63,52,46,53],
+  eco_zpad:[25,59,42,59,122,62,63,122,42,59,40,46,51,57,51,42,59,57,51,169,52,122,42,59,40,59,122,54,59,52,32,59,55,51,63,52,46,53,41,122,62,63,122,42,40,53,35,63,57,46,53,41,122,62,63,54,122,63,57,53,41,51,41,46,63,55,59],
+  eco_zpay:[19,52,60,40,59,63,41,46,40,47,57,46,47,40,59,122,62,63,122,42,59,61,53,122,42,59,40,59,122,46,40,59,52,41,59,57,57,51,53,52,63,41,122,57,53,52,122,59,57,46,51,44,53,41,122,62,51,61,51,46,59,54,63,41],
+  eco_zchain:[25,59,42,59,122,56,54,53,57,49,57,50,59,51,52,122,52,59,46,51,44,59,122,43,47,63,122,51,55,42,47,54,41,59,122,63,54,122,63,57,53,41,51,41,46,63,55,59,122,0,31,14,14,27],
+  s8_label:[8,21,27,30,23,27,10,122,30,31,122,30,31,9,27,8,8,21,22,22,21], s8_h1:[25,47,59,46,40,53,122,28,59,41,63,41,116], s8_h2:[15,52,59,122,27,40,43,47,51,46,63,57,46,47,40,59,122,25,53,55,42,54,63,46,59,116],
+  rp1_num:[28,27,9,31,122,106,107], rp1_name:[28,47,52,62,59,57,51,169,52], rp1_i1:[25,53,40,63,122,62,63,122,45,59,54,54,63,46,122,55,47,54,46,51,57,50,59,51,52], rp1_i2:[29,63,41,46,51,169,52,122,41,63,61,47,40,59,122,62,63,122,59,57,46,51,44,53,41], rp1_i3:[25,59,42,59,122,62,63,122,44,51,41,51,56,51,54,51,62,59,62,122,62,63,122,46,40,59,52,41,59,57,57,51,53,52,63,41], rp1_i4:[25,53,52,63,57,46,51,44,51,62,59,62,122,51,52,51,57,51,59,54,122,59,54,122,63,57,53,41,51,41,46,63,55,59],
+  rp2_num:[28,27,9,31,122,106,104], rp2_name:[19,52,46,63,54,51,61,63,52,57,51,59], rp2_i1:[19,52,46,63,61,40,59,57,51,169,52,122,62,63,54,122,59,41,63,41,53,40,122,0,51,53,52], rp2_i2:[9,51,41,46,63,55,59,41,122,62,63,122,57,53,52,57,51,63,52,57,51,59,122,62,63,122,40,47,46,59], rp2_i3:[18,63,40,40,59,55,51,63,52,46,59,41,122,62,63,122,63,44,59,54,47,59,57,51,169,52,122,62,63,122,40,51,63,41,61,53], rp2_i4:[27,52,187,54,51,41,51,41,122,62,63,122,41,63,171,59,54,63,41,122,62,63,122,57,53,52,46,40,59,46,53],
+  rp3_num:[28,27,9,31,122,106,105], rp3_name:[31,34,42,59,52,41,51,169,52,122,62,63,122,10,40,51,44,59,57,51,62,59,62], rp3_i1:[27,40,43,47,51,46,63,57,46,47,40,59,122,62,63,54,122,55,53,62,53,122,29,50,53,41,46], rp3_i2:[12,51,41,51,56,51,54,51,62,59,62,122,41,63,54,63,57,46,51,44,59,122,62,63,122,51,52,46,63,40,59,57,57,51,53,52,63,41], rp3_i3:[25,53,52,46,40,53,54,122,53,42,63,40,59,46,51,44,53,122,59,44,59,52,32,59,62,53], rp3_i4:[31,52,40,47,46,59,55,51,63,52,46,53,122,53,40,51,63,52,46,59,62,53,122,59,122,54,59,122,42,40,51,44,59,57,51,62,59,62],
+  rp4_num:[28,27,9,31,122,106,110], rp4_name:[19,52,46,63,61,40,59,57,51,169,52,122,59,54,122,31,57,53,41,51,41,46,63,55,59], rp4_i1:[19,52,46,63,40,59,57,57,51,169,52,122,52,59,46,51,44,59,122,57,53,52,122,0,119,9,45,59,42], rp4_i2:[25,53,52,63,57,46,51,44,51,62,59,62,122,62,63,122,54,51,43,47,51,62,63,32,122,0,119,28,51,52,59,52,57,63], rp4_i3:[25,59,42,59,122,62,63,122,42,59,40,46,51,57,51,42,59,57,51,169,52,122,0,119,10,59,62], rp4_i4:[25,53,55,42,59,46,51,56,51,54,51,62,59,62,122,57,53,52,122,0,63,46,46,59,122,25,50,59,51,52],
+  s9_label:[27,25,25,31,9,21,122,27,20,14,19,25,19,10,27,30,21], s9_h1:[25,53,52,46,40,53,54,59,122,14,47,41,122,27,57,46,51,44,53,41,122,30,51,61,51,46,59,54,63,41], s9_h2:[31,52,122,14,53,62,53,122,63,54,122,31,57,53,41,51,41,46,63,55,59,122,0,31,14,14,27],
+  s9_desc:[31,34,42,54,53,40,59,122,54,59,122,59,40,43,47,51,46,63,57,46,47,40,59,122,62,63,122,54,59,122,45,59,54,54,63,46,118,122,57,53,55,42,40,63,52,62,63,122,54,59,41,122,57,59,42,59,41,122,62,63,122,41,63,61,47,40,51,62,59,62,122,35,122,41,53,54,51,57,51,46,59,122,59,57,57,63,41,53,122,59,52,46,51,57,51,42,59,62,53,122,59,54,122,63,52,46,53,40,52,53,122,21,24,31,22,19,9,17,119,0,116],
+  s9_cta1:[31,34,42,54,53,40,59,40,122,27,40,43,47,51,46,63,57,46,47,40,59], s9_cta2:[9,53,54,51,57,51,46,59,40,122,27,57,57,63,41,53,122,27,52,46,51,57,51,42,59,62,53], s9_cta3:[12,63,40,122,25,59,42,59,41,122,62,63,122,9,63,61,47,40,51,62,59,62],
+  s9_footnote:[21,24,31,22,19,9,17,119,0,122,63,41,46,187,122,63,52,122,62,63,41,59,40,40,53,54,54,53,122,237,122,31,57,53,41,51,41,46,63,55,59,122,0,31,14,14,27,122,237,122,57,53,52,46,59,57,46,26,32,63,46,46,59,45,53,40,54,62,116,61,54,53,56,59,54],
+  footer_copy:[243,122,104,106,104,111,122,31,57,53,41,51,41,46,63,55,59,122,0,31,14,14,27,116,122,14,53,62,53,41,122,54,53,41,122,62,63,40,63,57,50,53,41,122,40,63,41,63,40,44,59,62,53,41,116],
+},
+
+zh:{
+  nav_arch:[26604,26590], nav_sec:[23507,20786], nav_modes:[27259,24405], nav_zion:[0,51,53,52,122,27,19],
+  nav_eco:[30021,24667,31905,32389], nav_road:[36277,32485,22180], nav_cta:[30057,35757,35813,38324],
+  hero_eyebrow:[0,31,14,14,27,122,30021,24667,31905,32389,122,8270,122,38123,21343,25597,21100,23576],
+  hero_subtitle:[25898,23309,36126,20221,30430,20065,26393,25597,21100,23576],
+  hero_desc:[21,24,31,22,19,9,17,119,0,122,26229,122,0,31,14,14,27,122,30021,24667,31905,32389,30430,23507,20786,36126,20221,25597,21100,23576,122,8270,122,23644,22848,38052,35813,38324,12379,26144,32935,20222,26185,24901,30655,12379,20159,38602,31131,20064,23462,21579,30430,25751,20230,27259,24405,21718,122,0,51,53,52,122,36831,21235,27972,23429,25902,21586,22386,20058,20080,32389,20058,29685,22745,20087,12376],
+  hero_cta1:[25592,32120,26604,26590], hero_cta2:[26559,30545,23507,20786,23576], hero_cta3:[30057,35757,26035,26437,35813,38324],
+  stat1_l:[32523,32390,35813,38324], stat2_l:[23507,20786,23576], stat2_v:[28001,36249], stat3_l:[25090,31739,27259,22481], stat4_l:[26144,32935],
+  orbit_zion:[0,19,21,20,122,27,19], orbit_sec:[23507,20786,80,24399,25748], orbit_ghost:[38602,36593,80,27259,24405], orbit_mc:[22848,38052,80,35813,38324], orbit_zetta:[0,31,14,14,27,80,30021,24667,31905,32389],
+  s2_label:[20122,19986,26229,122,21,24,31,22,19,9,17,119,0],
+  s2_h1:[20055,20127,20127,26229,38123,21343,12376], s2_h2:[25898,23309,36126,20221,25597,21100,29685,22745,12376],
+  s2_p1:[22909,22848,25898,38123,21343,20041,27826,20180,23298,20722,21718,36662,36220,12376,102,41,46,40,53,52,61,100,21,24,31,22,19,9,17,119,0,122,35057,35812,35835,20064,25898,23309,36126,20221,25751,20230,30430,25597,21100,23576,102,117,41,46,40,53,52,61,100,65366,22386,22848,20080,21344,22285,38052,32523,32390,20048,25482,20417,21429,35227,24701,12379,23507,20786,24901,30655,21718,26144,32935,21269,21235,12376],
+  s2_p2:[22386,122,0,31,14,14,27,122,30021,24667,31905,32389,20087,65366,38123,21343,20230,20064,21473,20087,24473,21324,22432,30746,35812,26087,30430,102,41,46,40,53,52,61,100,20065,35291,20799,21433,28899,102,117,41,46,40,53,52,61,100,65366,20261,30066,25197,32935,22853,22386,20052,21269,35828,20222,20168,30430,21590,26028,20359,25435,23459,36126,20221,30430,23510,20786,20065,26393,12376],
+  s2_p3:[27541,27515,20222,20168,22386,25149,34838,21098,36836,32523,32390,19985,21015,65366,37031,20288,32405,36765,21084,23576,35742,20330,26464,21100,122,8270,122,20116,21586,32508,21084,26570,21098,36277,30059,39638,35739,12376],
+  wc1_t:[23510,20786,36126,20221,20065,26393], wc1_d:[38660,25090,31739,26604,26590,12376,24818,30430,23452,38143,22386,20222,26185,30021,21543,21554,26437,30430,27541,20080,33496,28899,37031,22878,20180,24818,30430,20041,23556,25597,21100,19985,20049,12376],
+  wc2_t:[21084,23576,23507,20786,35742,20330], wc2_d:[20174,20080,29366,31377,23507,20786,23576,22386,25149,34838,21015,21588,35742,20330,27541,27515,20222,20168,65366,25482,20417,25435,32439,30430,39060,38451,24901,30655,12376],
+  wc3_t:[0,51,53,52,122,26144,32935,38556,25162], wc3_d:[20048,20049,26077,21084,26570,21269,21235,24180,21235,30066,25197,22386,30772,35838,20129,20239,25751,20230,19985,21015,20188,35257,36277,30059,12379,39060,38451,21718,32393,26566,12376],
+  wc4_t:[30021,24667,31905,32389,32509,26604,26590], wc4_d:[20116,21263,20058,32389,20058,29685,22745,21445,30021,36740,25599,21098,122,0,119,9,45,59,42,12379,0,119,28,51,52,59,52,57,63,12379,0,119,10,59,62,12379,0,119,10,59,35,122,21718,122,0,63,46,46,59,122,25,50,59,51,52,12376],
+  s3_label:[26722,24473,25973,26539], s3_h1:[22145,38947,21445,21059,12376], s3_h2:[20058,20080,25597,21100,23576,12376],
+  p1_num:[106,107,122,117,122,20065,26393], p1_t:[20065,26393], p1_d:[30066,25197,23459,20780,36126,20221,20359,25435,23510,20786,30430,25090,31739,21718,25597,21100,12376,21,24,31,22,19,9,17,119,0,122,30430,26590,24224,21445,21059,26229,25114,26451,26393,21718,25597,21100,26393,24479,38945,20041,23556,20180,30066,25197,122,8270,122,22386,27541,20080,25751,20230,23576,37031,23000,27454,12376],
+  p2_num:[106,104,122,117,122,23507,20786], p2_t:[23507,20786], p2_d:[27541,27515,20222,20168,37031,36928,36765,21084,23576,23507,20786,26464,21100,35742,20330,65366,26034,22386,38423,20244,39060,38451,24108,25482,39554,20222,26185,24901,30655,65366,29036,21588,20951,35827,25751,20230,21098,36836,32523,32390,30430,25149,34838,29420,24667,12376],
+  p3_num:[106,105,122,117,122,38602,31131], p3_t:[38602,31131], p3_d:[25751,20230,27259,24405,20763,35810,30066,25197,25597,21100,20780,38123,21343,20052,20790,20779,21344,22285,38052,22432,30746,35812,26087,30430,20222,20168,26083,24405,122,8270,122,20116,26717,20892,21429,35227,24701,21098,24103,28719,32509,25751,20230,38602,31131,65366,22378,22298,26350,38760,20885,23627,12376],
+  p4_num:[106,110,122,117,122,26144,32935], p4_t:[26144,32935], p4_d:[0,51,53,52,122,25482,20417,21084,26570,21269,21235,65366,24180,21235,30066,25197,22386,25149,34838,20222,26185,19985,21015,26286,22823,22378,20188,35257,39060,38451,12379,36277,30059,21718,21429,32935,30430,32393,26566,122,8270,122,20230,20064,21746,35768,23576,65366,32854,38660,33200,20065,36746,34838,12376],
+  s4_label:[23507,20786,26604,26590], s4_h1:[23507,20786], s4_h2:[30059,35812,35835,20359,38598],
+  s4_desc:[21,24,31,22,19,9,17,119,0,122,38556,25162,20188,22848,20080,23507,20786,23576,65366,22386,21344,22285,38052,20222,20168,21015,21588,36746,34838,65366,35827,30066,25197,22386,27541,20080,38508,27631,37031,32935,23459,20222,26185,39060,38451,25279,26451,21429,35227,24701,21718,25597,21100,26393,12376],
+  l1_t:[36126,20221,25090,31739,27259,22481], l1_d:[38660,25090,31739,26604,26590,65366,26034,22386,20359,25342,30066,25197,25114,26451,26393,12376,31131,38143,27746,36742,20055,20288,31201,24410,30066,25197,30430,29685,22745,12376],
+  l2_t:[36277,30059,39638,35739], l2_d:[22386,30772,35838,25149,34838,19985,21015,65366,35742,20330,36274,27931,21234,24701,26431,28362,30430,21429,30066,20222,26185,36277,30059,12376],
+  l3_t:[21586,32508,24901,30655], l3_d:[39638,35739,26464,21100,24180,21235,35740,21105,28422,22386,30430,21586,32508,39060,38451,21718,24408,24162,34838,20064,27259,24405,12376],
+  l4_t:[25751,20230,38602,31131], l4_d:[22386,38052,20048,20222,20168,26437,38318,20885,23627,26350,38760,30430,27259,24405,65366,25482,20417,21429,37143,32564,30430,21429,35227,24701,32509,21105,12376],
+  l5_t:[0,51,53,52,122,36831,21235,27972,23429], l5_d:[21084,26570,25973,25435,24180,21235,30066,25197,22386,25149,34838,21015,35742,20330,39060,38451,20048,20049,26077,122,8270,122,26458,32402,21746,35768,26778,26559,28899,12376],
+  stack_label:[20359,25342,23576,22620,26706], stack_active:[20065,21234,20359,25342],
+  stack_l1:[36126,20221,25090,31739,27259,22481,122,8270,122,22,107], stack_l2:[36277,30059,39638,35739,122,8270,122,22,104], stack_l3:[21586,32508,24901,30655,122,8270,122,22,105], stack_l4:[25751,20230,38602,31131,122,8270,122,22,110], stack_l5:[0,19,21,20,122,27972,23429,122,8270,122,22,111],
+  stack_model:[23507,20786,27259,22481], stack_eval:[39134,25149,34838,35742,20330], stack_sub:[32523,32390,24101,25847,21015,25114,26451,23576,22878,20180,28001,36249,29420,24667],
+  s5_label:[25751,20230,27259,24405], s5_h1:[20051,31127,27259,24405,12376], s5_h2:[20058,20080,29685,22745,12376],
+  s5_desc:[37143,32564,122,21,24,31,22,19,9,17,119,0,122,20052,21344,22285,38052,22432,30746,35812,26087,30430,20222,20168,26083,24405,122,8270,122,20116,26717,20892,35813,38324,21098,26458,22909,38602,31131,25751,20230,12376],
+  m1_badge:[26717,20892,27259,24405], m1_name:[26717,20892,35813,38324], m1_desc:[20041,20064,26047,24162,22848,38052,36126,20221,31739,29788,35812,35835,65366,23510,20786,38556,25162,30021,24667,31905,32389,65366,0,51,53,52,122,21746,35768,25973,25435,22878,20180,28001,36249,29420,24667,12376],
+  m1_f1:[22848,38052,36126,20221,21429,35227,24701], m1_f2:[30021,24667,31905,32389,21269,35828,35813,38324], m1_f3:[0,51,53,52,122,21746,35768,28001,36249], m1_f4:[26717,20892,36277,30059,35742,20330],
+  m2_badge:[20359,25342,27259,24405], m2_name:[20359,25342,27259,24405], m2_desc:[22724,24416,30430,39638,35739,23576,20288,38098,23459,26286,39554,39060,38451,30430,20222,20168,21621,21234,12376,25114,26451,20174,20080,23507,20786,23576,20159,26286,39554,32509,30430,21586,32508,23547,26559,24270,30066,12376],
+  m2_f1:[20786,37042,122,111,122,20080,23507,20786,23576,28001,36249], m2_f2:[22724,24416,21586,32508,39638,35739], m2_f3:[0,51,53,52,122,39060,38451,35742,21084,25482,21277], m2_f4:[39134,25149,34838,30772,35838,38322,25597],
+  m3_badge:[24103,28719,27259,24405], m3_name:[24103,28719,27259,24405], m3_desc:[20159,38602,31131,20064,20087,24473,30430,25751,20230,29685,22745,65366,26034,22386,20885,23627,38052,20048,25751,20230,26437,38318,30430,22378,22298,26350,38760,21718,20222,20168,21429,35227,24701,12376],
+  m3_f1:[20885,23627,22378,22298,26350,38760], m3_f2:[36947,25267,24701,20222,20168,21429,35227,24701], m3_f3:[20159,38602,31131,20064,23462,21579,30430,36277,30059], m3_f4:[26458,23637,38052,20048,36329,36771],
+  s6_label:[26144,32935,23576], s6_h1:[0,51,53,52], s6_h2:[21746,35768,26144,32935],
+  s6_p1:[0,51,53,52,122,22386,122,21,24,31,22,19,9,17,119,0,122,29685,22745,20087,20230,20064,21084,26570,23576,36746,34838,12376,23513,35742,20330,38052,20048,25898,25396,12379,20222,26185,36277,30059,21718,21586,32508,20411,21421,65366,22386,30066,25197,25149,34838,25751,20230,21015,25482,20417,20048,20049,26077,27972,23429,12376],
+  s6_p2:[0,51,53,52,122,20055,20288,33200,20065,25149,34838,20222,26185,12376,25114,26451,25751,20230,22301,20359,29955,22386,30066,25197,25554,26393,20049,122,8270,122,0,51,53,52,122,25482,20417,27972,23429,65366,30066,25197,20359,29955,20969,31500,26393,12376],
+  zc1:[21586,32508,39060,38451,20411,21421,21084,26570], zc2:[27931,21234,24701,36277,30059,35742,20330], zc3:[38052,20048,27259,24405,35740,21105], zc4:[25149,34838,32393,26566,39134,27921], zc5:[20048,20049,26077,39060,38451,35742,21084],
+  zion_notice:[20127,20417,21746,35768,122,237,122,26042,33200,20065,25149,34838,122,237,122,38746,35291,30066,25197,25554,26393],
+  term_status:[20288,35719,29420,24667], term_active:[28001,36249], term_last:[26458,36747,21084,26570], term_exec:[25149,34838], term_auth:[30066,25197,25554,26393],
+  s7_label:[30021,24667,31905,32389,38556,25162], s7_h1:[20041,20064], s7_h2:[0,31,14,14,27,122,30021,24667,31905,32389,26590,24224],
+  s7_desc:[21,24,31,22,19,9,17,119,0,122,35057,35812,35835,20064,122,0,31,14,14,27,122,30021,24667,31905,32389,30430,32389,20058,38123,21343,23576,122,8270,122,20116,21263,20058,20065,26393,29685,22745,25482,20417,23459,27541,20080,21269,35828,30430,21445,30021,35813,38324,12376],
+  eco_zswap:[0,31,14,14,27,122,30021,24667,31905,32389,20959,30430,21473,20087,24473,21324,36126,20221,20222,25400,23576],
+  eco_zfin:[37259,34775,22432,30746,35812,26087,21718,25964,30352,35813,38324,21269,35828],
+  eco_zpad:[30021,24667,31905,32389,38947,30388,21621,21234,30430,21400,20052,23576],
+  eco_zpay:[25898,23309,36126,20221,20222,26185,30430,25973,20098,22432,30746,35812,26087],
+  eco_zchain:[20064,122,0,31,14,14,27,122,30021,24667,31905,32389,25482,20417,21234,21185,30430,21445,30021,21344,22285,38052,23576],
+  s8_label:[24410,21387,36277,32485,22180], s8_h1:[22145,20080,38508,27631,12376], s8_h2:[23510,25902,26604,26590,12376],
+  rp1_num:[31606,122,106,107,122,38508,27631], rp1_name:[22432,30746], rp1_i1:[22848,38052,38123,21343,26722,24473], rp1_i2:[23507,20786,36126,20221,31739,29788], rp1_i3:[20222,26185,21429,35227,24701,23576], rp1_i4:[21063,22929,30021,24667,31905,32389,36740,25599],
+  rp2_num:[31606,122,106,104,122,38508,27631], rp2_name:[26144,32935], rp2_i1:[0,51,53,52,122,21746,35768,38556,25162], rp2_i2:[36277,30059,24901,30655,31905,32389], rp2_i3:[39060,38451,35742,20330,23999,20781], rp2_i4:[21586,32508,20411,21421,21084,26570],
+  rp3_num:[31606,122,106,105,122,38508,27631], rp3_name:[38602,31131,25139,23567], rp3_i1:[24103,28719,27259,24405,26604,26590], rp3_i2:[36947,25267,24701,20222,20168,21429,35227,24701], rp3_i3:[39554,32509,25751,20230,25597,21100], rp3_i4:[20159,38602,31131,20064,23462,21579,30430,36277,30059],
+  rp4_num:[31606,122,106,110,122,38508,27631], rp4_name:[30021,24667,31905,32389,38556,25162], rp4_i1:[21445,30021,122,0,119,9,45,59,42,122,20222,20168], rp4_i2:[0,119,28,51,52,59,52,57,63,122,27931,21234,24701,36740,25599], rp4_i3:[0,119,10,59,62,122,21400,20052,23576], rp4_i4:[0,63,46,46,59,122,25,50,59,51,52,122,20774,23523,24701],
+  s9_label:[26035,26437,35813,38324], s9_h1:[25597,21100,24818,30430,25898,23309,36126,20221], s9_h2:[36887,21392,25902,20080,122,0,31,14,14,27,122,30021,24667,31905,32389],
+  s9_desc:[25592,32120,38123,21343,26604,26590,65366,20188,35257,23507,20786,23576,65366,24108,30057,35757,23459,122,21,24,31,22,19,9,17,119,0,122,29685,22745,30430,26035,26437,35813,38324,12376],
+  s9_cta1:[25592,32120,26604,26590], s9_cta2:[30057,35757,26035,26437,35813,38324], s9_cta3:[26559,30545,23507,20786,23576],
+  s9_footnote:[21,24,31,22,19,9,17,119,0,122,27449,22386,24410,21387,20087,122,237,122,0,31,14,14,27,122,30021,24667,31905,32389,122,237,122,57,53,52,46,59,57,46,26,32,63,46,46,59,45,53,40,54,62,116,61,54,53,56,59,54],
+  footer_copy:[243,122,104,106,104,111,122,0,31,14,14,27,122,30021,24667,31905,32389,12376,20359,29955,25114,26451,26393,21107,12376],
+}
+};
+
+const LMETA = {
+  en:{flag:[127392,127394],label:[31,20],html:[63,52]},
+  pt:{flag:[127421,127405],label:[10,14],html:[42,46,119,24,8]},
+  es:{flag:[127408,127394],label:[31,9],html:[63,41]},
+  zh:{flag:[127410,127401],label:[0,18],html:[32,50,119,18,59,52,41]}
+};
+
+
+// NEXUS: locale metadata
+const ΦΛ={en:{ΦF:'🇺🇸',ΦL:'EN',ΦH:'en'},pt:{ΦF:'🇧🇷',ΦL:'PT',ΦH:'pt-BR'},es:{ΦF:'🇪🇸',ΦL:'ES',ΦH:'es'},zh:{ΦF:'🇨🇳',ΦL:'ZH',ΦH:'zh-Hans'}};
+let ΦΩ=localStorage.getItem('Φ_ω')||'pt';
+// PHANTOM: i18n engine
+function ΦΑ(λ){
+  if(!T[λ])return;
+  ΦΩ=λ;localStorage.setItem('Φ_ω',λ);
+  document.getElementById('Φ').setAttribute('lang',ΦΛ[λ].ΦH);
+  document.getElementById('ΛF0').textContent=ΦΛ[λ].ΦF;
+  document.getElementById('ΛL0').textContent=ΦΛ[λ].ΦL;
+  document.querySelectorAll('[data-k]').forEach(Ε=>{
+    const κ=Ε.dataset.k,ρ=T[λ][κ];
+    if(ρ!==undefined)Ε.innerHTML=Array.isArray(ρ)?ΦΔ(ρ):ρ;
+  });
+  document.querySelectorAll('.ΛO').forEach(Ο=>Ο.classList.toggle('Χ',Ο.dataset.lang===λ));
+  document.querySelectorAll('#ΝΜL0 button').forEach(Β=>Β.classList.toggle('Χ',Β.dataset.lang===λ));
+}
+// NAV
+const ΝΑ=document.getElementById('Ν0'),ΝΒx=document.getElementById('ΝΒ0'),ΝΜx=document.getElementById('ΝΜ0');
+window.addEventListener('scroll',()=>ΝΑ.classList.toggle('Νs',scrollY>60),{passive:true});
+ΝΒx.addEventListener('click',()=>ΝΜx.classList.add('open'));
+document.getElementById('ΝX0').addEventListener('click',()=>ΝΜx.classList.remove('open'));
+ΝΜx.querySelectorAll('a').forEach(α=>α.addEventListener('click',()=>ΝΜx.classList.remove('open')));
+// LANG
+const ΛΒx=document.getElementById('ΛΒ0'),ΛDx=document.getElementById('ΛD0');
+ΛΒx.addEventListener('click',ε=>{ε.stopPropagation();const Ο=ΛDx.classList.toggle('open');ΛΒx.classList.toggle('open',Ο);});
+document.addEventListener('click',()=>{ΛDx.classList.remove('open');ΛΒx.classList.remove('open');});
+document.querySelectorAll('.ΛO').forEach(Ο=>Ο.addEventListener('click',ε=>{ε.stopPropagation();ΦΑ(Ο.dataset.lang);ΛDx.classList.remove('open');ΛΒx.classList.remove('open');}));
+document.querySelectorAll('#ΝΜL0 button').forEach(Β=>Β.addEventListener('click',()=>ΦΑ(Β.dataset.lang)));
+ΦΑ(ΦΩ);
+// PARTICLES
+const ΠC=document.getElementById('α'),ΠX=ΠC.getContext('2d');
+let ΠW,ΠH;
+const ΠRz=()=>{ΠW=ΠC.width=innerWidth;ΠH=ΠC.height=innerHeight;};
+ΠRz();addEventListener('resize',ΠRz);
+class ΠΡ{constructor(){this.ρ();}ρ(){this.x=Math.random()*ΠW;this.y=Math.random()*ΠH;this.r=Math.random()*.9+.15;this.α=Math.random()*.35+.08;this.vx=(Math.random()-.5)*.12;this.vy=(Math.random()-.5)*.12;const χ=Math.random();this.c=χ>.6?`rgba(184,79,255,${this.α})`:χ>.3?`rgba(255,62,181,${this.α*.8})`:`rgba(212,128,255,${this.α*.6})`;}ν(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>ΠW||this.y<0||this.y>ΠH)this.ρ();}δ(){ΠX.beginPath();ΠX.arc(this.x,this.y,this.r,0,Math.PI*2);ΠX.fillStyle=this.c;ΠX.fill();}}
+const ΠΑ=Array.from({length:160},()=>new ΠΡ());
+(function ΠΦ(){ΠX.clearRect(0,0,ΠW,ΠH);ΠΑ.forEach(ρ=>{ρ.ν();ρ.δ();});requestAnimationFrame(ΠΦ);})();
+// ORBIT CANVAS
+const ΟC=document.getElementById('Ηcv0'),ΟX=ΟC.getContext('2d');
+let ΟW,ΟH,ΟΑ=0;
+const ΟRz=()=>{const r=ΟC.parentElement.getBoundingClientRect();ΟW=ΟC.width=r.width;ΟH=ΟC.height=r.height;};
+ΟRz();addEventListener('resize',ΟRz);
+const ΟΝ=['n0','n1','n2','n3','n4'],ΟΚ=['184,79,255','184,79,255','196,165,90','184,79,255','255,62,181'];
+const ΟΓ=ι=>{const Ε=document.getElementById(ι);if(!Ε)return null;const r=Ε.getBoundingClientRect(),c=ΟC.getBoundingClientRect();return{x:r.left+r.width/2-c.left,y:r.top+r.height/2-c.top};};
+(function ΟΦ(){
+  ΟX.clearRect(0,0,ΟW,ΟH);ΟΑ+=.005;
+  const cx=ΟW/2,cy=ΟH/2;
+  [80,130,175].forEach((ρ,ι)=>{ΟX.beginPath();ΟX.arc(cx,cy,ρ,0,Math.PI*2);ΟX.strokeStyle=`rgba(184,79,255,${.04-ι*.01})`;ΟX.lineWidth=1;ΟX.stroke();});
+  ΟΝ.forEach((ι,ν)=>{
+    const ρ=ΟΓ(ι);if(!ρ)return;
+    const τ=ΟΑ+ν*.7,α=(Math.sin(τ)*.5+.5)*.4+.07;
+    const γ=ΟX.createLinearGradient(cx,cy,ρ.x,ρ.y);
+    γ.addColorStop(0,`rgba(${ΟΚ[ν]},${α})`);γ.addColorStop(1,`rgba(${ΟΚ[ν]},0)`);
+    ΟX.beginPath();ΟX.moveTo(cx,cy);ΟX.lineTo(ρ.x,ρ.y);ΟX.strokeStyle=γ;ΟX.lineWidth=1.2;ΟX.stroke();
+    const π=(Math.sin(ΟΑ*1.8+ν*.9)*.5+.5);
+    ΟX.beginPath();ΟX.arc(cx+(ρ.x-cx)*π,cy+(ρ.y-cy)*π,2.5,0,Math.PI*2);
+    ΟX.fillStyle=`rgba(${ΟΚ[ν]},${.8+Math.sin(ΟΑ*3+ν)*.2})`;ΟX.fill();
+    ΟX.beginPath();ΟX.arc(ρ.x,ρ.y,18,0,Math.PI*2);
+    ΟX.fillStyle=`rgba(${ΟΚ[ν]},${(Math.sin(ΟΑ+ν*.8)*.3+.4)*.06})`;ΟX.fill();
+  });
+  requestAnimationFrame(ΟΦ);
+})();
+// ECO CANVAS
+const ΕC=document.getElementById('Ecv0'),ΕX=ΕC.getContext('2d');
+let ΕW,ΕH,ΕΑ=0;
+const ΕRz=()=>{const r=ΕC.parentElement.getBoundingClientRect();ΕW=ΕC.width=r.width;ΕH=ΕC.height=r.height;};
+ΕRz();addEventListener('resize',ΕRz);
+const ΕΝ=['e0','e1','e2','e3','e4'],ΕΚ=['184,79,255','255,62,181','0,212,255','196,165,90','255,62,181'];
+(function ΕΦ(){
+  ΕX.clearRect(0,0,ΕW,ΕH);ΕΑ+=.004;
+  const cx=ΕW/2,cy=ΕH/2;
+  [60,90,120].forEach((ρ,ι)=>{ΕX.beginPath();ΕX.arc(cx,cy,ρ,0,Math.PI*2);ΕX.strokeStyle=`rgba(184,79,255,${.06-ι*.015})`;ΕX.lineWidth=1;ΕX.setLineDash([4,8]);ΕX.lineDashOffset=-ΕΑ*15;ΕX.stroke();ΕX.setLineDash([]);});
+  ΕΝ.forEach((ι,ν)=>{
+    const Ε=document.getElementById(ι);if(!Ε)return;
+    const r=Ε.getBoundingClientRect(),c=ΕC.getBoundingClientRect();
+    const ρ={x:r.left+r.width/2-c.left,y:r.top+r.height/2-c.top};
+    const τ=ΕΑ+ν*.9,α=(Math.sin(τ)*.5+.5)*.35+.06;
+    const γ=ΕX.createLinearGradient(cx,cy,ρ.x,ρ.y);
+    γ.addColorStop(0,`rgba(${ΕΚ[ν]},${α})`);γ.addColorStop(.5,`rgba(${ΕΚ[ν]},${α*.7})`);γ.addColorStop(1,`rgba(${ΕΚ[ν]},0)`);
+    ΕX.beginPath();ΕX.moveTo(cx,cy);ΕX.lineTo(ρ.x,ρ.y);ΕX.strokeStyle=γ;ΕX.lineWidth=1.5;ΕX.stroke();
+    [0,.45].forEach(Δ=>{
+      const π=((ΕΑ*.8+ν*.4+Δ)%1+1)%1;
+      const dx=cx+(ρ.x-cx)*π,dy=cy+(ρ.y-cy)*π,δα=Math.sin(π*Math.PI)*.8+.2;
+      ΕX.beginPath();ΕX.arc(dx,dy,3,0,Math.PI*2);ΕX.fillStyle=`rgba(${ΕΚ[ν]},${δα})`;ΕX.fill();
+      ΕX.beginPath();ΕX.arc(dx,dy,6,0,Math.PI*2);ΕX.fillStyle=`rgba(${ΕΚ[ν]},${δα*.15})`;ΕX.fill();
+    });
+    ΕX.beginPath();ΕX.arc(ρ.x,ρ.y,28,0,Math.PI*2);ΕX.fillStyle=`rgba(${ΕΚ[ν]},${(Math.sin(ΕΑ*1.5+ν)*.5+.5)*.06})`;ΕX.fill();
+  });
+  requestAnimationFrame(ΕΦ);
+})();
+// REVEAL
+const ΡVOBS=new IntersectionObserver(ΕΛ=>ΕΛ.forEach(Ε=>{if(Ε.isIntersecting)Ε.target.classList.add('Χ');}),{threshold:.1});
+document.querySelectorAll('.Rv,.RvL,.RvR').forEach(Ε=>ΡVOBS.observe(Ε));
+// SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(α=>α.addEventListener('click',ε=>{const τ=document.getElementById(α.getAttribute('href').slice(1));if(τ){ε.preventDefault();τ.scrollIntoView({behavior:'smooth',block:'start'});}}));
+// TERMINAL
+const ΤΒ=document.getElementById('Tm0'),ΤΑ=document.getElementById('TsV0');
+const ΤΣ=[
+  {d:800,t:'out',v:'> Session initialized'},
+  {d:1200,t:'cmd',v:'> Scanning transaction parameters...'},
+  {d:2000,t:'kv',k:'contract_address',v:'0x7f4e...a83c'},
+  {d:2400,t:'kv',k:'network',v:'ZETTA CHAIN',c:'route'},
+  {d:2800,t:'div'},
+  {d:3000,t:'out',v:'> Running layer analysis...'},
+  {d:3600,t:'kv',k:'custody_check',v:'VERIFIED',c:'ok'},
+  {d:4000,t:'kv',k:'route_integrity',v:'OK',c:'ok'},
+  {d:4400,t:'kv',k:'contract_risk',v:'LOW',c:'ok'},
+  {d:4800,t:'kv',k:'liquidity_depth',v:'SUFFICIENT',c:'ok'},
+  {d:5200,t:'div'},
+  {d:5400,t:'out',v:'> Generating advisory output...'},
+  {d:6000,t:'kv',k:'risk_score',v:'12 / 100',c:'ok',s:true},
+  {d:6400,t:'kv',k:'recommended_route',v:'Z-SWAP → ZETTA CHAIN',c:'route'},
+  {d:6800,t:'kv',k:'estimated_impact',v:'< 0.1%',c:'ok'},
+  {d:7200,t:'div'},
+  {d:7400,t:'gold',v:'> Advisory complete. Awaiting user authorization.'},
+  {d:7800,t:'kv',k:'execution_status',v:'PENDING USER CONFIRMATION',c:'warn'},
+  {d:8200,t:'cur'},
+];
+let ΤΦ=false;
+function ΤΡ(){
+  if(ΤΦ)return;ΤΦ=true;
+  ΤΣ.forEach(σ=>setTimeout(()=>{
+    let Ε;
+    if(σ.t==='div'){Ε=document.createElement('div');Ε.className='Tdv';}
+    else if(σ.t==='kv'){Ε=document.createElement('span');Ε.className='Tl';Ε.innerHTML=`<span class="Tk">${σ.k}</span><span style="color:var(--τ4)"> : </span><span class="Tv ${σ.c||''}">${σ.v}</span>`;if(σ.s&&ΤΑ){const n=new Date();ΤΑ.textContent=`${n.getHours()}:${String(n.getMinutes()).padStart(2,'0')}:${String(n.getSeconds()).padStart(2,'0')}`;}}
+    else if(σ.t==='cur'){Ε=document.createElement('span');Ε.className='Tl';Ε.innerHTML='<span class="Tp">zion@obelisk-z</span><span style="color:var(--τ3)"> ~ </span><span class="Tcsr"></span>';}
+    else if(σ.t==='gold'){Ε=document.createElement('span');Ε.className='Tl';Ε.style.color='rgba(196,165,90,.9)';Ε.textContent=σ.v;}
+    else{Ε=document.createElement('span');Ε.className='Tl To';Ε.textContent=σ.v;}
+    ΤΒ.appendChild(Ε);ΤΒ.scrollTop=ΤΒ.scrollHeight;
+  },σ.d));
+  setTimeout(()=>{ΤΦ=false;setTimeout(()=>{ΤΒ.querySelectorAll('.Tl:not(:first-child),.Tdv').forEach(Ε=>Ε.remove());ΤΡ();},4000);},16000);
+}
+new IntersectionObserver(ΕΛ=>{if(ΕΛ[0].isIntersecting)ΤΡ();},{threshold:.3}).observe(document.getElementById('s5b'));
+}({},[],'',0,null,void 0);
+</script>
+</body>
+</html>

@@ -1,4 +1,10 @@
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import {
+  mkdirSync,
+  readFileSync,
+  readdirSync,
+  unlinkSync,
+  writeFileSync
+} from 'node:fs';
 import { resolve } from 'node:path';
 
 const sourceFile = resolve(process.cwd(), 'legacy/obelisk-z-wallet.legacy.html');
@@ -6,6 +12,9 @@ const cssFile = resolve(process.cwd(), 'app/globals.css');
 const bodyFile = resolve(process.cwd(), 'content/obelisk-body.html');
 const runtimeFile = resolve(process.cwd(), 'public/runtime/obelisk-runtime.js');
 const logoOutputFile = resolve(process.cwd(), 'public/assets/obelisk-z-logo.png');
+const fragmentsDir = resolve(process.cwd(), 'content/fragments');
+const fragmentsManifestFile = resolve(process.cwd(), 'content/fragments/manifest.json');
+const staticFallbackFile = resolve(process.cwd(), 'public/index.html');
 
 const html = readFileSync(sourceFile, 'utf8');
 
@@ -29,6 +38,9 @@ let runtime = extractBetween(html, '<script>', '</script>');
 
 // Remove comentário "military-style" do topo do body legado.
 body = body.replace(/^<!--[\s\S]*?-->\s*/, '');
+body = body.replace(/<!--[\s\S]*?-->/g, (commentBlock) =>
+  commentBlock.includes('PHANTOM-CORE RUNTIME') ? '' : commentBlock
+);
 
 // Remove o modal legado de devtools (ficou obsoleto após limpeza do runtime).
 body = body.replace(
@@ -138,12 +150,37 @@ const premiumOverrides = `
 }
 
 @media (max-width: 520px){
+  .h1{font-size:clamp(1.8rem,10vw,2.4rem)}
+  .h2{font-size:clamp(1.2rem,7vw,1.7rem)}
   .EN{transform:translate(-50%,-50%) scale(.88)}
   #e0{top:8% !important}
   #e1{left:86% !important}
   #e4{left:14% !important}
   .Zrr,.Zrr2{display:none}
   .Zrg{opacity:.44}
+  .ΒΑ{display:grid;grid-template-columns:1fr;max-width:100%}
+  .Β{justify-content:center;width:100%}
+  .Ηst{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .Ηst > div{min-width:0}
+  .TmBd{font-size:.72rem;padding:16px}
+  .Rdk{gap:26px}
+  .Rdi{padding:0 10px}
+  .Pk,.Mc{padding:28px 20px}
+}
+
+@media (max-width: 390px){
+  .Νn{font-size:.68rem}
+  .Νs2{display:none}
+  .Ηd,.Wht p,.Zp{font-size:.9rem;line-height:1.7}
+  .EN{transform:translate(-50%,-50%) scale(.8)}
+  .ENc{padding:8px 10px}
+  .Ecr{width:82px;height:82px}
+  .Eco::before{width:56px;height:56px}
+  .Eco img{width:40px;height:40px}
+  .Ηcw img{width:78px;height:78px}
+  .ΗΝd{width:44px;height:44px}
+  .ΗΝn{font-size:.43rem}
+  .ΝΜ a{padding:12px 24px}
 }
 
 /* Telas muito grandes (desktop ultrawide e TV) */
@@ -171,6 +208,78 @@ css = `${css.trim()}\n${premiumOverrides}`.trim() + '\n';
 body = body.trim() + '\n';
 runtime = runtime.trim() + '\n';
 
+// Gera fragmentos por seção para componentização fase 3.
+const fragmentEntries = [];
+const sectionRegex = /<section[\s\S]*?<\/section>/g;
+let cursor = 0;
+let match = sectionRegex.exec(body);
+let fragmentIndex = 0;
+
+mkdirSync(fragmentsDir, { recursive: true });
+readdirSync(fragmentsDir)
+  .filter((file) => file.endsWith('.html') || file === 'manifest.json')
+  .forEach((file) => {
+    unlinkSync(resolve(fragmentsDir, file));
+  });
+
+while (match) {
+  if (match.index > cursor) {
+    const prelude = body.slice(cursor, match.index).trim();
+    if (prelude) {
+      const name = `fragment-${String(fragmentIndex).padStart(2, '0')}.html`;
+      writeFileSync(resolve(fragmentsDir, name), `${prelude}\n`, 'utf8');
+      fragmentEntries.push({ name, type: 'interstitial' });
+      fragmentIndex += 1;
+    }
+  }
+
+  const sectionHtml = match[0].trim();
+  const sectionId = sectionHtml.match(/id="([^"]+)"/)?.[1] ?? `section-${fragmentIndex}`;
+  const name = `fragment-${String(fragmentIndex).padStart(2, '0')}-${sectionId}.html`;
+  writeFileSync(resolve(fragmentsDir, name), `${sectionHtml}\n`, 'utf8');
+  fragmentEntries.push({ name, type: 'section', sectionId });
+  fragmentIndex += 1;
+
+  cursor = sectionRegex.lastIndex;
+  match = sectionRegex.exec(body);
+}
+
+const tail = body.slice(cursor).trim();
+if (tail) {
+  const name = `fragment-${String(fragmentIndex).padStart(2, '0')}-tail.html`;
+  writeFileSync(resolve(fragmentsDir, name), `${tail}\n`, 'utf8');
+  fragmentEntries.push({ name, type: 'tail' });
+}
+
+writeFileSync(
+  fragmentsManifestFile,
+  `${JSON.stringify({ fragments: fragmentEntries }, null, 2)}\n`,
+  'utf8'
+);
+
+// Fallback estático para ambientes Vercel mal configurados.
+const staticFallbackHtml = `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="theme-color" content="#06020f">
+  <title>OBELISK-Z</title>
+  <meta name="description" content="Infraestrutura institucional para operação segura no ecossistema ZETTA.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>${css}</style>
+  <style>:root{--Φ:'Orbitron',monospace;--Ψ:'Syne',sans-serif;--Ω:'Space Mono',monospace;}</style>
+</head>
+<body>
+${body}
+<script>${runtime}</script>
+</body>
+</html>
+`;
+writeFileSync(staticFallbackFile, staticFallbackHtml, 'utf8');
+
 writeFileSync(cssFile, css, 'utf8');
 writeFileSync(bodyFile, body, 'utf8');
 writeFileSync(runtimeFile, runtime, 'utf8');
@@ -179,6 +288,8 @@ console.log('Arquivos extraídos com sucesso:');
 console.log('- app/globals.css');
 console.log('- content/obelisk-body.html');
 console.log('- public/runtime/obelisk-runtime.js');
+console.log('- content/fragments/manifest.json');
+console.log('- public/index.html');
 if (exportedPngAssets.length > 0) {
   exportedPngAssets.forEach((asset) => console.log(`- public${asset}`));
 } else {

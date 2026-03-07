@@ -392,12 +392,37 @@ footer{padding:40px 0;border-top:1px solid rgba(184,79,255,.1);background:var(--
 }
 
 @media (max-width: 520px){
+  .h1{font-size:clamp(1.8rem,10vw,2.4rem)}
+  .h2{font-size:clamp(1.2rem,7vw,1.7rem)}
   .EN{transform:translate(-50%,-50%) scale(.88)}
   #e0{top:8% !important}
   #e1{left:86% !important}
   #e4{left:14% !important}
   .Zrr,.Zrr2{display:none}
   .Zrg{opacity:.44}
+  .ΒΑ{display:grid;grid-template-columns:1fr;max-width:100%}
+  .Β{justify-content:center;width:100%}
+  .Ηst{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .Ηst > div{min-width:0}
+  .TmBd{font-size:.72rem;padding:16px}
+  .Rdk{gap:26px}
+  .Rdi{padding:0 10px}
+  .Pk,.Mc{padding:28px 20px}
+}
+
+@media (max-width: 390px){
+  .Νn{font-size:.68rem}
+  .Νs2{display:none}
+  .Ηd,.Wht p,.Zp{font-size:.9rem;line-height:1.7}
+  .EN{transform:translate(-50%,-50%) scale(.8)}
+  .ENc{padding:8px 10px}
+  .Ecr{width:82px;height:82px}
+  .Eco::before{width:56px;height:56px}
+  .Eco img{width:40px;height:40px}
+  .Ηcw img{width:78px;height:78px}
+  .ΗΝd{width:44px;height:44px}
+  .ΗΝn{font-size:.43rem}
+  .ΝΜ a{padding:12px 24px}
 }
 
 /* Telas muito grandes (desktop ultrawide e TV) */

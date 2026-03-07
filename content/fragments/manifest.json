@@ -1,0 +1,89 @@
+{
+  "fragments": [
+    {
+      "name": "fragment-00.html",
+      "type": "interstitial"
+    },
+    {
+      "name": "fragment-01-s1.html",
+      "type": "section",
+      "sectionId": "s1"
+    },
+    {
+      "name": "fragment-02.html",
+      "type": "interstitial"
+    },
+    {
+      "name": "fragment-03-s2.html",
+      "type": "section",
+      "sectionId": "s2"
+    },
+    {
+      "name": "fragment-04.html",
+      "type": "interstitial"
+    },
+    {
+      "name": "fragment-05-s3.html",
+      "type": "section",
+      "sectionId": "s3"
+    },
+    {
+      "name": "fragment-06.html",
+      "type": "interstitial"
+    },
+    {
+      "name": "fragment-07-s4.html",
+      "type": "section",
+      "sectionId": "s4"
+    },
+    {
+      "name": "fragment-08.html",
+      "type": "interstitial"
+    },
+    {
+      "name": "fragment-09-s4b.html",
+      "type": "section",
+      "sectionId": "s4b"
+    },
+    {
+      "name": "fragment-10.html",
+      "type": "interstitial"
+    },
+    {
+      "name": "fragment-11-s5b.html",
+      "type": "section",
+      "sectionId": "s5b"
+    },
+    {
+      "name": "fragment-12.html",
+      "type": "interstitial"
+    },
+    {
+      "name": "fragment-13-s6.html",
+      "type": "section",
+      "sectionId": "s6"
+    },
+    {
+      "name": "fragment-14.html",
+      "type": "interstitial"
+    },
+    {
+      "name": "fragment-15-s7.html",
+      "type": "section",
+      "sectionId": "s7"
+    },
+    {
+      "name": "fragment-16.html",
+      "type": "interstitial"
+    },
+    {
+      "name": "fragment-17-s8.html",
+      "type": "section",
+      "sectionId": "s8"
+    },
+    {
+      "name": "fragment-18-tail.html",
+      "type": "tail"
+    }
+  ]
+}
