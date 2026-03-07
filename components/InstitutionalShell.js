@@ -1,9 +1,17 @@
 import Script from 'next/script';
 
-export default function InstitutionalShell({ bodyHtml, runtimeScript }) {
+function HtmlBlock({ html }) {
+  return <div className="legacy-fragment" dangerouslySetInnerHTML={{ __html: html }} />;
+}
+
+export default function InstitutionalShell({ blocks, runtimeScript }) {
   return (
     <>
-      <main dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+      <main aria-label="Página institucional OBELISK-Z">
+        {blocks.map((block, index) => (
+          <HtmlBlock key={`legacy-block-${index}`} html={block} />
+        ))}
+      </main>
       <Script id="obelisk-runtime" strategy="afterInteractive">
         {runtimeScript}
       </Script>

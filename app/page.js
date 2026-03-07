@@ -12,8 +12,35 @@ const runtimeScript = readFileSync(
   'utf8'
 );
 
+function splitBodyInBlocks(html) {
+  const blocks = [];
+  const sectionRegex = /<section[\s\S]*?<\/section>/g;
+  let cursor = 0;
+  let match = sectionRegex.exec(html);
+
+  while (match) {
+    if (match.index > cursor) {
+      const interstitial = html.slice(cursor, match.index).trim();
+      if (interstitial) {
+        blocks.push(interstitial);
+      }
+    }
+
+    blocks.push(match[0].trim());
+    cursor = sectionRegex.lastIndex;
+    match = sectionRegex.exec(html);
+  }
+
+  const tail = html.slice(cursor).trim();
+  if (tail) {
+    blocks.push(tail);
+  }
+
+  return blocks;
+}
+
+const bodyBlocks = splitBodyInBlocks(bodyHtml);
+
 export default function HomePage() {
-  return (
-    <InstitutionalShell bodyHtml={bodyHtml} runtimeScript={runtimeScript} />
-  );
+  return <InstitutionalShell blocks={bodyBlocks} runtimeScript={runtimeScript} />;
 }

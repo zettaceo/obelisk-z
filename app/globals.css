@@ -333,6 +333,9 @@ footer{padding:40px 0;border-top:1px solid rgba(184,79,255,.1);background:var(--
   --Ω:var(--font-space-mono),monospace;
 }
 
+/* Evita wrappers extras alterarem o layout legado */
+.legacy-fragment{display:contents}
+
 /* Remove a bolinha rosa sólida atrás da logo central e aplica acabamento premium discreto */
 .Eco{
   width:auto;

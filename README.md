@@ -11,9 +11,11 @@ Projeto institucional da OBELISK-Z reestruturado para arquitetura moderna com Ne
 ## Estrutura
 
 - `app/` — rota principal e layout global
+- `app/opengraph-image.js` e `app/twitter-image.js` — imagens sociais dinâmicas
 - `components/` — casca da página institucional
 - `content/` — fragmento HTML legado já separado
 - `public/runtime/` — script runtime legado já separado
+- `public/assets/` — imagens extraídas do legado (sem base64 inline em produção)
 - `legacy/` — backup do HTML monolítico original
 - `scripts/extract-legacy.mjs` — extrator para regenerar CSS/HTML/runtime
 
@@ -38,7 +40,9 @@ npm run start            # sobe build de produção
 
 - Remoção da camada anti-devtools do runtime.
 - Default de idioma ajustado para **PT-BR**.
+- SEO institucional avançado com metadata + Open Graph/Twitter image dinâmica.
 - Ajustes premium de responsividade (mobile, tablet, desktop e telas grandes/TV).
 - Refino visual do núcleo central do ecossistema:
   - remoção da bolinha rosa sólida atrás da logo;
   - substituição por acabamento mais sutil/premium.
+- Extração automática da logo inline para asset estático em `public/assets/`.

@@ -5,6 +5,8 @@
   "private": true,
   "scripts": {
     "extract:legacy": "node scripts/extract-legacy.mjs",
+    "predev": "npm run extract:legacy",
+    "prebuild": "npm run extract:legacy",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
