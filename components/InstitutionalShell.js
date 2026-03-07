@@ -4,6 +4,7 @@ import HeroSection from './sections/HeroSection';
 import EcosystemSection from './sections/EcosystemSection';
 import RoadmapSection from './sections/RoadmapSection';
 import FooterSection from './sections/FooterSection';
+import ScrollProgressBar from './ScrollProgressBar';
 
 function HtmlBlock({ html }) {
   return <div className="legacy-fragment" dangerouslySetInnerHTML={{ __html: html }} />;
@@ -29,6 +30,7 @@ function splitTailContent(html = '') {
 export default function InstitutionalShell({ fragments, runtimeScript }) {
   return (
     <>
+      <ScrollProgressBar />
       <main aria-label="Página institucional OBELISK-Z">
         {fragments.map((fragment, index) => {
           const SectionComponent = sectionComponentById[fragment.sectionId];

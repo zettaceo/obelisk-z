@@ -336,11 +336,56 @@ footer{padding:40px 0;border-top:1px solid rgba(184,79,255,.1);background:var(--
 /* Evita wrappers extras alterarem o layout legado */
 .legacy-fragment{display:contents}
 
+/* Barra de progresso do scroll no topo */
+.scroll-progress{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:3px;
+  z-index:1200;
+  pointer-events:none;
+  background:rgba(184,79,255,.14);
+  backdrop-filter:blur(2px);
+  transition:opacity .2s ease;
+}
+.scroll-progress__fill{
+  width:100%;
+  height:100%;
+  transform:scaleX(0);
+  transform-origin:left center;
+  background:linear-gradient(90deg,var(--π),var(--μ),var(--γ));
+  box-shadow:0 0 14px rgba(184,79,255,.55);
+}
+
 /* Base estrutural para evitar clipping em traduções e grids densos */
 .Ξ,.Pg > *,.ELg > *,.Rdk > *{min-width:0}
 .WhiD,.PkD,.SiD,.McD,.Rpi li,.ELd,.CFd,.Ηd,.Wht p,.Zp{overflow-wrap:anywhere}
 .ELg{grid-template-columns:repeat(5,minmax(0,1fr))}
 .Η{min-height:100dvh}
+
+/* Hardening anti-overflow horizontal */
+html,body,main{
+  max-width:100%;
+  overflow-x:clip;
+  overscroll-behavior-x:none;
+}
+body{
+  touch-action:pan-y pinch-zoom;
+}
+.Ηdg,.Eg{
+  overflow:clip;
+}
+.EN{
+  max-width:min(46vw,220px);
+}
+.ENc{
+  max-width:100%;
+}
+.ENn,.ENs{
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
 
 /* Remove a bolinha rosa sólida atrás da logo central e aplica acabamento premium discreto */
 .Eco{
@@ -431,6 +476,28 @@ footer{padding:40px 0;border-top:1px solid rgba(184,79,255,.1);background:var(--
   .ΝΜ a{padding:12px 24px}
 }
 
+/* Modo desktop no celular: força legibilidade e evita miniaturização extrema */
+@media (pointer: coarse) and (hover: none) and (min-width: 900px){
+  html{font-size:19px}
+  .Ξ{max-width:100%;padding:0 18px}
+  .Ν{padding:12px 0}
+  .Νlk{display:none}
+  .Νc{display:none}
+  .ΝΒ{display:block}
+  .Η{padding:126px 0 58px;min-height:auto}
+  .Ηi,.Whg,.Sg,.Zg{grid-template-columns:1fr;gap:36px}
+  .Ηdg{height:360px}
+  .Pg,.Mg{grid-template-columns:1fr 1fr}
+  .Eg{height:340px;max-width:100%}
+  .ELg{grid-template-columns:1fr 1fr;gap:14px}
+  .Rdk{grid-template-columns:1fr 1fr;gap:26px}
+  .Rdk::before{display:none}
+}
+
+@media (pointer: coarse) and (hover: none) and (min-width: 900px) and (max-height: 520px){
+  html{font-size:20px}
+}
+
 /* Notebooks com altura reduzida (evita sensação de "vazio" no desktop baixo) */
 @media (max-height: 820px) and (min-width: 900px){
   .Λ{padding:96px 0}
@@ -498,4 +565,8 @@ footer{padding:40px 0;border-top:1px solid rgba(184,79,255,.1);background:var(--
     transition:none !important;
     scroll-behavior:auto !important;
   }
+}
+
+@media (max-width: 520px){
+  .scroll-progress{height:2.5px}
 }
