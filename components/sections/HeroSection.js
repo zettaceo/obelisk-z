@@ -1,0 +1,152 @@
+export default function HeroSection() {
+  return (
+    <section className="Λ Η" id="s1">
+      <div className="Ηb" />
+      <div className="Ξ">
+        <div className="Ηi">
+          <div className="Ηc">
+            <div className="Ηe">
+              <div className="Ηed" />
+              <span className="Ηet" data-k="hero_eyebrow" />
+            </div>
+            <h1 className="h1 Ητ">
+              <span className="ln">OBELISK-Z</span>
+              <span className="la Θ">WALLET</span>
+            </h1>
+            <p className="Ηs" data-k="hero_subtitle" />
+            <p className="Ηd" data-k="hero_desc" />
+            <div className="ΒΑ">
+              <a href="#s2" className="Β Β1">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+                <span data-k="hero_cta1" />
+              </a>
+              <a href="#s3" className="Β Β2" data-k="hero_cta2" />
+              <a
+                href="#s8"
+                className="Β Β2"
+                style={{ borderColor: 'rgba(196,165,90,.25)', color: 'var(--γ)' }}
+                data-k="hero_cta3"
+              />
+            </div>
+            <div className="Ηst">
+              <div>
+                <span className="Ηsl" data-k="stat1_l" />
+                <div className="Ηsv">
+                  Multi<span>chain</span>
+                </div>
+              </div>
+              <div>
+                <span className="Ηsl" data-k="stat2_l" />
+                <div className="Ηsv">
+                  <span>5</span> <span data-k="stat2_v" />
+                </div>
+              </div>
+              <div>
+                <span className="Ηsl" data-k="stat3_l" />
+                <div className="Ηsv">
+                  Non-<span>Custodial</span>
+                </div>
+              </div>
+              <div>
+                <span className="Ηsl" data-k="stat4_l" />
+                <div className="Ηsv">
+                  ZION <span>AI</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="Ηdg">
+            <canvas className="Ηcv" id="Ηcv0" />
+            <div className="Ηct">
+              <div className="Ηcw">
+                <img
+                  src="/assets/obelisk-z-logo.png"
+                  alt=""
+                  style={{
+                    width: 96,
+                    height: 96,
+                    objectFit: 'contain',
+                    position: 'relative',
+                    zIndex: 3,
+                    filter:
+                      'drop-shadow(0 0 24px rgba(184,79,255,.8)) drop-shadow(0 0 48px rgba(255,62,181,.3))',
+                    animation: 'ΩΓ 4s ease-in-out infinite'
+                  }}
+                />
+                <svg className="Ηrs" width="200" height="200" style={{ width: 200, height: 200 }}>
+                  <ellipse
+                    cx="100"
+                    cy="100"
+                    rx="90"
+                    ry="30"
+                    fill="none"
+                    stroke="rgba(255,62,181,0.5)"
+                    strokeWidth="1.2"
+                    style={{ animation: 'Ω2d 3s linear infinite', transformOrigin: '100px 100px' }}
+                  />
+                  <ellipse
+                    cx="100"
+                    cy="100"
+                    rx="110"
+                    ry="38"
+                    fill="none"
+                    stroke="rgba(184,79,255,0.3)"
+                    strokeWidth="1"
+                    style={{ animation: 'Ω2d 5s linear infinite reverse', transformOrigin: '100px 100px' }}
+                  />
+                </svg>
+              </div>
+              <div className="Ηcl" data-k="orbit_center" />
+            </div>
+            <div className="ΗΝ" id="n0" style={{ left: '50%', top: '5%' }}>
+              <div className="ΗΝd">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b84fff" strokeWidth="1.5">
+                  <circle cx="12" cy="12" r="3" />
+                  <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
+                </svg>
+              </div>
+              <span className="ΗΝn" data-k="orbit_zion" />
+            </div>
+            <div className="ΗΝ" id="n1" style={{ left: '89%', top: '30%' }}>
+              <div className="ΗΝd">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b84fff" strokeWidth="1.5">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <span className="ΗΝn" data-k="orbit_sec" />
+            </div>
+            <div className="ΗΝ" id="n2" style={{ left: '80%', top: '78%' }}>
+              <div className="ΗΝd">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c4a55a" strokeWidth="1.5">
+                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
+                  <line x1="1" y1="1" x2="23" y2="23" />
+                </svg>
+              </div>
+              <span className="ΗΝn" data-k="orbit_ghost" />
+            </div>
+            <div className="ΗΝ" id="n3" style={{ left: '20%', top: '78%' }}>
+              <div className="ΗΝd">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b84fff" strokeWidth="1.5">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                </svg>
+              </div>
+              <span className="ΗΝn" data-k="orbit_mc" />
+            </div>
+            <div className="ΗΝ" id="n4" style={{ left: '11%', top: '30%' }}>
+              <div className="ΗΝd">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff3eb5" strokeWidth="1.5">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                </svg>
+              </div>
+              <span className="ΗΝn" data-k="orbit_zetta" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

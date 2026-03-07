@@ -11,10 +11,11 @@ const fragmentsManifest = JSON.parse(
   readFileSync(join(process.cwd(), 'content/fragments/manifest.json'), 'utf8')
 );
 
-const bodyBlocks = fragmentsManifest.fragments.map((fragment) =>
-  readFileSync(join(process.cwd(), `content/fragments/${fragment.name}`), 'utf8')
-);
+const fragments = fragmentsManifest.fragments.map((fragment) => ({
+  ...fragment,
+  html: readFileSync(join(process.cwd(), `content/fragments/${fragment.name}`), 'utf8')
+}));
 
 export default function HomePage() {
-  return <InstitutionalShell blocks={bodyBlocks} runtimeScript={runtimeScript} />;
+  return <InstitutionalShell fragments={fragments} runtimeScript={runtimeScript} />;
 }

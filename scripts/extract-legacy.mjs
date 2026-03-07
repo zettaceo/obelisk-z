@@ -189,6 +189,37 @@ const premiumOverrides = `
   .ΝΜ a{padding:12px 24px}
 }
 
+/* Desktop premium: melhora escala e densidade visual sem alterar o design */
+@media (min-width: 1200px){
+  .Ξ{max-width:1400px;padding:0 clamp(24px,3.4vw,72px)}
+  .Ν{padding:22px 0}
+  .Νn{font-size:.92rem}
+  .Νs2{font-size:.56rem;letter-spacing:.22em}
+  .Νlk a{font-size:.72rem;padding:8px 13px}
+  .ΛΒ{font-size:.66rem;padding:8px 13px}
+  .Η{padding:176px 0 98px}
+  .Ηi{gap:clamp(64px,6vw,108px)}
+  .Ηd{max-width:620px;font-size:1.02rem}
+  .Ηst{gap:38px}
+  .Ηdg{height:580px}
+  .Whg{gap:96px}
+  .Pg{gap:24px}
+  .Sg{gap:92px}
+  .Mg{gap:28px}
+  .Eg{max-width:760px;height:540px}
+  .ELg{gap:20px}
+  .Rdk{gap:12px}
+  .Rph{padding:0 18px}
+  .CF{padding:156px 0}
+}
+
+@media (min-width: 1440px){
+  html{font-size:16.5px}
+  .Ξ{max-width:1480px}
+  .Ηdg{height:620px}
+  .TmBd{max-height:340px}
+}
+
 /* Telas muito grandes (desktop ultrawide e TV) */
 @media (min-width: 1800px){
   html{font-size:17px}
