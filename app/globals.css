@@ -360,13 +360,13 @@ footer{padding:40px 0;border-top:1px solid rgba(184,79,255,.1);background:var(--
 
 /* Base estrutural para evitar clipping em traduções e grids densos */
 .Ξ,.Pg > *,.ELg > *,.Rdk > *{min-width:0}
-.WhiD,.PkD,.SiD,.McD,.Rpi li,.ELd,.CFd,.Ηd,.Wht p,.Zp{overflow-wrap:anywhere}
-.ELg{grid-template-columns:repeat(5,minmax(0,1fr))}
+.WhiD,.PkD,.SiD,.McD,.Rpi li,.ELd,.CFd,.Ηd,.Wht p,.Zp{overflow-wrap:break-word;word-break:normal;hyphens:auto}
 .Η{min-height:100dvh}
 
 /* Hardening anti-overflow horizontal */
 html,body,main{
   max-width:100%;
+  overflow-x:hidden;
   overflow-x:clip;
   overscroll-behavior-x:none;
 }
@@ -385,6 +385,14 @@ body{
 .ENn,.ENs{
   overflow:hidden;
   text-overflow:ellipsis;
+}
+
+/* Intermediário (inclui Desktop mode no celular): evita colunas ultra estreitas */
+@media (max-width: 1150px){
+  .ELg{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .Eg{height:420px;max-width:100%}
+  .Rdk{grid-template-columns:1fr 1fr;gap:30px}
+  .Rdk::before{display:none}
 }
 
 /* Remove a bolinha rosa sólida atrás da logo central e aplica acabamento premium discreto */
@@ -456,7 +464,7 @@ body{
   .Ηst{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .Ηst > div{min-width:0}
   .TmBd{font-size:.72rem;padding:16px}
-  .Rdk{gap:26px}
+  .Rdk{grid-template-columns:1fr;gap:26px}
   .Rdi{padding:0 10px}
   .Pk,.Mc{padding:28px 20px}
 }
