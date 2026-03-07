@@ -1,0 +1,58 @@
+/* ╔══════════════════════════════════════════╗
+   ║ OBELISK-Z DESIGN TOKENS                 ║
+   ║ CLASSIFICATION: INTERNAL USE ONLY       ║
+   ╚══════════════════════════════════════════╝ */
+
+:root {
+  /* Background tones */
+  --ν0: #06020f;
+  --ν1: #0a0418;
+  --ν2: #0e0520;
+  --ν3: #140830;
+
+  /* Purple spectrum */
+  --π: #b84fff;
+  --πd: #8b20e8;
+  --πl: #d580ff;
+  --πx: rgba(184, 79, 255, .08);
+  --πg: rgba(184, 79, 255, .35);
+
+  /* Pink spectrum */
+  --μ: #ff3eb5;
+  --μd: #cc1f8a;
+  --μl: #ff80cc;
+  --μx: rgba(255, 62, 181, .07);
+
+  /* Cyan */
+  --κ: #00d4ff;
+  --κd: #0099cc;
+
+  /* Gold */
+  --γ: #c4a55a;
+  --γl: #e8c97e;
+
+  /* Text tones */
+  --τ1: #f5eeff;
+  --τ2: rgba(215, 190, 255, .72);
+  --τ3: rgba(170, 130, 220, .48);
+  --τ4: rgba(120, 80, 180, .32);
+
+  /* Surface */
+  --σ1: rgba(20, 6, 48, .7);
+  --σ2: rgba(35, 10, 80, .5);
+
+  /* Border */
+  --β: rgba(184, 79, 255, .12);
+  --βh: rgba(184, 79, 255, .35);
+
+  /* Typography */
+  --Φ: 'Orbitron', monospace;
+  --Ψ: 'Syne', sans-serif;
+  --Ω: 'Space Mono', monospace;
+
+  /* Spacing */
+  --ρ: 120px;
+  --ρm: 72px;
+  --δ: 12px;
+  --δl: 20px;
+}

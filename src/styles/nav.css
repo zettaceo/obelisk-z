@@ -1,0 +1,154 @@
+/* Navigation */
+.Ν {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  padding: 20px 0; transition: all .4s;
+  border-bottom: 1px solid transparent;
+}
+.Ν.Νs {
+  padding: 14px 0;
+  background: rgba(6, 2, 15, .92);
+  backdrop-filter: blur(24px) saturate(1.5);
+  border-bottom-color: rgba(184, 79, 255, .12);
+}
+
+.Νi { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+
+.Νl { display: flex; align-items: center; gap: 14px; text-decoration: none; flex-shrink: 0; }
+
+.Νg {
+  position: relative; width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.Νg img {
+  width: 44px; height: 44px; object-fit: contain;
+  position: relative; z-index: 2;
+  filter: drop-shadow(0 0 8px rgba(184, 79, 255, .6));
+  transition: filter .3s;
+}
+.Νl:hover .Νg img { filter: drop-shadow(0 0 16px rgba(255, 62, 181, .8)); }
+
+.Νr {
+  position: absolute; border-radius: 50%;
+  border: 1px solid; animation: ΩΩ 4s linear infinite; pointer-events: none;
+}
+.Νr1 {
+  width: 52px; height: 20px; top: 50%; left: 50%;
+  transform: translate(-50%, -50%) rotateX(70deg);
+  border-color: rgba(255, 62, 181, .5); animation-duration: 3s;
+}
+.Νr2 {
+  width: 60px; height: 24px; top: 50%; left: 50%;
+  transform: translate(-50%, -50%) rotateX(70deg);
+  border-color: rgba(184, 79, 255, .3); animation-duration: 4.5s;
+  animation-direction: reverse;
+}
+
+.Νt { display: flex; flex-direction: column; }
+.Νn {
+  font-family: var(--Φ); font-size: .8rem; font-weight: 700;
+  letter-spacing: .14em; color: var(--τ1); line-height: 1;
+}
+.Νs2 {
+  font-family: var(--Ω); font-size: .5rem;
+  letter-spacing: .2em; color: var(--τ4);
+  text-transform: uppercase; margin-top: 2px;
+}
+
+.Νlk { display: flex; align-items: center; gap: 4px; list-style: none; }
+.Νlk a {
+  display: block; padding: 7px 12px; font-size: .68rem;
+  font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--τ3); text-decoration: none; border-radius: 8px;
+  transition: color .2s, background .2s; white-space: nowrap;
+}
+.Νlk a:hover { color: var(--τ1); background: rgba(184, 79, 255, .08); }
+
+.Νrg { display: flex; align-items: center; gap: 10px; }
+
+.Νc {
+  font-family: var(--Φ); font-size: .65rem; font-weight: 700;
+  letter-spacing: .1em; padding: 9px 18px; border-radius: var(--δ);
+  background: linear-gradient(135deg, var(--πd), var(--μd));
+  color: white; text-decoration: none;
+  box-shadow: 0 0 24px var(--πx); transition: all .3s; white-space: nowrap;
+}
+.Νc:hover { transform: translateY(-2px); box-shadow: 0 0 40px var(--πg); }
+
+/* Language Switcher */
+.ΛΣ { position: relative; flex-shrink: 0; }
+
+.ΛΒ {
+  display: flex; align-items: center; gap: 6px; padding: 7px 12px;
+  border-radius: var(--δ); background: rgba(184, 79, 255, .06);
+  border: 1px solid rgba(184, 79, 255, .18); color: var(--τ2);
+  cursor: pointer; font-family: var(--Ω); font-size: .62rem;
+  letter-spacing: .08em; text-transform: uppercase;
+  transition: all .2s; white-space: nowrap;
+}
+.ΛΒ:hover {
+  background: rgba(184, 79, 255, .12); color: var(--τ1);
+  border-color: rgba(184, 79, 255, .35);
+}
+.ΛΒ svg { width: 11px; height: 11px; opacity: .6; transition: transform .25s; }
+.ΛΒ.open svg { transform: rotate(180deg); }
+
+.ΛD {
+  position: absolute; top: calc(100% + 8px); right: 0; min-width: 160px;
+  background: rgba(8, 3, 20, .98); border: 1px solid rgba(184, 79, 255, .2);
+  border-radius: var(--δ); padding: 6px; display: none;
+  flex-direction: column; gap: 2px; backdrop-filter: blur(24px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, .8); z-index: 200;
+}
+.ΛD.open { display: flex; }
+
+.ΛO {
+  display: flex; align-items: center; gap: 10px; padding: 9px 12px;
+  border-radius: 8px; cursor: pointer; transition: background .15s;
+  border: none; background: none; width: 100%; text-align: left;
+}
+.ΛO:hover { background: rgba(184, 79, 255, .12); }
+.ΛO.Χ { background: rgba(184, 79, 255, .08); }
+.ΛO.Χ .ΛN { color: var(--πl); }
+
+.ΛF { font-size: 1rem; line-height: 1; }
+.ΛN { font-size: .78rem; color: var(--τ1); font-family: var(--Ψ); }
+.ΛC { font-size: .58rem; color: var(--τ4); font-family: var(--Ω); letter-spacing: .1em; margin-left: auto; }
+
+/* Mobile nav */
+.ΝΒ { display: none; background: none; border: none; cursor: pointer; padding: 4px; color: var(--τ2); }
+.ΝΒ svg { width: 22px; height: 22px; }
+
+.ΝΜ {
+  display: none; position: fixed; inset: 0; z-index: 800;
+  background: rgba(6, 2, 15, .97); backdrop-filter: blur(24px);
+  flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+}
+.ΝΜ.open { display: flex; }
+.ΝΜ a {
+  font-family: var(--Φ); font-size: 1rem; letter-spacing: .15em;
+  text-transform: uppercase; color: var(--τ2); text-decoration: none;
+  padding: 16px 40px; border-radius: 10px; width: 100%; text-align: center;
+  transition: all .2s;
+}
+.ΝΜ a:hover { color: var(--πl); background: rgba(184, 79, 255, .08); }
+.ΝΜc { background: linear-gradient(135deg, var(--πd), var(--μd)) !important; color: white !important; margin-top: 8px; }
+
+.ΝΜL { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 16px; }
+.ΝΜL button {
+  padding: 7px 14px; border-radius: var(--δ);
+  border: 1px solid rgba(184, 79, 255, .2); background: rgba(184, 79, 255, .06);
+  color: var(--τ3); font-family: var(--Ω); font-size: .62rem;
+  cursor: pointer; transition: all .2s;
+}
+.ΝΜL button.Χ, .ΝΜL button:hover {
+  background: rgba(184, 79, 255, .18); color: var(--πl);
+  border-color: rgba(184, 79, 255, .4);
+}
+
+.ΝX {
+  position: absolute; top: 20px; right: 24px;
+  background: none; border: none; cursor: pointer;
+  color: var(--τ3); font-size: 1.4rem; padding: 8px;
+  transition: color .2s;
+}
+.ΝX:hover { color: var(--τ1); }

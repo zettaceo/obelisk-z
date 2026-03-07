@@ -1,0 +1,131 @@
+/* Hero Section */
+.Η {
+  min-height: 100vh; padding: 160px 0 80px;
+  position: relative; display: flex; align-items: center; overflow: hidden;
+}
+
+.Ηb { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.Ηb::before {
+  content: ''; position: absolute; top: -20%; left: -15%;
+  width: 70vw; height: 70vw; border-radius: 50%;
+  background: radial-gradient(circle, rgba(184, 79, 255, .07) 0%, transparent 65%);
+}
+.Ηb::after {
+  content: ''; position: absolute; bottom: -20%; right: -15%;
+  width: 55vw; height: 55vw; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 62, 181, .06) 0%, transparent 65%);
+}
+
+.Ηi { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+
+.Ηc { position: relative; z-index: 2; }
+
+.Ηe {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 7px 16px; border-radius: 100px;
+  border: 1px solid rgba(184, 79, 255, .25);
+  background: rgba(184, 79, 255, .07); margin-bottom: 28px;
+}
+
+.Ηed {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--π); animation: ΩΑ 2.5s ease-in-out infinite;
+}
+
+.Ηet {
+  font-family: var(--Ω); font-size: .58rem;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--πl);
+}
+
+.Ητ { margin-bottom: 14px; }
+.Ητ .ln { display: block; color: var(--τ1); font-size: clamp(2.4rem, 5.5vw, 5.2rem); }
+.Ητ .la { display: block; font-size: clamp(2.4rem, 5.5vw, 5.2rem); }
+
+.Ηs {
+  font-family: var(--Φ); font-size: clamp(.9rem, 1.5vw, 1.05rem);
+  font-weight: 500; letter-spacing: .06em; color: var(--τ3);
+  margin-bottom: 20px; line-height: 1.5;
+}
+
+.Ηd {
+  font-size: clamp(.95rem, 1.5vw, 1.05rem); color: var(--τ2);
+  line-height: 1.82; max-width: 520px; margin-bottom: 40px;
+}
+
+.Ηst {
+  display: flex; gap: 32px; flex-wrap: wrap;
+  padding-top: 32px; border-top: 1px solid rgba(184, 79, 255, .1); margin-top: 8px;
+}
+
+.Ηsl {
+  font-family: var(--Ω); font-size: .55rem;
+  letter-spacing: .15em; text-transform: uppercase;
+  color: var(--τ4); display: block; margin-bottom: 4px;
+}
+
+.Ηsv { font-family: var(--Φ); font-size: .95rem; font-weight: 700; color: var(--τ1); }
+.Ηsv span { color: var(--πl); }
+
+/* Hero diagram */
+.Ηdg {
+  position: relative; display: flex; align-items: center;
+  justify-content: center; height: 540px; z-index: 2;
+}
+
+.Ηcv { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+.Ηct {
+  position: relative; z-index: 10;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center;
+}
+
+.Ηcw {
+  position: relative; width: 130px; height: 130px;
+  display: flex; align-items: center; justify-content: center;
+}
+.Ηcw img {
+  width: 96px; height: 96px; object-fit: contain;
+  position: relative; z-index: 3;
+  filter: drop-shadow(0 0 24px rgba(184, 79, 255, .8)) drop-shadow(0 0 48px rgba(255, 62, 181, .3));
+  animation: ΩΓ 4s ease-in-out infinite;
+}
+
+.Ηrs {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%); pointer-events: none;
+}
+
+.Ηcl {
+  font-family: var(--Φ); font-size: .58rem;
+  letter-spacing: .18em; color: var(--πl); margin-top: 14px; line-height: 1.6;
+}
+
+/* Orbit nodes */
+.ΗΝ {
+  position: absolute; display: flex; flex-direction: column;
+  align-items: center; gap: 6px; transform: translate(-50%, -50%);
+  z-index: 10; cursor: default;
+}
+
+.ΗΝd {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--σ1); border: 1px solid var(--β);
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(12px); transition: all .35s;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .5);
+}
+.ΗΝ:hover .ΗΝd {
+  border-color: var(--π);
+  box-shadow: 0 0 24px rgba(184, 79, 255, .4);
+  transform: scale(1.12);
+}
+.ΗΝd svg { width: 22px; height: 22px; }
+
+.ΗΝn {
+  font-family: var(--Ω); font-size: .5rem;
+  letter-spacing: .15em; text-transform: uppercase;
+  color: var(--τ3); text-align: center; white-space: nowrap;
+  transition: color .3s; line-height: 1.4;
+}
+.ΗΝ:hover .ΗΝn { color: var(--πl); }

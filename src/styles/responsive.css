@@ -1,0 +1,187 @@
+/* ═══════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   TV (2560+) → Desktop (1440) → Laptop (1100)
+   → Tablet (900) → iPad (768) → Mobile (640)
+   → Small Mobile (480) → Mini (360)
+   ═══════════════════════════════════════════ */
+
+/* Ultra-wide / TV displays */
+@media (min-width: 2560px) {
+  .Ξ { max-width: 1600px; }
+  .h1 { font-size: 5.5rem; }
+  .h2 { font-size: 3.2rem; }
+  .Ηi { gap: 100px; }
+  .Ηdg { height: 640px; }
+  .Pg { gap: 28px; }
+  .Mg { gap: 32px; }
+  .ELg { gap: 24px; }
+}
+
+/* Large Desktop */
+@media (min-width: 1920px) and (max-width: 2559px) {
+  .Ξ { max-width: 1440px; }
+}
+
+/* Standard breakpoints from original design */
+@media (max-width: 1100px) {
+  .Νlk { display: none; }
+  .Νc { display: none; }
+  .ΝΒ { display: block; }
+  .Pg { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 1024px) {
+  .Ηi { grid-template-columns: 1fr; }
+  .Ηc { max-width: 640px; }
+  .Ηdg { height: 420px; }
+  .Sg { grid-template-columns: 1fr; }
+  .Sw { position: static; margin-top: 48px; }
+  .Zg { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) {
+  .Whg { grid-template-columns: 1fr; gap: 48px; }
+  .Mg { grid-template-columns: 1fr; }
+  .ELg { grid-template-columns: repeat(2, 1fr); }
+  .Eg { height: 380px; }
+  .Rdk { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .Rdk::before { display: none; }
+}
+
+@media (max-width: 768px) {
+  .Λ { padding: var(--ρm) 0; }
+
+  .Ηi { gap: 40px; }
+  .Ηst { gap: 24px; }
+
+  .Zrs { max-width: 300px; height: 240px; }
+  .ZrI { width: 200px; }
+  .Zrg { width: 180px; height: 60px; }
+
+  .Ft {
+    flex-direction: column; align-items: center;
+    text-align: center; gap: 16px;
+  }
+  .Flk { justify-content: center; }
+
+  .CF { padding: 100px 0; }
+
+  .TmBd { min-height: 200px; max-height: 240px; }
+  .Tst { flex-direction: column; gap: 8px; }
+}
+
+@media (max-width: 640px) {
+  .Η { padding: 130px 0 60px; }
+  .Ηdg { height: 340px; }
+  .Ηst { gap: 20px; }
+
+  .Pg { grid-template-columns: 1fr; }
+  .ELg { grid-template-columns: 1fr; }
+  .Rdk { grid-template-columns: 1fr; }
+
+  .ΒΑ { flex-direction: column; align-items: stretch; }
+  .Β { justify-content: center; }
+
+  .CF { padding: 80px 0; }
+  .CFd { font-size: .95rem; }
+}
+
+@media (max-width: 480px) {
+  .Ξ { padding: 0 16px; }
+
+  .Ητ .ln, .Ητ .la { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+  .Ηs { font-size: .85rem; }
+  .Ηd { font-size: .9rem; }
+
+  .Ηdg { height: 280px; }
+  .ΗΝd { width: 40px; height: 40px; }
+  .ΗΝd svg { width: 18px; height: 18px; }
+  .ΗΝn { font-size: .42rem; }
+
+  .Pk { padding: 28px 22px; }
+  .PkT { font-size: .82rem; }
+  .PkD { font-size: .82rem; }
+
+  .Mc { padding: 28px 22px; }
+  .McN { font-size: .92rem; }
+  .McD { font-size: .85rem; }
+
+  .Zrs { max-width: 260px; height: 200px; }
+  .ZrI { width: 170px; }
+  .Zrg { width: 150px; height: 50px; }
+
+  .Eg { height: 260px; }
+  .ENc { padding: 8px 14px; font-size: .55rem; }
+  .Eco { width: 60px; height: 60px; }
+  .Eco img { width: 36px; height: 36px; }
+
+  .Rpd { width: 60px; height: 60px; }
+  .Rpd svg { width: 22px; height: 22px; }
+  .RpNm { font-size: .75rem; }
+  .Rpi li { font-size: .75rem; }
+
+  .SPl { padding: 10px 14px; font-size: .5rem; }
+
+  .Ν.Νs { padding: 10px 0; }
+  .Νn { font-size: .7rem; }
+}
+
+@media (max-width: 360px) {
+  .Ξ { padding: 0 12px; }
+
+  .Ητ .ln, .Ητ .la { font-size: 1.6rem; }
+  .Ηe { padding: 5px 12px; }
+  .Ηet { font-size: .5rem; }
+
+  .h2 { font-size: 1.3rem; }
+
+  .Β { padding: 12px 20px; font-size: .65rem; }
+
+  .Ηdg { height: 240px; }
+
+  .Pk { padding: 24px 18px; }
+  .Mc { padding: 24px 18px; }
+
+  .ELi { padding: 16px 14px; }
+
+  .Tm { border-radius: var(--δ); }
+  .TmBd { padding: 16px; font-size: .7rem; }
+}
+
+/* Landscape phones */
+@media (max-height: 500px) and (orientation: landscape) {
+  .Η { min-height: auto; padding: 100px 0 40px; }
+  .Ηdg { height: 300px; }
+  .CF { padding: 60px 0; }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .Pk:hover,
+  .Mc:hover,
+  .ENc:hover,
+  .ELi:hover,
+  .Whi:hover,
+  .Si:hover { transform: none; }
+
+  .Β1:hover, .Β2:hover { transform: none; }
+  .Νc:hover { transform: none; }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .Rv, .RvL, .RvR { opacity: 1; transform: none; }
+}
+
+/* Print styles */
+@media print {
+  .Ν, .ΝΜ, .DT, #α, .Δ, canvas { display: none !important; }
+  body { background: white; color: black; }
+  .Θ { -webkit-text-fill-color: #8b20e8; }
+}
