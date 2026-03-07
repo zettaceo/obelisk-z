@@ -86,6 +86,23 @@ runtime = runtime.replace(
   "let ΦΩ=localStorage.getItem('Φ_ω')||'pt';"
 );
 
+// Otimizações de performance e acessibilidade para múltiplos dispositivos.
+runtime = runtime.replace(
+  "const ΠC=document.getElementById('α'),ΠX=ΠC.getContext('2d');",
+  "const REDUCE_MOTION=typeof matchMedia==='function'&&matchMedia('(prefers-reduced-motion: reduce)').matches;const ΠC=document.getElementById('α'),ΠX=ΠC.getContext('2d');"
+);
+runtime = runtime.replace(
+  "const ΠΑ=Array.from({length:160},()=>new ΠΡ());",
+  "const ΠΜ=REDUCE_MOTION?0:(innerWidth<640?64:innerWidth<1200?110:160);const ΠΑ=Array.from({length:ΠΜ},()=>new ΠΡ());"
+);
+runtime = runtime.replace('(function ΠΦ(){', 'if(ΠΑ.length)(function ΠΦ(){');
+runtime = runtime.replace('(function ΟΦ(){', 'if(!REDUCE_MOTION)(function ΟΦ(){');
+runtime = runtime.replace('(function ΕΦ(){', 'if(!REDUCE_MOTION)(function ΕΦ(){');
+runtime = runtime.replace(
+  "document.querySelectorAll('a[href^=\"#\"]').forEach(α=>α.addEventListener('click',ε=>{const τ=document.getElementById(α.getAttribute('href').slice(1));if(τ){ε.preventDefault();τ.scrollIntoView({behavior:'smooth',block:'start'});}}));",
+  "document.querySelectorAll('a[href^=\"#\"]').forEach(α=>α.addEventListener('click',ε=>{const τ=document.getElementById(α.getAttribute('href').slice(1));if(τ){ε.preventDefault();τ.scrollIntoView({behavior:REDUCE_MOTION?'auto':'smooth',block:'start'});}}));"
+);
+
 const premiumOverrides = `
 
 /* ===== Premium overrides (estrutura Vercel) ===== */
@@ -99,6 +116,12 @@ const premiumOverrides = `
 
 /* Evita wrappers extras alterarem o layout legado */
 .legacy-fragment{display:contents}
+
+/* Base estrutural para evitar clipping em traduções e grids densos */
+.Ξ,.Pg > *,.ELg > *,.Rdk > *{min-width:0}
+.WhiD,.PkD,.SiD,.McD,.Rpi li,.ELd,.CFd,.Ηd,.Wht p,.Zp{overflow-wrap:anywhere}
+.ELg{grid-template-columns:repeat(5,minmax(0,1fr))}
+.Η{min-height:100dvh}
 
 /* Remove a bolinha rosa sólida atrás da logo central e aplica acabamento premium discreto */
 .Eco{
@@ -189,6 +212,20 @@ const premiumOverrides = `
   .ΝΜ a{padding:12px 24px}
 }
 
+/* Notebooks com altura reduzida (evita sensação de "vazio" no desktop baixo) */
+@media (max-height: 820px) and (min-width: 900px){
+  .Λ{padding:96px 0}
+  .Η{padding:138px 0 72px;min-height:auto}
+  .Ηdg{height:500px}
+}
+
+@media (max-height: 700px) and (min-width: 900px){
+  .Ν{padding:12px 0}
+  .Η{padding:124px 0 56px}
+  .Ηdg{height:440px}
+  .Whg,.Sg{gap:56px}
+}
+
 /* Desktop premium: melhora escala e densidade visual sem alterar o design */
 @media (min-width: 1200px){
   .Ξ{max-width:1400px;padding:0 clamp(24px,3.4vw,72px)}
@@ -211,6 +248,10 @@ const premiumOverrides = `
   .Rdk{gap:12px}
   .Rph{padding:0 18px}
   .CF{padding:156px 0}
+}
+
+@media (min-width: 1280px){
+  html{font-size:16.2px}
 }
 
 @media (min-width: 1440px){
@@ -299,7 +340,7 @@ const staticFallbackHtml = `<!DOCTYPE html>
 <html id="Φ" lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
   <meta name="theme-color" content="#06020f">
   <title>OBELISK-Z</title>
   <meta name="description" content="Infraestrutura institucional para operação segura no ecossistema ZETTA.">

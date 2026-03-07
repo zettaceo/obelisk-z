@@ -2,7 +2,7 @@
 <html id="Φ" lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
   <meta name="theme-color" content="#06020f">
   <title>OBELISK-Z</title>
   <meta name="description" content="Infraestrutura institucional para operação segura no ecossistema ZETTA.">
@@ -347,6 +347,12 @@ footer{padding:40px 0;border-top:1px solid rgba(184,79,255,.1);background:var(--
 /* Evita wrappers extras alterarem o layout legado */
 .legacy-fragment{display:contents}
 
+/* Base estrutural para evitar clipping em traduções e grids densos */
+.Ξ,.Pg > *,.ELg > *,.Rdk > *{min-width:0}
+.WhiD,.PkD,.SiD,.McD,.Rpi li,.ELd,.CFd,.Ηd,.Wht p,.Zp{overflow-wrap:anywhere}
+.ELg{grid-template-columns:repeat(5,minmax(0,1fr))}
+.Η{min-height:100dvh}
+
 /* Remove a bolinha rosa sólida atrás da logo central e aplica acabamento premium discreto */
 .Eco{
   width:auto;
@@ -436,6 +442,20 @@ footer{padding:40px 0;border-top:1px solid rgba(184,79,255,.1);background:var(--
   .ΝΜ a{padding:12px 24px}
 }
 
+/* Notebooks com altura reduzida (evita sensação de "vazio" no desktop baixo) */
+@media (max-height: 820px) and (min-width: 900px){
+  .Λ{padding:96px 0}
+  .Η{padding:138px 0 72px;min-height:auto}
+  .Ηdg{height:500px}
+}
+
+@media (max-height: 700px) and (min-width: 900px){
+  .Ν{padding:12px 0}
+  .Η{padding:124px 0 56px}
+  .Ηdg{height:440px}
+  .Whg,.Sg{gap:56px}
+}
+
 /* Desktop premium: melhora escala e densidade visual sem alterar o design */
 @media (min-width: 1200px){
   .Ξ{max-width:1400px;padding:0 clamp(24px,3.4vw,72px)}
@@ -458,6 +478,10 @@ footer{padding:40px 0;border-top:1px solid rgba(184,79,255,.1);background:var(--
   .Rdk{gap:12px}
   .Rph{padding:0 18px}
   .CF{padding:156px 0}
+}
+
+@media (min-width: 1280px){
+  html{font-size:16.2px}
 }
 
 @media (min-width: 1440px){
@@ -1023,13 +1047,13 @@ document.querySelectorAll('.ΛO').forEach(Ο=>Ο.addEventListener('click',ε=>{�
 document.querySelectorAll('#ΝΜL0 button').forEach(Β=>Β.addEventListener('click',()=>ΦΑ(Β.dataset.lang)));
 ΦΑ(ΦΩ);
 // PARTICLES
-const ΠC=document.getElementById('α'),ΠX=ΠC.getContext('2d');
+const REDUCE_MOTION=typeof matchMedia==='function'&&matchMedia('(prefers-reduced-motion: reduce)').matches;const ΠC=document.getElementById('α'),ΠX=ΠC.getContext('2d');
 let ΠW,ΠH;
 const ΠRz=()=>{ΠW=ΠC.width=innerWidth;ΠH=ΠC.height=innerHeight;};
 ΠRz();addEventListener('resize',ΠRz);
 class ΠΡ{constructor(){this.ρ();}ρ(){this.x=Math.random()*ΠW;this.y=Math.random()*ΠH;this.r=Math.random()*.9+.15;this.α=Math.random()*.35+.08;this.vx=(Math.random()-.5)*.12;this.vy=(Math.random()-.5)*.12;const χ=Math.random();this.c=χ>.6?`rgba(184,79,255,${this.α})`:χ>.3?`rgba(255,62,181,${this.α*.8})`:`rgba(212,128,255,${this.α*.6})`;}ν(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>ΠW||this.y<0||this.y>ΠH)this.ρ();}δ(){ΠX.beginPath();ΠX.arc(this.x,this.y,this.r,0,Math.PI*2);ΠX.fillStyle=this.c;ΠX.fill();}}
-const ΠΑ=Array.from({length:160},()=>new ΠΡ());
-(function ΠΦ(){ΠX.clearRect(0,0,ΠW,ΠH);ΠΑ.forEach(ρ=>{ρ.ν();ρ.δ();});requestAnimationFrame(ΠΦ);})();
+const ΠΜ=REDUCE_MOTION?0:(innerWidth<640?64:innerWidth<1200?110:160);const ΠΑ=Array.from({length:ΠΜ},()=>new ΠΡ());
+if(ΠΑ.length)(function ΠΦ(){ΠX.clearRect(0,0,ΠW,ΠH);ΠΑ.forEach(ρ=>{ρ.ν();ρ.δ();});requestAnimationFrame(ΠΦ);})();
 // ORBIT CANVAS
 const ΟC=document.getElementById('Ηcv0'),ΟX=ΟC.getContext('2d');
 let ΟW,ΟH,ΟΑ=0;
@@ -1037,7 +1061,7 @@ const ΟRz=()=>{const r=ΟC.parentElement.getBoundingClientRect();ΟW=ΟC.width=
 ΟRz();addEventListener('resize',ΟRz);
 const ΟΝ=['n0','n1','n2','n3','n4'],ΟΚ=['184,79,255','184,79,255','196,165,90','184,79,255','255,62,181'];
 const ΟΓ=ι=>{const Ε=document.getElementById(ι);if(!Ε)return null;const r=Ε.getBoundingClientRect(),c=ΟC.getBoundingClientRect();return{x:r.left+r.width/2-c.left,y:r.top+r.height/2-c.top};};
-(function ΟΦ(){
+if(!REDUCE_MOTION)(function ΟΦ(){
   ΟX.clearRect(0,0,ΟW,ΟH);ΟΑ+=.005;
   const cx=ΟW/2,cy=ΟH/2;
   [80,130,175].forEach((ρ,ι)=>{ΟX.beginPath();ΟX.arc(cx,cy,ρ,0,Math.PI*2);ΟX.strokeStyle=`rgba(184,79,255,${.04-ι*.01})`;ΟX.lineWidth=1;ΟX.stroke();});
@@ -1061,7 +1085,7 @@ let ΕW,ΕH,ΕΑ=0;
 const ΕRz=()=>{const r=ΕC.parentElement.getBoundingClientRect();ΕW=ΕC.width=r.width;ΕH=ΕC.height=r.height;};
 ΕRz();addEventListener('resize',ΕRz);
 const ΕΝ=['e0','e1','e2','e3','e4'],ΕΚ=['184,79,255','255,62,181','0,212,255','196,165,90','255,62,181'];
-(function ΕΦ(){
+if(!REDUCE_MOTION)(function ΕΦ(){
   ΕX.clearRect(0,0,ΕW,ΕH);ΕΑ+=.004;
   const cx=ΕW/2,cy=ΕH/2;
   [60,90,120].forEach((ρ,ι)=>{ΕX.beginPath();ΕX.arc(cx,cy,ρ,0,Math.PI*2);ΕX.strokeStyle=`rgba(184,79,255,${.06-ι*.015})`;ΕX.lineWidth=1;ΕX.setLineDash([4,8]);ΕX.lineDashOffset=-ΕΑ*15;ΕX.stroke();ΕX.setLineDash([]);});
@@ -1087,7 +1111,7 @@ const ΕΝ=['e0','e1','e2','e3','e4'],ΕΚ=['184,79,255','255,62,181','0,212,255
 const ΡVOBS=new IntersectionObserver(ΕΛ=>ΕΛ.forEach(Ε=>{if(Ε.isIntersecting)Ε.target.classList.add('Χ');}),{threshold:.1});
 document.querySelectorAll('.Rv,.RvL,.RvR').forEach(Ε=>ΡVOBS.observe(Ε));
 // SMOOTH SCROLL
-document.querySelectorAll('a[href^="#"]').forEach(α=>α.addEventListener('click',ε=>{const τ=document.getElementById(α.getAttribute('href').slice(1));if(τ){ε.preventDefault();τ.scrollIntoView({behavior:'smooth',block:'start'});}}));
+document.querySelectorAll('a[href^="#"]').forEach(α=>α.addEventListener('click',ε=>{const τ=document.getElementById(α.getAttribute('href').slice(1));if(τ){ε.preventDefault();τ.scrollIntoView({behavior:REDUCE_MOTION?'auto':'smooth',block:'start'});}}));
 // TERMINAL
 const ΤΒ=document.getElementById('Tm0'),ΤΑ=document.getElementById('TsV0');
 const ΤΣ=[
