@@ -66,7 +66,7 @@ export default function EcosystemSection() {
                 </svg>
               </div>
               <span className="ENn">Z-FINANCE</span>
-              <span className="ENs">Yield</span>
+              <span className="ENs">Hybrid Finance</span>
             </div>
           </div>
           <div className="EN" id="e2" style={{ left: '82%', top: '76%' }}>
