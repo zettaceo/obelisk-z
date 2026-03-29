@@ -3,20 +3,20 @@
 import { useEffect, useRef } from 'react';
 
 export default function ScrollProgressBar() {
-  const trackRef = useRef(null);
-  const fillRef = useRef(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const fillRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let rafId = 0;
 
-    const updateProgress = () => {
+    const updateProgress = (): void => {
       const fill = fillRef.current;
       const track = trackRef.current;
       if (!fill || !track) return;
 
       const maxScroll = Math.max(
         1,
-        document.documentElement.scrollHeight - window.innerHeight
+        document.documentElement.scrollHeight - window.innerHeight,
       );
       const progress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
 
@@ -24,7 +24,7 @@ export default function ScrollProgressBar() {
       track.style.opacity = progress > 0 ? '1' : '0.35';
     };
 
-    const onScrollOrResize = () => {
+    const onScrollOrResize = (): void => {
       if (rafId) return;
       rafId = window.requestAnimationFrame(() => {
         rafId = 0;

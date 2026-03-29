@@ -72,7 +72,7 @@ export default function HeroSection() {
                     zIndex: 3,
                     filter:
                       'drop-shadow(0 0 24px rgba(184,79,255,.8)) drop-shadow(0 0 48px rgba(255,62,181,.3))',
-                    animation: 'ΩΓ 4s ease-in-out infinite'
+                    animation: 'ΩΓ 4s ease-in-out infinite',
                   }}
                 />
                 <svg className="Ηrs" width="200" height="200" style={{ width: 200, height: 200 }}>

@@ -3,11 +3,11 @@ import { ImageResponse } from 'next/og';
 export const alt = 'OBELISK-Z';
 export const size = {
   width: 1200,
-  height: 630
+  height: 630,
 };
 export const contentType = 'image/png';
 
-export default function OpenGraphImage() {
+export default function OpenGraphImage(): ImageResponse {
   return new ImageResponse(
     (
       <div
@@ -20,14 +20,14 @@ export default function OpenGraphImage() {
           alignItems: 'center',
           background:
             'radial-gradient(circle at 50% 35%, rgba(184,79,255,0.25), rgba(6,2,15,1) 62%)',
-          color: '#f5eeff'
+          color: '#f5eeff',
         }}
       >
         <div
           style={{
             fontSize: 80,
             letterSpacing: 5,
-            fontWeight: 800
+            fontWeight: 800,
           }}
         >
           OBELISK-Z
@@ -37,7 +37,7 @@ export default function OpenGraphImage() {
             marginTop: 18,
             fontSize: 34,
             letterSpacing: 2,
-            color: '#d580ff'
+            color: '#d580ff',
           }}
         >
           Ecossistema ZETTA
@@ -48,13 +48,13 @@ export default function OpenGraphImage() {
             fontSize: 24,
             color: 'rgba(215,190,255,.92)',
             maxWidth: 920,
-            textAlign: 'center'
+            textAlign: 'center',
           }}
         >
           Infraestrutura institucional para wallet soberana, segura e multichain.
         </div>
       </div>
     ),
-    size
+    size,
   );
 }

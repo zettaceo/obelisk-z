@@ -1,6 +1,10 @@
 export default function RoadmapSection() {
   return (
-    <section className="Λ" id="s7" style={{ background: 'linear-gradient(180deg,var(--ν1) 0%,var(--ν2) 100%)' }}>
+    <section
+      className="Λ"
+      id="s7"
+      style={{ background: 'linear-gradient(180deg,var(--ν1) 0%,var(--ν2) 100%)' }}
+    >
       <div className="Ξ">
         <div style={{ textAlign: 'center', marginBottom: 72 }} className="Rv">
           <div className="Σ" style={{ justifyContent: 'center' }}>

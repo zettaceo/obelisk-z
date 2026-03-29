@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment as ReactFragment } from 'react';
 import Script from 'next/script';
 import HeroSection from './sections/HeroSection';
 import EcosystemSection from './sections/EcosystemSection';
@@ -6,17 +6,35 @@ import RoadmapSection from './sections/RoadmapSection';
 import FooterSection from './sections/FooterSection';
 import ScrollProgressBar from './ScrollProgressBar';
 
-function HtmlBlock({ html }) {
+export interface Fragment {
+  name: string;
+  type: 'section' | 'interstitial' | 'tail';
+  sectionId?: string;
+  html: string;
+}
+
+interface HtmlBlockProps {
+  html: string;
+}
+
+function HtmlBlock({ html }: HtmlBlockProps) {
   return <div className="legacy-fragment" dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
-const sectionComponentById = {
+type SectionId = 's1' | 's6' | 's7';
+
+const sectionComponentById: Record<SectionId, React.ComponentType> = {
   s1: HeroSection,
   s6: EcosystemSection,
-  s7: RoadmapSection
+  s7: RoadmapSection,
 };
 
-function splitTailContent(html = '') {
+interface SplitTailResult {
+  contentHtml: string;
+  hasFooter: boolean;
+}
+
+function splitTailContent(html = ''): SplitTailResult {
   const footerRegex = /<footer[\s\S]*?<\/footer>/i;
   const footerMatch = html.match(footerRegex);
   if (!footerMatch) {
@@ -27,13 +45,20 @@ function splitTailContent(html = '') {
   return { contentHtml, hasFooter: true };
 }
 
-export default function InstitutionalShell({ fragments, runtimeScript }) {
+interface InstitutionalShellProps {
+  fragments: Fragment[];
+  runtimeScript: string;
+}
+
+export default function InstitutionalShell({ fragments, runtimeScript }: InstitutionalShellProps) {
   return (
     <>
       <ScrollProgressBar />
       <main aria-label="Página institucional OBELISK-Z">
         {fragments.map((fragment, index) => {
-          const SectionComponent = sectionComponentById[fragment.sectionId];
+          const sectionId = fragment.sectionId as SectionId | undefined;
+          const SectionComponent = sectionId ? sectionComponentById[sectionId] : undefined;
+
           if (SectionComponent) {
             return <SectionComponent key={`section-component-${fragment.sectionId}-${index}`} />;
           }
@@ -41,10 +66,10 @@ export default function InstitutionalShell({ fragments, runtimeScript }) {
           if (fragment.type === 'tail') {
             const { contentHtml, hasFooter } = splitTailContent(fragment.html);
             return (
-              <Fragment key={`tail-fragment-${fragment.name}-${index}`}>
+              <ReactFragment key={`tail-fragment-${fragment.name}-${index}`}>
                 {contentHtml ? <HtmlBlock html={contentHtml} /> : null}
                 {hasFooter ? <FooterSection /> : null}
-              </Fragment>
+              </ReactFragment>
             );
           }
 

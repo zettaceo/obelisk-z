@@ -1,25 +1,26 @@
 import './globals.css';
+import type { Metadata } from 'next';
 import { Orbitron, Space_Mono, Syne } from 'next/font/google';
 
 const orbitron = Orbitron({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800', '900'],
   variable: '--font-orbitron',
-  display: 'swap'
+  display: 'swap',
 });
 
 const syne = Syne({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800'],
   variable: '--font-syne',
-  display: 'swap'
+  display: 'swap',
 });
 
 const spaceMono = Space_Mono({
   subsets: ['latin'],
   weight: ['400', '700'],
   variable: '--font-space-mono',
-  display: 'swap'
+  display: 'swap',
 });
 
 const organizationSchema = {
@@ -30,10 +31,10 @@ const organizationSchema = {
   logo: 'https://obelisk-z.vercel.app/assets/obelisk-z-logo.png',
   description:
     'Infraestrutura institucional para operação segura no ecossistema ZETTA.',
-  sameAs: ['https://github.com/zettaceo/obelisk-z']
-};
+  sameAs: ['https://github.com/zettaceo/obelisk-z'],
+} as const;
 
-export const metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://obelisk-z.vercel.app'),
   title: 'OBELISK-Z | Camada de Wallet do Ecossistema ZETTA',
   description:
@@ -44,10 +45,10 @@ export const metadata = {
     'wallet',
     'segurança',
     'multichain',
-    'infraestrutura institucional'
+    'infraestrutura institucional',
   ],
   alternates: {
-    canonical: '/'
+    canonical: '/',
   },
   openGraph: {
     title: 'OBELISK-Z',
@@ -62,28 +63,32 @@ export const metadata = {
         url: '/opengraph-image.png',
         width: 1200,
         height: 630,
-        alt: 'OBELISK-Z'
-      }
-    ]
+        alt: 'OBELISK-Z',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'OBELISK-Z',
     description:
       'Infraestrutura institucional para operação segura no ecossistema ZETTA.',
-    images: ['/opengraph-image.png']
+    images: ['/opengraph-image.png'],
   },
   robots: {
     index: true,
-    follow: true
+    follow: true,
   },
   icons: {
     icon: '/assets/obelisk-z-logo.png',
-    apple: '/assets/obelisk-z-logo.png'
-  }
+    apple: '/assets/obelisk-z-logo.png',
+  },
 };
 
-export default function RootLayout({ children }) {
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html id="Φ" lang="pt-BR">
       <head>

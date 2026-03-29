@@ -18,7 +18,7 @@ export default function EcosystemSection() {
               fontSize: '1rem',
               lineHeight: 1.8,
               maxWidth: 520,
-              margin: '16px auto 0'
+              margin: '16px auto 0',
             }}
             data-k="s7_desc"
           />
@@ -38,7 +38,7 @@ export default function EcosystemSection() {
                     width: 50,
                     height: 50,
                     objectFit: 'contain',
-                    filter: 'drop-shadow(0 0 6px rgba(255,255,255,.4))'
+                    filter: 'drop-shadow(0 0 6px rgba(255,255,255,.4))',
                   }}
                 />
               </div>
@@ -66,7 +66,7 @@ export default function EcosystemSection() {
                 </svg>
               </div>
               <span className="ENn">Z-FINANCE</span>
-              <span className="ENs">Hybrid Finance</span>
+              <span className="ENs">Yield</span>
             </div>
           </div>
           <div className="EN" id="e2" style={{ left: '82%', top: '76%' }}>
@@ -115,7 +115,7 @@ export default function EcosystemSection() {
                 left: 0,
                 right: 0,
                 height: 2,
-                background: 'linear-gradient(90deg,transparent,rgba(184,79,255,.6),transparent)'
+                background: 'linear-gradient(90deg,transparent,rgba(184,79,255,.6),transparent)',
               }}
             />
             <div className="ELii" style={{ background: 'rgba(184,79,255,.1)', border: '1px solid rgba(184,79,255,.2)' }}>
@@ -135,7 +135,7 @@ export default function EcosystemSection() {
                 left: 0,
                 right: 0,
                 height: 2,
-                background: 'linear-gradient(90deg,transparent,rgba(255,62,181,.6),transparent)'
+                background: 'linear-gradient(90deg,transparent,rgba(255,62,181,.6),transparent)',
               }}
             />
             <div className="ELii" style={{ background: 'rgba(255,62,181,.1)', border: '1px solid rgba(255,62,181,.2)' }}>
@@ -155,7 +155,7 @@ export default function EcosystemSection() {
                 left: 0,
                 right: 0,
                 height: 2,
-                background: 'linear-gradient(90deg,transparent,rgba(255,62,181,.5),transparent)'
+                background: 'linear-gradient(90deg,transparent,rgba(255,62,181,.5),transparent)',
               }}
             />
             <div className="ELii" style={{ background: 'rgba(255,62,181,.1)', border: '1px solid rgba(255,62,181,.2)' }}>
@@ -175,7 +175,7 @@ export default function EcosystemSection() {
                 left: 0,
                 right: 0,
                 height: 2,
-                background: 'linear-gradient(90deg,transparent,rgba(196,165,90,.6),transparent)'
+                background: 'linear-gradient(90deg,transparent,rgba(196,165,90,.6),transparent)',
               }}
             />
             <div className="ELii" style={{ background: 'rgba(196,165,90,.1)', border: '1px solid rgba(196,165,90,.2)' }}>
@@ -195,7 +195,7 @@ export default function EcosystemSection() {
                 left: 0,
                 right: 0,
                 height: 2,
-                background: 'linear-gradient(90deg,transparent,rgba(0,212,255,.6),transparent)'
+                background: 'linear-gradient(90deg,transparent,rgba(0,212,255,.6),transparent)',
               }}
             />
             <div className="ELii" style={{ background: 'rgba(0,212,255,.1)', border: '1px solid rgba(0,212,255,.2)' }}>
